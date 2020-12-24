@@ -1,6 +1,6 @@
 <template>    
   <div>
-    <div v-if="user_infos == {}" class="d-flex justify-content-center page">
+    <div v-if="!loaded" class="d-flex justify-content-center page">
       <div class="spinner-border" role="status">
         <span class="sr-only">Loading...</span>
       </div>
@@ -81,14 +81,31 @@ import store from '../store.js';
 
 export default {
   store,
-  computed: {
-    user() {
-      return store.getters.user;
-    },
-    user_infos() {
-      return store.getters.user_infos;
+  data() {
+    return {
+      loaded: false
     }
   },
+  computed: {
+    user() {
+      return this.$store.getters.user;
+    },
+    user_infos() {
+      return this.$store.getters.user_infos;
+    }
+  },
+  mounted() {
+    if(store.getters.isUserLogged) { // on vérifie dans le store si l'utilisateur est connecté avant de récupérer ses infos
+      axios.get('/api/user_infos').then((informations) => {
+          store.commit('SET_USER_INFOS', informations.data);
+      }).catch(error => {
+        console.log("Can't recover user informations.");
+      })
+    }
+    setTimeout(() => {
+      this.loaded = true;
+    }, 1000)    
+  }
 }
 </script>
 

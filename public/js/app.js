@@ -2225,7 +2225,6 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/api/logout')["catch"](function (error) {
         console.log('Echec de la déconnexion : ' + error);
       });
-      this.$router.push('/');
     }
   },
   computed: {
@@ -2328,13 +2327,34 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   store: _store_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+  data: function data() {
+    return {
+      loaded: false
+    };
+  },
   computed: {
     user: function user() {
-      return _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.user;
+      return this.$store.getters.user;
     },
     user_infos: function user_infos() {
-      return _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.user_infos;
+      return this.$store.getters.user_infos;
     }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    if (_store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.isUserLogged) {
+      // on vérifie dans le store si l'utilisateur est connecté avant de récupérer ses infos
+      axios.get('/api/user_infos').then(function (informations) {
+        _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].commit('SET_USER_INFOS', informations.data);
+      })["catch"](function (error) {
+        console.log("Can't recover user informations.");
+      });
+    }
+
+    setTimeout(function () {
+      _this.loaded = true;
+    }, 1000);
   }
 });
 
@@ -39757,7 +39777,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.user_infos == {}
+    !_vm.loaded
       ? _c("div", { staticClass: "d-flex justify-content-center page" }, [
           _vm._m(0)
         ])
@@ -56565,13 +56585,14 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history' // évite l'affichage d'un # dans l'url
 
 });
-var vm = new Vue({
+new Vue({
   el: '#app',
   router: router,
   store: _store_js__WEBPACK_IMPORTED_MODULE_1__["default"],
   components: {
     'navbar': _components_Navbar_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    'default-footer': _components_Footer_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+    'default-footer': _components_Footer_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+    ProfilePage: _components_ProfilePage_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
   },
   beforeCreate: function beforeCreate() {
     var _this = this;
@@ -56579,9 +56600,6 @@ var vm = new Vue({
     axios.get('/sanctum/csrf-cookie').then(function () {
       axios.get('/api/user').then(function (response) {
         _store_js__WEBPACK_IMPORTED_MODULE_1__["default"].commit('SET_USER', response.data);
-        axios.get('/api/user_infos').then(function (informations) {
-          _store_js__WEBPACK_IMPORTED_MODULE_1__["default"].commit('SET_USER_INFOS', informations.data);
-        });
       })["catch"](function (error) {
         console.log('User is not logged in.');
 
@@ -56592,7 +56610,6 @@ var vm = new Vue({
         }
       });
     });
-    _store_js__WEBPACK_IMPORTED_MODULE_1__["default"].commit('SET_LOADED', true);
   }
 });
 
@@ -57359,8 +57376,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
   state: {
     isUserLogged: false,
     user: {},
-    user_infos: {},
-    loaded: false
+    user_infos: {}
   },
   mutations: {
     SET_IS_USER_LOGGED: function SET_IS_USER_LOGGED(state, value) {
@@ -57377,9 +57393,6 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
       state.isUserLogged = false;
       state.user = {};
       state.user_infos = {};
-    },
-    SET_LOADED: function SET_LOADED(state, value) {
-      return state.loaded = value;
     }
   },
   getters: {
@@ -57419,8 +57432,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/jubelix/Programmation/Projets/portreto_SANDBOXTEST/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/jubelix/Programmation/Projets/portreto_SANDBOXTEST/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/jubelix/Programmation/Projets/Portreto/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/jubelix/Programmation/Projets/Portreto/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

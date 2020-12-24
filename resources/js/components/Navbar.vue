@@ -38,7 +38,6 @@ export default {
       axios.post('/api/logout').catch(error => {
         console.log('Echec de la déconnexion : ' + error);
       })
-      this.$router.push('/');
     }
   },
   computed: {

@@ -8,7 +8,6 @@ export default new Vuex.Store({
     isUserLogged: false,
     user: {},
     user_infos: {},
-    loaded: false
   },
 
   mutations: {
@@ -23,7 +22,6 @@ export default new Vuex.Store({
       state.user = {};
       state.user_infos = {};
     },
-    SET_LOADED: (state, value) => state.loaded = value
   },
 
   getters: {
@@ -34,6 +32,6 @@ export default new Vuex.Store({
   },
 
   actions: {
-    
+
   }
 })

@@ -1,11 +1,5 @@
 <template>    
-  <div>
-    <div v-if="!loaded" class="d-flex justify-content-center page">
-      <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-      </div>
-    </div>
-  <div v-else class="container page">
+  <div v-if="isUserLogged" class="container page">
     <div class="row p-3">
       <div class="col-md-5">
         <div class="row">
@@ -74,7 +68,6 @@
       </div>
     </div>
   </div>
-  </div>
 </template>
 
 <script>
@@ -82,23 +75,16 @@ import store from '../store.js';
 
 export default {
   store,
-  data() {
-    return {
-      loaded: false
-    }
-  },
   computed: {
+    isUserLogged() {
+      return store.getters.isUserLogged;
+    },
     user() {
       return store.getters.user;
     },
     user_infos() {
       return store.getters.user_infos;
     }
-  },
-  mounted() {
-    setTimeout(() => {
-      this.loaded = true;
-    }, 1000)    
   }
 }
 </script>

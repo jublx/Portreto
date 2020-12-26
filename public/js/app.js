@@ -2323,35 +2323,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   store: _store_js__WEBPACK_IMPORTED_MODULE_0__["default"],
-  data: function data() {
-    return {
-      loaded: false
-    };
-  },
   computed: {
+    isUserLogged: function isUserLogged() {
+      return _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.isUserLogged;
+    },
     user: function user() {
       return _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.user;
     },
     user_infos: function user_infos() {
       return _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.user_infos;
     }
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    setTimeout(function () {
-      _this.loaded = true;
-    }, 1000);
   }
 });
 
@@ -39773,144 +39757,130 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    !_vm.loaded
-      ? _c("div", { staticClass: "d-flex justify-content-center page" }, [
-          _vm._m(0)
-        ])
-      : _c("div", { staticClass: "container page" }, [
-          _c("div", { staticClass: "row p-3" }, [
-            _c("div", { staticClass: "col-md-5" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "card bg-light shadow" }, [
-                  _c("div", { staticClass: "card-body" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "d-flex flex-column align-items-center text-center"
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "rounded-circle",
-                          attrs: {
-                            src:
-                              "https://bootdey.com/img/Content/avatar/avatar7.png",
-                            alt: "Admin",
-                            width: "150"
-                          }
-                        }),
+  return _vm.isUserLogged
+    ? _c("div", { staticClass: "container page" }, [
+        _c("div", { staticClass: "row p-3" }, [
+          _c("div", { staticClass: "col-md-5" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "card bg-light shadow" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "d-flex flex-column align-items-center text-center"
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "rounded-circle",
+                        attrs: {
+                          src:
+                            "https://bootdey.com/img/Content/avatar/avatar7.png",
+                          alt: "Admin",
+                          width: "150"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "mt-3" }, [
+                        _c("h4", [_vm._v(_vm._s(_vm.user.name))]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "mt-3" }, [
-                          _c("h4", [_vm._v(_vm._s(_vm.user.name))]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-secondary mb-1" }, [
-                            _vm._v(_vm._s(_vm.user_infos.job))
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-muted font-size-sm" }, [
-                            _vm._v(_vm._s(_vm.user_infos.adresse))
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-muted font-size-sm" }, [
-                            _vm._v(
-                              "code ami : " + _vm._s(_vm.user_infos.friend_code)
-                            )
-                          ])
+                        _c("p", { staticClass: "text-secondary mb-1" }, [
+                          _vm._v(_vm._s(_vm.user_infos.job))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "text-muted font-size-sm" }, [
+                          _vm._v(_vm._s(_vm.user_infos.adresse))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "text-muted font-size-sm" }, [
+                          _vm._v(
+                            "code ami : " + _vm._s(_vm.user_infos.friend_code)
+                          )
                         ])
-                      ]
-                    )
-                  ])
+                      ])
+                    ]
+                  )
                 ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-7 card shadow bg-light" }, [
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "row" }, [
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-sm-9 text-secondary" }, [
-                    _vm._v(
-                      "\n            " +
-                        _vm._s(_vm.user_infos.contact_email) +
-                        "\n          "
-                    )
-                  ])
-                ]),
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-7 card shadow bg-light" }, [
+            _c("div", { staticClass: "card-body" }, [
+              _c("div", { staticClass: "row" }, [
+                _vm._m(0),
                 _vm._v(" "),
-                _c("hr"),
+                _c("div", { staticClass: "col-sm-9 text-secondary" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.user_infos.contact_email) +
+                      "\n          "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _vm._m(1),
                 _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _vm._m(2),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-sm-9 text-secondary" }, [
-                    _vm._v(
-                      "\n            " +
-                        _vm._s(_vm.user_infos.biography) +
-                        "\n          "
-                    )
-                  ])
-                ]),
+                _c("div", { staticClass: "col-sm-9 text-secondary" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.user_infos.biography) +
+                      "\n          "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _vm._m(2),
                 _vm._v(" "),
-                _c("hr"),
+                _c("div", { staticClass: "col-sm-9 text-secondary" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.user_infos.phone_number) +
+                      "\n          "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _vm._m(3),
                 _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _vm._m(3),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-sm-9 text-secondary" }, [
-                    _vm._v(
-                      "\n            " +
-                        _vm._s(_vm.user_infos.phone_number) +
-                        "\n          "
-                    )
-                  ])
-                ]),
+                _c("div", { staticClass: "col-sm-9 text-secondary" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.user_infos.diploma) +
+                      "\n          "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _vm._m(4),
                 _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _vm._m(4),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-sm-9 text-secondary" }, [
-                    _vm._v(
-                      "\n            " +
-                        _vm._s(_vm.user_infos.diploma) +
-                        "\n          "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _vm._m(5),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-sm-9 text-secondary" }, [
-                    _vm._v(
-                      "\n            " +
-                        _vm._s(_vm.user_infos.interests) +
-                        "\n          "
-                    )
-                  ])
+                _c("div", { staticClass: "col-sm-9 text-secondary" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.user_infos.interests) +
+                      "\n          "
+                  )
                 ])
               ])
             ])
           ])
         ])
-  ])
+      ])
+    : _vm._e()
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "spinner-border", attrs: { role: "status" } },
-      [_c("span", { staticClass: "sr-only" }, [_vm._v("Loading...")])]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

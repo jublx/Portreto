@@ -83,6 +83,11 @@ export default {
       axios.get('/sanctum/csrf-cookie').then(() => {
         axios.post('/login', this.form1).then(() => {
           axios.get('/api/user').then(response => {
+            axios.get('/api/user_infos').then((informations) => {
+              store.commit('SET_USER_INFOS', informations.data);
+            }).catch(error => {
+              console.log("Can't recover user informations.");
+            })
             store.commit('SET_USER', response.data);
             setTimeout(() => {
               this.$router.push('/profile');

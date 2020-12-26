@@ -16,11 +16,12 @@ class AuthController extends Controller
         'password' => ['required', 'min:8', 'confirmed'],
       ]);
       
-      User::create([
+      $user = User::create([
         "name" => $request->name,
         "email" => $request->email,
         "password" => Hash::make($request->password)
       ]);
 
+      $user->informations()->save(\App\Models\UserInformations::factory()->make());
     }
 }

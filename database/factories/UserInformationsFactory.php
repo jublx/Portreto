@@ -21,9 +21,16 @@ class UserInformationsFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'contact_email' => $this->faker->email,
-            'biography' => $this->faker->text
-        ];
+      do {
+        $number = strval(rand(100,999)) . "-" . strval(rand(100,999)) . "-" . strval(rand(100,999));
+      } while($this->friendCodeExists($number));
+      
+      return [
+          'friend_code' => $number
+      ];
     }
+
+    public function friendCodeExists($number) {
+      return UserInformations::whereFriendCode($number)->exists(); // on vérifie que le code généré n'existe pas déjà
+  }
 }

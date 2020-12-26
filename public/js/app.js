@@ -2018,6 +2018,11 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/sanctum/csrf-cookie').then(function () {
         axios.post('/login', _this.form1).then(function () {
           axios.get('/api/user').then(function (response) {
+            axios.get('/api/user_infos').then(function (informations) {
+              _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].commit('SET_USER_INFOS', informations.data);
+            })["catch"](function (error) {
+              console.log("Can't recover user informations.");
+            });
             _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].commit('SET_USER', response.data);
             setTimeout(function () {
               _this.$router.push('/profile');
@@ -2324,6 +2329,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   store: _store_js__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -2334,23 +2340,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     user: function user() {
-      return this.$store.getters.user;
+      return _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.user;
     },
     user_infos: function user_infos() {
-      return this.$store.getters.user_infos;
+      return _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.user_infos;
     }
   },
   mounted: function mounted() {
     var _this = this;
-
-    if (_store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.isUserLogged) {
-      // on vérifie dans le store si l'utilisateur est connecté avant de récupérer ses infos
-      axios.get('/api/user_infos').then(function (informations) {
-        _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].commit('SET_USER_INFOS', informations.data);
-      })["catch"](function (error) {
-        console.log("Can't recover user informations.");
-      });
-    }
 
     setTimeout(function () {
       _this.loaded = true;
@@ -39813,6 +39810,12 @@ var render = function() {
                           _vm._v(" "),
                           _c("p", { staticClass: "text-muted font-size-sm" }, [
                             _vm._v(_vm._s(_vm.user_infos.adresse))
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "text-muted font-size-sm" }, [
+                            _vm._v(
+                              "code ami : " + _vm._s(_vm.user_infos.friend_code)
+                            )
                           ])
                         ])
                       ]
@@ -56600,6 +56603,11 @@ new Vue({
     axios.get('/sanctum/csrf-cookie').then(function () {
       axios.get('/api/user').then(function (response) {
         _store_js__WEBPACK_IMPORTED_MODULE_1__["default"].commit('SET_USER', response.data);
+        axios.get('/api/user_infos').then(function (informations) {
+          _store_js__WEBPACK_IMPORTED_MODULE_1__["default"].commit('SET_USER_INFOS', informations.data);
+        })["catch"](function (error) {
+          console.log("Can't recover user informations.");
+        });
       })["catch"](function (error) {
         console.log('User is not logged in.');
 

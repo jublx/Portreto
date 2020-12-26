@@ -24,7 +24,7 @@ class UserInformationsController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**

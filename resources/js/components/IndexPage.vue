@@ -6,7 +6,7 @@
             <h1><span>Portreto</span>, la plateforme qui regroupe les informations de contact qui <span>vous</span> intéressent.</h1>
           </div>
           <div class="row">
-            <img src="../../images/profile.png" class="d-none d-xl-block">
+            <img src="../../images/profile.png" class="d-none ">
           </div>
         </div>
         <div class="col-xl px-xl-5">

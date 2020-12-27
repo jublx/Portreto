@@ -6822,7 +6822,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.formulary[data-v-5150e6ee] {\n  font-size: 1.4em;\n}\n.formulary button[data-v-5150e6ee] {\n  margin-top: 4vh;\n}\n.head[data-v-5150e6ee] {\n  cursor: pointer;\n}\n.active[data-v-5150e6ee] {\n}\n.nactivel[data-v-5150e6ee] {\n  background-color: #08A873;\n  color: #f8fafc;\n  box-shadow: inset -15px -20px 31px -23px rgba(0,0,0,0.75);\n}\n.nactiver[data-v-5150e6ee] {\n  background-color: #08A873;\n  color: #f8fafc;\n  box-shadow: inset 15px -20px 31px -23px rgba(0,0,0,0.75);\n}\n.form-content form[data-v-5150e6ee] {\n  display: block;\n  width: 70%;\n}\n.form1[data-v-5150e6ee] {\n  margin: 12vh auto 14vh;\n}\n.form2[data-v-5150e6ee] {\n  margin: 8vh auto 8vh;\n}\n.form-error[data-v-5150e6ee] {\n  color: red;\n  font-size: 0.7em;\n}\n.form-success[data-v-5150e6ee] {\n  color: rgb(0, 177, 0);\n  margin: 6px 0 0 20px;\n  font-size: 0.7em;\n}\n.btn[data-v-5150e6ee] {\n  font-size: 0.9em;\n}\n\n/* ANIMATIONS */\n.fade-in-left[data-v-5150e6ee] {\n\t-webkit-animation: fade-in-left-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n\t        animation: fade-in-left-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n}\n.fade-in-right[data-v-5150e6ee] {\n\t-webkit-animation: fade-in-right-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n\t        animation: fade-in-right-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n}\n.rotate-out-center[data-v-5150e6ee] {\n\t-webkit-animation: rotate-out-center-data-v-5150e6ee 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;\n\t        animation: rotate-out-center-data-v-5150e6ee 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;\n}\n@-webkit-keyframes fade-in-left-data-v-5150e6ee {\n0% {\n    transform: translateX(-50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@keyframes fade-in-left-data-v-5150e6ee {\n0% {\n    transform: translateX(-50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@-webkit-keyframes fade-in-right-data-v-5150e6ee {\n0% {\n    transform: translateX(50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@keyframes fade-in-right-data-v-5150e6ee {\n0% {\n    transform: translateX(50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@-webkit-keyframes rotate-out-center-data-v-5150e6ee {\n0% {\n    transform: rotate(0);\n    opacity: 1;\n}\n100% {\n    transform: rotate(-360deg);\n    opacity: 0;\n}\n}\n@keyframes rotate-out-center-data-v-5150e6ee {\n0% {\n    transform: rotate(0);\n    opacity: 1;\n}\n100% {\n    transform: rotate(-360deg);\n    opacity: 0;\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.formulary[data-v-5150e6ee] {\n  font-size: 1.4em;\n}\n.formulary button[data-v-5150e6ee] {\n  margin-top: 4vh;\n}\n.head[data-v-5150e6ee] {\n  cursor: pointer;\n}\n.active[data-v-5150e6ee] {\n}\n.nactivel[data-v-5150e6ee] {\n  background-color: #219e89;\n  color: #f8fafc;\n  box-shadow: inset -15px -20px 31px -23px rgba(0,0,0,0.75);\n  transition: background-color 0.3s ease-in-out;\n}\n.nactiver[data-v-5150e6ee] {\n  background-color: #219e89;\n  color: #f8fafc;\n  box-shadow: inset 15px -20px 31px -23px rgba(0,0,0,0.75);\n  transition: background-color 0.3s ease-in-out;\n}\n.nactivel[data-v-5150e6ee]:hover {\n  background-color: #008383;\n}\n.nactiver[data-v-5150e6ee]:hover {\n  background-color: #008383;\n}\n.form-content form[data-v-5150e6ee] {\n  display: block;\n  width: 70%;\n}\n.form1[data-v-5150e6ee] {\n  margin: 12vh auto 14vh;\n}\n.form2[data-v-5150e6ee] {\n  margin: 8vh auto 8vh;\n}\n.form-error[data-v-5150e6ee] {\n  color: red;\n  font-size: 0.7em;\n}\n.form-success[data-v-5150e6ee] {\n  color: rgb(0, 177, 0);\n  margin: 6px 0 0 20px;\n  font-size: 0.7em;\n}\n.btn[data-v-5150e6ee] {\n  font-size: 0.9em;\n}\n\n/* ANIMATIONS */\n.fade-in-left[data-v-5150e6ee] {\n\t-webkit-animation: fade-in-left-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n\t        animation: fade-in-left-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n}\n.fade-in-right[data-v-5150e6ee] {\n\t-webkit-animation: fade-in-right-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n\t        animation: fade-in-right-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n}\n.rotate-out-center[data-v-5150e6ee] {\n\t-webkit-animation: rotate-out-center-data-v-5150e6ee 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;\n\t        animation: rotate-out-center-data-v-5150e6ee 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;\n}\n@-webkit-keyframes fade-in-left-data-v-5150e6ee {\n0% {\n    transform: translateX(-50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@keyframes fade-in-left-data-v-5150e6ee {\n0% {\n    transform: translateX(-50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@-webkit-keyframes fade-in-right-data-v-5150e6ee {\n0% {\n    transform: translateX(50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@keyframes fade-in-right-data-v-5150e6ee {\n0% {\n    transform: translateX(50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@-webkit-keyframes rotate-out-center-data-v-5150e6ee {\n0% {\n    transform: rotate(0);\n    opacity: 1;\n}\n100% {\n    transform: rotate(-360deg);\n    opacity: 0;\n}\n}\n@keyframes rotate-out-center-data-v-5150e6ee {\n0% {\n    transform: rotate(0);\n    opacity: 1;\n}\n100% {\n    transform: rotate(-360deg);\n    opacity: 0;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -6860,7 +6860,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.bg-custom[data-v-61a7c374] {\n  background-color: #1e1e1e;\n  position: fixed;\n  bottom: 0;\n}\n.bg-custom ul[data-v-61a7c374] {\n  justify-content: center;\n}\n.nav-link[data-v-61a7c374] {\n  font-size: 1.2em;\n}\n.nav-item[data-v-61a7c374] {\n  cursor: pointer;\n}\n.nav-item a[data-v-61a7c374] {\n  color: #f8fafc;\n  text-decoration: none;\n  font-size: 1.1em;\n}\n.nav-item a[data-v-61a7c374]:after {\n  content: '';\n  position: relative;\n  width: 0; \n  height: 2px;\n  display: block;\n  margin-top: -6px;\n  z-index: -1;\n  background: #08A873;\n  opacity: 1;\n  transition: width .2s ease;\n}\n.nav-item a[data-v-61a7c374]:hover:after {\n  width: 75%;\n  left: 0;\n}\n  \n", ""]);
+exports.push([module.i, "\n.bg-custom[data-v-61a7c374] {\n  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);\n  position: fixed;\n  bottom: 0;\n}\n.bg-custom ul[data-v-61a7c374] {\n  justify-content: center;\n}\n.nav-link[data-v-61a7c374] {\n  font-size: 1.2em;\n}\n.nav-item[data-v-61a7c374] {\n  cursor: pointer;\n}\n.nav-item a[data-v-61a7c374] {\n  color: #f8fafc;\n  text-decoration: none;\n  font-size: 1.1em;\n}\n.nav-item a[data-v-61a7c374]:after {\n  content: '';\n  position: relative;\n  width: 0; \n  height: 2px;\n  display: block;\n  margin-top: -6px;\n  z-index: -1;\n  background: #f9f871;\n  opacity: 1;\n  transition: width .2s ease;\n}\n.nav-item a[data-v-61a7c374]:hover:after {\n  width: 75%;\n  left: 0;\n}\n  \n", ""]);
 
 // exports
 
@@ -6898,7 +6898,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.navbar-brand[data-v-6dde423b] {\n  font-size: 1.5em;\n}\n.navbar-brand[data-v-6dde423b]:hover {\n  color: #08A873;\n}\n.nav-link[data-v-6dde423b] {\n  cursor: pointer;\n  font-size: 1.1em;\n  color: #f8fafc;\n  text-decoration: none;\n  float: right;\n  margin-right: 16px;\n}\n.nav-link[data-v-6dde423b]:after {\n  content: '';\n  position: relative;\n  width: 0; \n  height: 10px;\n  display: block;\n  margin-top: -12px;\n  z-index: -1;\n  background: #08A873;\n  opacity: 0.4;\n  transition: width .2s ease;\n}\n.nav-link[data-v-6dde423b]:hover:after {\n  width: 90%;\n  left: 0;\n}\n.navbar-toggler[data-v-6dde423b] {\n  border: none;\n}\n\n", ""]);
+exports.push([module.i, "\n.navbar-brand[data-v-6dde423b] {\n  font-size: 1.5em;\n}\n.navbar-brand[data-v-6dde423b]:hover {\n  color: #219e89;\n}\n.nav-link[data-v-6dde423b] {\n  cursor: pointer;\n  font-size: 1.1em;\n  color: #f8fafc;\n  text-decoration: none;\n  float: right;\n  margin-right: 16px;\n}\n.nav-link[data-v-6dde423b]:after {\n  content: '';\n  position: relative;\n  width: 0; \n  height: 10px;\n  display: block;\n  margin-top: -12px;\n  z-index: -1;\n  background: #f9f871;\n  opacity: 1;\n  transition: width .2s ease;\n}\n.nav-link[data-v-6dde423b]:hover:after {\n  width: 90%;\n  left: 0;\n}\n.navbar-toggler[data-v-6dde423b] {\n  border: none;\n}\n\n", ""]);
 
 // exports
 
@@ -6917,7 +6917,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\ndiv[data-v-21d2b2bd] {\n  text-align: left;\n}\nh4[data-v-21d2b2bd], p[data-v-21d2b2bd] {\n  text-align: center;\n}\np[data-v-21d2b2bd] {\n  font-size: 1.1em;\n}\n.card[data-v-21d2b2bd] {\n  width: 94%;\n  font-size: 1.2em;\n}\n\n", ""]);
+exports.push([module.i, "\ndiv[data-v-21d2b2bd] {\n  text-align: left;\n}\nh4[data-v-21d2b2bd], p[data-v-21d2b2bd] {\n  text-align: center;\n}\np[data-v-21d2b2bd] {\n  font-size: 1.1em;\n}\n.bg-custom[data-v-21d2b2bd] {\n  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);\n  color: #f8fafc;\n}\n.card[data-v-21d2b2bd] {\n  width: 94%;\n  font-size: 1.2em;\n}\n\n", ""]);
 
 // exports
 
@@ -39001,7 +39001,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container shadow formulary" }, [
+  return _c("div", { staticClass: "container shadow formulary bg-light" }, [
     _c("div", { staticClass: "row text-center" }, [
       _c(
         "div",
@@ -39113,7 +39113,7 @@ var render = function() {
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-outline-primary",
+                      staticClass: "btn btn-primary",
                       attrs: { type: "submit" },
                       on: {
                         click: function($event) {
@@ -39303,7 +39303,7 @@ var render = function() {
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-outline-primary",
+                      staticClass: "btn btn-primary",
                       attrs: { type: "submit" },
                       on: {
                         click: function($event) {
@@ -39597,7 +39597,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("img", {
-          staticClass: "d-none d-xl-block",
+          staticClass: "d-none ",
           attrs: { src: __webpack_require__(/*! ../../images/profile.png */ "./resources/images/profile.png") }
         })
       ])
@@ -39627,10 +39627,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "nav",
-    {
-      staticClass:
-        "navbar navbar-expand-lg navbar-light bg-light shadow fixed-top"
-    },
+    { staticClass: "navbar navbar-expand-lg navbar-light shadow fixed-top" },
     [
       _c(
         "router-link",
@@ -39762,7 +39759,7 @@ var render = function() {
         _c("div", { staticClass: "row p-3" }, [
           _c("div", { staticClass: "col-md-5" }, [
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "card bg-light shadow" }, [
+              _c("div", { staticClass: "card bg-custom shadow" }, [
                 _c("div", { staticClass: "card-body" }, [
                   _c(
                     "div",
@@ -57410,8 +57407,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/jubelix/Programmation/Projets/Portreto/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/jubelix/Programmation/Projets/Portreto/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/jubelix/test/Portreto/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/jubelix/test/Portreto/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 .bg-custom {
-  background-color: #1e1e1e;
+  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);
   position: fixed;
   bottom: 0;
 }
@@ -52,7 +52,7 @@ export default {
   display: block;
   margin-top: -6px;
   z-index: -1;
-  background: #08A873;
+  background: #f9f871;
   opacity: 1;
   transition: width .2s ease;
 }

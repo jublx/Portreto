@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light shadow fixed-top">
     <router-link class="navbar-brand" to="/" exact>Portreto</router-link>
     <div v-if="isUserLogged" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       Mon compte
@@ -55,7 +55,7 @@ export default {
 }
 
 .navbar-brand:hover {
-  color: #08A873;
+  color: #219e89;
 }
 
 .nav-link {
@@ -75,8 +75,8 @@ export default {
   display: block;
   margin-top: -12px;
   z-index: -1;
-  background: #08A873;
-  opacity: 0.4;
+  background: #f9f871;
+  opacity: 1;
   transition: width .2s ease;
 }
 

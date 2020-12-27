@@ -3,7 +3,7 @@
     <div class="row p-3">
       <div class="col-md-5">
         <div class="row">
-          <div class="card bg-light shadow">
+          <div class="card bg-custom shadow">
             <div class="card-body">
               <div class="d-flex flex-column align-items-center text-center">
                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
@@ -100,6 +100,11 @@ h4, p {
 
 p {
   font-size: 1.1em;
+}
+
+.bg-custom {
+  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);
+  color: #f8fafc;
 }
 
 .card {

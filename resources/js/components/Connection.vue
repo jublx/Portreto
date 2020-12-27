@@ -1,5 +1,5 @@
 <template>
-  <div class="container shadow formulary">
+  <div class="container shadow formulary bg-light">
     <div class="row text-center">
       <div class="col py-3 head" :class="[ view == 1 ? 'active':'nactivel' ]" @click="view = 1">Connexion</div>
       <div class="col py-3 head" :class="[ view == 2 ? 'active':'nactiver' ]" @click="view = 2">Inscription</div>
@@ -16,7 +16,7 @@
             <input type="password" class="form-control" id="InputPassword1" v-model="form1.password">
             <small v-if="this.errors1.email" class="form-error">{{ errors1.email[0] }}</small>
           </div>
-          <button @click.prevent="handleLogin()" type="submit" class="btn btn-outline-primary">Connexion</button>
+          <button @click.prevent="handleLogin()" type="submit" class="btn btn-primary">Connexion</button>
         </form>
         <form v-else class="form2" key="2">
           <div class="form-group">
@@ -46,7 +46,7 @@
             <input type="password" class="form-control" id="InputPassword2" v-model="form2.password_confirmation">
             <small v-if="this.errors2.password" class="form-error">{{ errors2.password[0] }}</small>
           </div>
-          <button @click.prevent="register()" type="submit" class="btn btn-outline-primary">Inscription</button>
+          <button @click.prevent="register()" type="submit" class="btn btn-primary">Inscription</button>
           <small v-if="success" class="form-success">Bienvenue ! Essayez maintenant de vous connecter.</small>
         </form>
       </transition>
@@ -142,15 +142,25 @@ export default {
 }
 
 .nactivel {
-  background-color: #08A873;
+  background-color: #219e89;
   color: #f8fafc;
   box-shadow: inset -15px -20px 31px -23px rgba(0,0,0,0.75);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .nactiver {
-  background-color: #08A873;
+  background-color: #219e89;
   color: #f8fafc;
   box-shadow: inset 15px -20px 31px -23px rgba(0,0,0,0.75);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nactivel:hover {
+  background-color: #008383;
+}
+
+.nactiver:hover {
+  background-color: #008383;
 }
 
 .form-content form {

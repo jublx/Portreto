@@ -75,15 +75,22 @@
         <contacts-browser></contacts-browser>
       </div>
     </div>
+    <modification-formulary v-if="modifyInfos"></modification-formulary>
   </div>
 </template>
 
 <script>
 import store from '../store.js';
 import ContactBrowser from './ContactsBrowser.vue';
+import ModificationFormulary from './ModificationFormulary.vue';
 
 export default {
   store,
+  data(){
+    return {
+      modifyInfos: true
+    }
+  },
   computed: {
     isUserLogged() {
       return store.getters.isUserLogged;
@@ -96,7 +103,8 @@ export default {
     }
   },
   components: {
-    'contacts-browser': ContactBrowser
+    'contacts-browser': ContactBrowser,
+    'modification-formulary': ModificationFormulary
   }
 }
 </script>

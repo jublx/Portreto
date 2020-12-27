@@ -75,8 +75,8 @@ export default {
   display: block;
   margin-top: -12px;
   z-index: -1;
-  background: #f9f871;
-  opacity: 1;
+  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);
+  opacity: 0.5;
   transition: width .2s ease;
 }
 

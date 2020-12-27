@@ -67,11 +67,20 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-5">
+
+      </div>
+      <div class="col-md-7">
+        <contacts-browser></contacts-browser>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import store from '../store.js';
+import ContactBrowser from './ContactsBrowser.vue';
 
 export default {
   store,
@@ -85,6 +94,9 @@ export default {
     user_infos() {
       return store.getters.user_infos;
     }
+  },
+  components: {
+    'contacts-browser': ContactBrowser
   }
 }
 </script>

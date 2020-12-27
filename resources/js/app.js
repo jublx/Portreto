@@ -60,7 +60,6 @@ new Vue({
     components: {
       'navbar': Navbar,
       'default-footer': Footer,
-      ProfilePage
     },
     beforeCreate() {
       axios.get('/sanctum/csrf-cookie').then(() => {

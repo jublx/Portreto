@@ -2263,6 +2263,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   store: _store_js__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -39794,7 +39840,7 @@ var render = function() {
     _c(
       "div",
       {
-        staticClass: "modal fade",
+        staticClass: "modal fade bd-example-modal-lg",
         attrs: {
           id: "exampleModal",
           tabindex: "-1",
@@ -39806,201 +39852,468 @@ var render = function() {
       [
         _c(
           "div",
-          { staticClass: "modal-dialog", attrs: { role: "document" } },
+          { staticClass: "modal-dialog modal-lg", attrs: { role: "document" } },
           [
             _c("div", { staticClass: "modal-content" }, [
               _vm._m(0),
               _vm._v(" "),
-              _c("div", { staticClass: "modal-body" }, [
-                _c("form", [
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
-                      {
-                        staticClass: "col-form-label",
-                        attrs: { for: "recipient-name" }
-                      },
-                      [_vm._v("Email:")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.user_infos.contact_email,
-                          expression: "user_infos.contact_email"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: { type: "text", id: "email" },
-                      domProps: { value: _vm.user_infos.contact_email },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+              _c("form", [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col" }, [
+                    _c("div", { staticClass: "modal-body" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "recipient-name" }
+                          },
+                          [_vm._v("Email:")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.user_infos.contact_email,
+                              expression: "user_infos.contact_email"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", id: "email" },
+                          domProps: { value: _vm.user_infos.contact_email },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.user_infos,
+                                "contact_email",
+                                $event.target.value
+                              )
+                            }
                           }
-                          _vm.$set(
-                            _vm.user_infos,
-                            "contact_email",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "recipient-name" }
+                          },
+                          [_vm._v("Nationalité:")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.user_infos.nationality,
+                              expression: "user_infos.nationality"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", id: "nationalite" },
+                          domProps: { value: _vm.user_infos.nationality },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.user_infos,
+                                "nationality",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "recipient-name" }
+                          },
+                          [_vm._v("Tél:")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.user_infos.phone_number,
+                              expression: "user_infos.phone_number"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", id: "tel" },
+                          domProps: { value: _vm.user_infos.phone_number },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.user_infos,
+                                "phone_number",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "recipient-name" }
+                          },
+                          [_vm._v("Diplômes:")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.user_infos.diploma,
+                              expression: "user_infos.diploma"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", id: "diplomes" },
+                          domProps: { value: _vm.user_infos.diploma },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.user_infos,
+                                "diploma",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "recipient-name" }
+                          },
+                          [_vm._v("Job:")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.user_infos.job,
+                              expression: "user_infos.job"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", id: "job" },
+                          domProps: { value: _vm.user_infos.job },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.user_infos,
+                                "job",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "recipient-name" }
+                          },
+                          [_vm._v("Bio:")]
+                        ),
+                        _vm._v(" "),
+                        _c("textarea", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.user_infos.biography,
+                              expression: "user_infos.biography"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { id: "bio" },
+                          domProps: { value: _vm.user_infos.biography },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.user_infos,
+                                "biography",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ])
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
-                      {
-                        staticClass: "col-form-label",
-                        attrs: { for: "recipient-name" }
-                      },
-                      [_vm._v("Bio:")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.user_infos.biography,
-                          expression: "user_infos.biography"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: { type: "text", id: "recipient-name" },
-                      domProps: { value: _vm.user_infos.biography },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                  _c("div", { staticClass: "col" }, [
+                    _c("div", { staticClass: "modal-body" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "recipient-name" }
+                          },
+                          [_vm._v("Adresse:")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.user_infos.adresse,
+                              expression: "user_infos.adresse"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", id: "adresse" },
+                          domProps: { value: _vm.user_infos.adresse },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.user_infos,
+                                "adresse",
+                                $event.target.value
+                              )
+                            }
                           }
-                          _vm.$set(
-                            _vm.user_infos,
-                            "biography",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
-                      {
-                        staticClass: "col-form-label",
-                        attrs: { for: "recipient-name" }
-                      },
-                      [_vm._v("Tél:")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.user_infos.phone_number,
-                          expression: "user_infos.phone_number"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: { type: "text", id: "recipient-name" },
-                      domProps: { value: _vm.user_infos.phone_number },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "recipient-name" }
+                          },
+                          [_vm._v("Linkedin:")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.user_infos.linkedin,
+                              expression: "user_infos.linkedin"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", id: "linkedin" },
+                          domProps: { value: _vm.user_infos.linkedin },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.user_infos,
+                                "linkedin",
+                                $event.target.value
+                              )
+                            }
                           }
-                          _vm.$set(
-                            _vm.user_infos,
-                            "phone_number",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
-                      {
-                        staticClass: "col-form-label",
-                        attrs: { for: "recipient-name" }
-                      },
-                      [_vm._v("Diplômes:")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.user_infos.diploma,
-                          expression: "user_infos.diploma"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: { type: "text", id: "recipient-name" },
-                      domProps: { value: _vm.user_infos.diploma },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "recipient-name" }
+                          },
+                          [_vm._v("Instagram:")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.user_infos.instagram,
+                              expression: "user_infos.instagram"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", id: "instagram" },
+                          domProps: { value: _vm.user_infos.instagram },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.user_infos,
+                                "instagram",
+                                $event.target.value
+                              )
+                            }
                           }
-                          _vm.$set(
-                            _vm.user_infos,
-                            "diploma",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
-                      {
-                        staticClass: "col-form-label",
-                        attrs: { for: "message-text" }
-                      },
-                      [_vm._v("Centres d'interêts:")]
-                    ),
-                    _vm._v(" "),
-                    _c("textarea", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.user_infos.interests,
-                          expression: "user_infos.interests"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: { id: "message-text" },
-                      domProps: { value: _vm.user_infos.interests },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "recipient-name" }
+                          },
+                          [_vm._v("Twitter:")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.user_infos.twitter,
+                              expression: "user_infos.twitter"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", id: "twitter" },
+                          domProps: { value: _vm.user_infos.twitter },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.user_infos,
+                                "twitter",
+                                $event.target.value
+                              )
+                            }
                           }
-                          _vm.$set(
-                            _vm.user_infos,
-                            "interests",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "message-text" }
+                          },
+                          [_vm._v("Facebook:")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.user_infos.facebook,
+                              expression: "user_infos.facebook"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text", id: "facebook" },
+                          domProps: { value: _vm.user_infos.facebook },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.user_infos,
+                                "facebook",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "col-form-label",
+                            attrs: { for: "message-text" }
+                          },
+                          [_vm._v("Centres d'interêts:")]
+                        ),
+                        _vm._v(" "),
+                        _c("textarea", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.user_infos.interests,
+                              expression: "user_infos.interests"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { id: "interets" },
+                          domProps: { value: _vm.user_infos.interests },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.user_infos,
+                                "interests",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ])
+                    ])
                   ])
-                ])
-              ]),
-              _vm._v(" "),
-              _vm._m(1)
+                ]),
+                _vm._v(" "),
+                _vm._m(1)
+              ])
             ])
           ]
         )
@@ -40038,21 +40351,25 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-footer" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-secondary",
-          attrs: { type: "button", "data-dismiss": "modal" }
-        },
-        [_vm._v("Annuler")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-primary", attrs: { type: "button" } },
-        [_vm._v("Enregistrer")]
-      )
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col" }, [
+        _c("div", { staticClass: "modal-footer" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-secondary",
+              attrs: { type: "button", "data-dismiss": "modal" }
+            },
+            [_vm._v("Annuler")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-primary", attrs: { type: "button" } },
+            [_vm._v("Enregistrer")]
+          )
+        ])
+      ])
     ])
   }
 ]

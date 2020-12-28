@@ -10,7 +10,7 @@
     <div v-if="isUserLogged" class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <router-link class="nav-link" to="/profile" data-toggle="collapse" data-target="#navbarNav">PROFIL</router-link>
+          <router-link class="nav-link" to="/profile" data-toggle="collapse" data-target="#navbarNav">TABLEAU DE BORD</router-link>
         </li>
         <li class="nav-item" @click="logout">
           <router-link class="nav-link" to="/" data-toggle="collapse" data-target="#navbarNav">

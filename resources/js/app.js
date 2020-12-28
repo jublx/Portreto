@@ -16,7 +16,7 @@ import About from './components/About.vue';
 import Progress from './components/ProgressState.vue'
 import Contact from './components/Contact.vue';
 import Footer from './components/Footer.vue';
-import ProfilePage from './components/ProfilePage.vue';
+import Dashboard from './components/Dashboard.vue';
 import NotFound from './components/NotFound.vue'
 
 // définitions des routes
@@ -39,7 +39,7 @@ const routes = [
   },
   {
     path: '/dashboard',
-    component: ProfilePage
+    component: Dashboard
   },
   {
     path: '*',

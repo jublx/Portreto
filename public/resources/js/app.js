@@ -12,7 +12,7 @@ import About from './components/About.vue';
 import Progress from './components/ProgressState.vue'
 import Contact from './components/Contact.vue';
 import Footer from './components/Footer.vue';
-import ProfilePage from './components/ProfilePage.vue';
+import Dashboard from './components/Dashboard.vue';
 
 // définitions des routes
 const routes = [
@@ -34,7 +34,7 @@ const routes = [
   },
   {
     path: '/profile',
-    component: ProfilePage
+    component: Dashboard
   }
 ]
 const router = new VueRouter({

@@ -26,7 +26,7 @@
                     
                     <div class="form-group">
                       <label for="recipient-name" class="col-form-label custom-label">Tél:</label>
-                      <input type="text" class="form-control" id="tel" v-model="modifiedInfos.phone_number">
+                      <input type="tel" class="form-control" id="tel" v-model="modifiedInfos.phone_number">
                     </div>
 
                     <div class="form-group">

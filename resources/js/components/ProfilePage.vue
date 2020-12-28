@@ -132,13 +132,13 @@
           <div class="card-body">
             <form class="row">
               <div class="form-inline mx-sm-2 mb-2">
-                <label class="col-lg-3 p-0">Ajouter un contact</label>
+                <label class="col-lg-3 p-0 justify-content-center">Ajouter un contact</label>
                 <div class="col-lg-6 justify-content-center d-inline-flex p-0 mt-2">
-                  <input type="text" class="form-control mx-2" id="part1" maxlength="3">
+                  <input type="number" min="100" max="999" class="form-control mx-2" id="part1"/>
                   <label>-</label>
-                  <input type="text" class="form-control mx-2" id="part2" maxlength="3">
+                  <input type="number" min="100" max="999" class="form-control mx-2" id="part2"/>
                   <label>-</label>
-                  <input type="text" class="form-control mx-2" id="part3" maxlength="3">
+                  <input type="number" min="100" max="999" class="form-control mx-2" id="part3"/>
                 </div>
                 <div class="col-lg-3 justify-content-center d-flex p-0 mt-4 mt-lg-2">
                   <button type="submit" class="btn btn-primary" @click.prevent>Ajouter contact</button>
@@ -235,5 +235,17 @@ p {
 
 .adresse {
   font-size: 0.9em;
+}
+
+/* on cache les flèches des champs de type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 </style>

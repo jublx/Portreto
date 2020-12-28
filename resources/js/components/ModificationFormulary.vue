@@ -85,7 +85,7 @@
                 <div class="modal-footer">
                   
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" @click="save()">Enregistrer</button>
+                  <button type="button" class="btn btn-primary"  @click="save()">Enregistrer</button>
                 </div>
               </div>
             </div>

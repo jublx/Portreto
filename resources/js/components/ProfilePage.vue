@@ -71,6 +71,25 @@
             </div>
           </div>
         </div>
+        <div class="card mt-md-4 shadow bg-light">
+          <div class="card-body">
+            <form class="row">
+              <div class="form-inline mx-sm-2 mb-2">
+                <label class="col-lg-3 p-0">Ajouter un contact</label>
+                <div class="col-lg-6 justify-content-center d-inline-flex p-0 mt-2">
+                  <input type="text" class="form-control mx-2" id="part1" maxlength="3">
+                  <label>-</label>
+                  <input type="text" class="form-control mx-2" id="part2" maxlength="3">
+                  <label>-</label>
+                  <input type="text" class="form-control mx-2" id="part3" maxlength="3">
+                </div>
+                <div class="col-lg-3 justify-content-center d-flex p-0 mt-4 mt-lg-2">
+                  <button type="submit" class="btn btn-primary" @click.prevent>Ajouter contact</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -93,6 +112,11 @@ export default {
   store,
   data(){
     return {
+      addFriendCode: {
+        part1: "",
+        part2: "",
+        part3: ""
+      }
     }
   },
   computed: {
@@ -145,6 +169,11 @@ p {
 
 .text-muted {
   margin: 0;
+}
+
+.form-control {
+  width: 22%;
+  text-align: center;
 }
 
 </style>

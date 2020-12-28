@@ -2509,13 +2509,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   store: _store_js__WEBPACK_IMPORTED_MODULE_0__["default"],
   data: function data() {
-    return {};
+    return {
+      addFriendCode: {
+        part1: "",
+        part2: "",
+        part3: ""
+      }
+    };
   },
   computed: {
     isUserLogged: function isUserLogged() {
@@ -7131,7 +7156,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nh1[data-v-21d2b2bd] {\n  margin: 10px;\n}\nh4[data-v-21d2b2bd], p[data-v-21d2b2bd] {\n  text-align: center;\n}\np[data-v-21d2b2bd] {\n  font-size: 1.1em;\n}\n.page[data-v-21d2b2bd] {\n  margin-top: 100px;\n}\n.bg-custom[data-v-21d2b2bd] {\n  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);\n  color: #f8fafc;\n}\n.card[data-v-21d2b2bd] {\n  font-size: 1.2em;\n}\n.btn-modal[data-v-21d2b2bd] {\n  margin-bottom: -30px;\n}\n.text-muted[data-v-21d2b2bd] {\n  margin: 0;\n}\n\n", ""]);
+exports.push([module.i, "\nh1[data-v-21d2b2bd] {\n  margin: 10px;\n}\nh4[data-v-21d2b2bd], p[data-v-21d2b2bd] {\n  text-align: center;\n}\np[data-v-21d2b2bd] {\n  font-size: 1.1em;\n}\n.page[data-v-21d2b2bd] {\n  margin-top: 100px;\n}\n.bg-custom[data-v-21d2b2bd] {\n  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);\n  color: #f8fafc;\n}\n.card[data-v-21d2b2bd] {\n  font-size: 1.2em;\n}\n.btn-modal[data-v-21d2b2bd] {\n  margin-bottom: -30px;\n}\n.text-muted[data-v-21d2b2bd] {\n  margin: 0;\n}\n.form-control[data-v-21d2b2bd] {\n  width: 22%;\n  text-align: center;\n}\n\n", ""]);
 
 // exports
 
@@ -40404,11 +40429,7 @@ var render = function() {
                         "button",
                         {
                           staticClass: "btn btn-primary",
-                          attrs: {
-                            type: "button",
-                            "data-toggle": "modal",
-                            "data-target": "#exampleModal"
-                          },
+                          attrs: { type: "button" },
                           on: {
                             click: function($event) {
                               return _vm.save()
@@ -40738,6 +40759,43 @@ var render = function() {
                   ])
                 ])
               ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card mt-md-4 shadow bg-light" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("form", { staticClass: "row" }, [
+                  _c("div", { staticClass: "form-inline mx-sm-2 mb-2" }, [
+                    _c("label", { staticClass: "col-lg-3 p-0" }, [
+                      _vm._v("Ajouter un contact")
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(6),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "col-lg-3 justify-content-center d-flex p-0 mt-4 mt-lg-2"
+                      },
+                      [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-primary",
+                            attrs: { type: "submit" },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                              }
+                            }
+                          },
+                          [_vm._v("Ajouter contact")]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ])
             ])
           ])
         ]),
@@ -40798,6 +40856,35 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-sm-3" }, [
       _c("h5", { staticClass: "mb-0" }, [_vm._v("Centres d'intérêts")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-lg-6 justify-content-center d-inline-flex p-0 mt-2" },
+      [
+        _c("input", {
+          staticClass: "form-control mx-2",
+          attrs: { type: "text", id: "part1", maxlength: "3" }
+        }),
+        _vm._v(" "),
+        _c("label", [_vm._v("-")]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form-control mx-2",
+          attrs: { type: "text", id: "part2", maxlength: "3" }
+        }),
+        _vm._v(" "),
+        _c("label", [_vm._v("-")]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form-control mx-2",
+          attrs: { type: "text", id: "part3", maxlength: "3" }
+        })
+      ]
+    )
   }
 ]
 render._withStripped = true

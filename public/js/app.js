@@ -2641,9 +2641,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2726,7 +2723,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      changements: [{
+        date: '26-12-2020',
+        content: 'Affichage d\'un formulaire "ajouter un contact" sur le tableau de bord.'
+      }, {
+        date: '26-12-2020',
+        content: 'Affichage des différents réseaux sociaux des utilisateurs.'
+      }, {
+        date: '15-12-2020',
+        content: "Création du \"code ami\" unique pour chaque utilisateur, on le retrouve sur le tableau de bord lorsqu'on est connecté."
+      }]
+    };
+  }
+});
 
 /***/ }),
 
@@ -7322,7 +7334,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody[data-v-2ce50e5a]{\n                background: #33cc99;\n                color:#fff;\n                font-family: 'Open Sans', sans-serif;\n                max-height:700px;\n                overflow: hidden;\n}\n.c[data-v-2ce50e5a]{\n                text-align: center;\n                display: block;\n                position: relative;\n                width:80%;\n                margin:100px auto;\n}\n._404[data-v-2ce50e5a]{\n                font-size: 220px;\n                position: relative;\n                display: inline-block;\n                z-index: 2;\n                height: 250px;\n                letter-spacing: 15px;\n}\n._1[data-v-2ce50e5a]{\n                text-align:center;\n                display:block;\n                position:relative;\n                letter-spacing: 12px;\n                font-size: 4em;\n                line-height: 80%;\n}\n._2[data-v-2ce50e5a]{\n                text-align:center;\n                display:block;\n                position: relative;\n                font-size: 20px;\n}\n.text[data-v-2ce50e5a]{\n                font-size: 70px;\n                text-align: center;\n                position: relative;\n                display: inline-block;\n                margin: 19px 0px 0px 0px;\n                /* top: 256.301px; */\n                z-index: 3;\n                width: 100%;\n                line-height: 1.2em;\n                display: inline-block;\n}\n.btn[data-v-2ce50e5a]{\n                background-color:#33cc99;\n                position: relative;\n                display: inline-block;\n                width: 358px;\n                padding: 5px;\n                z-index: 5;\n                font-size: 25px;\n                margin:0 auto;\n                color:#ffffff;\n                text-decoration: none;\n                margin-right: 10px\n}\n.right[data-v-2ce50e5a]{\n                float:right;\n                width:60%;\n}\nhr[data-v-2ce50e5a]{\n                padding: 0;\n                border: none;\n                border-top: 5px solid #fff;\n                color: #fff;\n                text-align: center;\n                margin: 0px auto;\n                width: 420px;\n                height:10px;\n                z-index: -10;\n}\n.cloud[data-v-2ce50e5a] {\n                width: 350px; height: 120px;\n\n                background: #33cc99;\n                background: linear-gradient(to top, #218362 100%);\n                background: -o-linear-gradient(to top, #33cc99 100%);\n\n                border-radius: 100px;\n                -webkit-border-radius: 100px;\n                -moz-border-radius: 100px;\n\n                position: absolute;\n                margin: 120px auto 20px;\n                z-index:-1;\n                transition: ease 1s;\n}\n.cloud[data-v-2ce50e5a]:after, .cloud[data-v-2ce50e5a]:before {\n                content: '';\n                position: absolute;\n                background: #33cc99;\n                z-index: -1\n}\n.cloud[data-v-2ce50e5a]:after {\n                width: 100px; height: 100px;\n                top: -50px; left: 50px;\n\n                border-radius: 100px;\n                -webkit-border-radius: 100px;\n                -moz-border-radius: 100px;\n}\n.cloud[data-v-2ce50e5a]:before {\n                width: 180px; height: 180px;\n                top: -90px; right: 50px;\n\n                border-radius: 200px;\n                -webkit-border-radius: 200px;\n                -moz-border-radius: 200px;\n}\n.x1[data-v-2ce50e5a] {\n                top:-50px;\n                left:100px;\n                transform: scale(0.3);\n                opacity: 0.9;\n                -webkit-animation: moveclouds-data-v-2ce50e5a 15s linear infinite;\n                -moz-animation: moveclouds-data-v-2ce50e5a 15s linear infinite;\n                -o-animation: moveclouds-data-v-2ce50e5a 15s linear infinite;\n}\n.x1_5[data-v-2ce50e5a]{\n                top:-80px;\n                left:250px;\n                transform: scale(0.3);\n                -webkit-animation: moveclouds-data-v-2ce50e5a 17s linear infinite;\n                -moz-animation: moveclouds-data-v-2ce50e5a 17s linear infinite;\n                -o-animation: moveclouds-data-v-2ce50e5a 17s linear infinite;\n}\n.x2[data-v-2ce50e5a] {\n                left: 250px;\n                top:30px;\n                transform: scale(0.6);\n                opacity: 0.6; \n                -webkit-animation: moveclouds-data-v-2ce50e5a 25s linear infinite;\n                -moz-animation: moveclouds-data-v-2ce50e5a 25s linear infinite;\n                -o-animation: moveclouds-data-v-2ce50e5a 25s linear infinite;\n}\n.x3[data-v-2ce50e5a] {\n                left: 250px; bottom: -70px;\n                transform: scale(0.6);\n                opacity: 0.8; \n\n                -webkit-animation: moveclouds-data-v-2ce50e5a 25s linear infinite;\n                -moz-animation: moveclouds-data-v-2ce50e5a 25s linear infinite;\n                -o-animation: moveclouds-data-v-2ce50e5a 25s linear infinite;\n}\n.x4[data-v-2ce50e5a] {\n                left: 470px; botttom: 20px;\n                transform: scale(0.75);\n                opacity: 0.75;\n\n                -webkit-animation: moveclouds-data-v-2ce50e5a 18s linear infinite;\n                -moz-animation: moveclouds-data-v-2ce50e5a 18s linear infinite;\n                -o-animation: moveclouds-data-v-2ce50e5a 18s linear infinite;\n}\n.x5[data-v-2ce50e5a] {\n                left: 200px; top: 300px;\n                transform: scale(0.5);\n                opacity: 0.8; \n\n                -webkit-animation: moveclouds-data-v-2ce50e5a 20s linear infinite;\n                -moz-animation: moveclouds-data-v-2ce50e5a 20s linear infinite;\n                -o-animation: moveclouds-data-v-2ce50e5a 20s linear infinite;\n}\n@-webkit-keyframes moveclouds-data-v-2ce50e5a {\n0% {margin-left: 1000px;}\n100% {margin-left: -1000px;}\n}\n", ""]);
+exports.push([module.i, "\npage[data-v-2ce50e5a] {\n  background: #33cc99;\n  color:#fff;\n  font-family: 'Open Sans', sans-serif;\n  height:90%;\n  overflow: hidden;\n}\n.c[data-v-2ce50e5a]{\n  text-align: center;\n  display: block;\n  position: relative;\n  width:80%;\n  margin:100px auto;\n}\n._404[data-v-2ce50e5a]{\n  font-size: 220px;\n  position: relative;\n  display: inline-block;\n  z-index: 2;\n  height: 250px;\n  letter-spacing: 15px;\n}\n._1[data-v-2ce50e5a]{\n  text-align:center;\n  display:block;\n  position:relative;\n  letter-spacing: 12px;\n  font-size: 4em;\n  line-height: 80%;\n}\n._2[data-v-2ce50e5a]{\n  text-align:center;\n  display:block;\n  position: relative;\n  font-size: 20px;\n}\n.text[data-v-2ce50e5a]{\n  font-size: 70px;\n  text-align: center;\n  position: relative;\n  display: inline-block;\n  margin: 19px 0px 0px 0px;\n  /* top: 256.301px; */\n  z-index: 3;\n  width: 100%;\n  line-height: 1.2em;\n  display: inline-block;\n}\n.btn[data-v-2ce50e5a]{\n  background-color:#33cc99;\n  position: relative;\n  display: inline-block;\n  width: 358px;\n  padding: 5px;\n  z-index: 5;\n  font-size: 25px;\n  margin:0 auto;\n  color:#ffffff;\n  text-decoration: none;\n  margin-right: 10px\n}\n.right[data-v-2ce50e5a]{\n  float:right;\n  width:60%;\n}\nhr[data-v-2ce50e5a]{\n  padding: 0;\n  border: none;\n  border-top: 5px solid #fff;\n  color: #fff;\n  text-align: center;\n  margin: 0px auto;\n  width: 420px;\n  height:10px;\n  z-index: -10;\n}\n.cloud[data-v-2ce50e5a] {\n  width: 350px; height: 120px;\n\n  background: #33cc99;\n  background: linear-gradient(to top, #218362 100%);\n  background: -o-linear-gradient(to top, #33cc99 100%);\n\n  border-radius: 100px;\n  -webkit-border-radius: 100px;\n  -moz-border-radius: 100px;\n\n  position: absolute;\n  margin: 120px auto 20px;\n  z-index:-1;\n  transition: ease 1s;\n}\n.cloud[data-v-2ce50e5a]:after, .cloud[data-v-2ce50e5a]:before {\n  content: '';\n  position: absolute;\n  background: #33cc99;\n  z-index: -1\n}\n.cloud[data-v-2ce50e5a]:after {\n  width: 100px; height: 100px;\n  top: -50px; left: 50px;\n\n  border-radius: 100px;\n  -webkit-border-radius: 100px;\n  -moz-border-radius: 100px;\n}\n.cloud[data-v-2ce50e5a]:before {\n  width: 180px; height: 180px;\n  top: -90px; right: 50px;\n\n  border-radius: 200px;\n  -webkit-border-radius: 200px;\n  -moz-border-radius: 200px;\n}\n.x1[data-v-2ce50e5a] {\n  top:-50px;\n  left:100px;\n  transform: scale(0.3);\n  opacity: 0.9;\n  -webkit-animation: moveclouds-data-v-2ce50e5a 15s linear infinite;\n  -moz-animation: moveclouds-data-v-2ce50e5a 15s linear infinite;\n  -o-animation: moveclouds-data-v-2ce50e5a 15s linear infinite;\n}\n.x1_5[data-v-2ce50e5a]{\n  top:-80px;\n  left:250px;\n  transform: scale(0.3);\n  -webkit-animation: moveclouds-data-v-2ce50e5a 17s linear infinite;\n  -moz-animation: moveclouds-data-v-2ce50e5a 17s linear infinite;\n  -o-animation: moveclouds-data-v-2ce50e5a 17s linear infinite;\n}\n.x2[data-v-2ce50e5a] {\n  left: 250px;\n  top:30px;\n  transform: scale(0.6);\n  opacity: 0.6; \n  -webkit-animation: moveclouds-data-v-2ce50e5a 25s linear infinite;\n  -moz-animation: moveclouds-data-v-2ce50e5a 25s linear infinite;\n  -o-animation: moveclouds-data-v-2ce50e5a 25s linear infinite;\n}\n.x3[data-v-2ce50e5a] {\n  left: 250px; bottom: 0px;\n  transform: scale(0.6);\n  opacity: 0.8; \n\n  -webkit-animation: moveclouds-data-v-2ce50e5a 25s linear infinite;\n  -moz-animation: moveclouds-data-v-2ce50e5a 25s linear infinite;\n  -o-animation: moveclouds-data-v-2ce50e5a 25s linear infinite;\n}\n.x4[data-v-2ce50e5a] {\n  left: 470px; \n  botttom: 20px;\n  transform: scale(0.75);\n  opacity: 0.75;\n\n  -webkit-animation: moveclouds-data-v-2ce50e5a 18s linear infinite;\n  -moz-animation: moveclouds-data-v-2ce50e5a 18s linear infinite;\n  -o-animation: moveclouds-data-v-2ce50e5a 18s linear infinite;\n}\n.x5[data-v-2ce50e5a] {\n  left: 200px; top: 300px;\n  transform: scale(0.5);\n  opacity: 0.8; \n\n  -webkit-animation: moveclouds-data-v-2ce50e5a 20s linear infinite;\n  -moz-animation: moveclouds-data-v-2ce50e5a 20s linear infinite;\n  -o-animation: moveclouds-data-v-2ce50e5a 20s linear infinite;\n}\n@-webkit-keyframes moveclouds-data-v-2ce50e5a {\n0% {margin-left: 1000px;}\n100% {margin-left: -1000px;}\n}\n\n", ""]);
 
 // exports
 
@@ -41260,43 +41272,48 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container page mb-0" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "c" },
+      [
+        _c("div", { staticClass: "_404 mt-4" }, [_vm._v("404")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "_1 mt-4" }, [_vm._v("LA PAGE")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "_2 mt-4" }, [
+          _vm._v("À LAQUELLE VOUS SOUHAITEZ ACCÉDER N'A PAS ÉTÉ TROUVÉE")
+        ]),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          { staticClass: "btn btn-primary mt-4", attrs: { to: "/" } },
+          [_vm._v("RETOUR À L'ACCUEIL")]
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page container" }, [
-      _c("div", { attrs: { id: "clouds" } }, [
-        _c("div", { staticClass: "cloud x1" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "cloud x1_5" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "cloud x2" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "cloud x3" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "cloud x4" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "cloud x5" })
-      ]),
+    return _c("div", { attrs: { id: "clouds" } }, [
+      _c("div", { staticClass: "cloud x1" }),
       _vm._v(" "),
-      _c("div", { staticClass: "c" }, [
-        _c("div", { staticClass: "_404" }, [_vm._v("404")]),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("div", { staticClass: "_1" }, [_vm._v("LA PAGE")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "_2" }, [
-          _vm._v("À LAQUEL VOUS SOUHAITEZ ACCÉDER N'A PAS ÉTÉ TROUVÉE")
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "btn", attrs: { href: "./" } }, [
-          _vm._v("RETOUR À L'ACCUEIL")
-        ])
-      ])
+      _c("div", { staticClass: "cloud x1_5" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "cloud x2" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "cloud x3" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "cloud x4" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "cloud x5" })
     ])
   }
 ]
@@ -59171,8 +59188,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/TDDWA/Portreto/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/TDDWA/Portreto/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/jubelix/Programmation/Projets/Portreto/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/jubelix/Programmation/Projets/Portreto/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

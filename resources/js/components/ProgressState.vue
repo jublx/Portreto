@@ -12,7 +12,7 @@
           <th scope="col"><span>Nouveauté</span></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody>        
         <tr>
           <td>26/12/2020</td>
           <td>Affichage d'un formulaire "ajouter un contact" sur le tableau de bord.</td>
@@ -69,7 +69,24 @@
 
 <script>
 export default {
-  
+  data() {
+    return {
+      changements: [
+        {
+          date: '26-12-2020',
+          content: 'Affichage d\'un formulaire "ajouter un contact" sur le tableau de bord.'
+        },
+        {
+          date: '26-12-2020',
+          content: 'Affichage des différents réseaux sociaux des utilisateurs.'
+        },
+        {
+          date: '15-12-2020',
+          content: "Création du \"code ami\" unique pour chaque utilisateur, on le retrouve sur le tableau de bord lorsqu'on est connecté."
+        },
+      ]            
+    }
+  }
 }
 </script>
 

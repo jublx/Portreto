@@ -183,7 +183,7 @@ export default {
 
 .form-success {
   color: rgb(0, 177, 0);
-  margin: 6px 0 0 20px;
+  margin-left: 20px;
   font-size: 0.7em;
 }
 

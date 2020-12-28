@@ -7097,7 +7097,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.formulary[data-v-5150e6ee] {\n  font-size: 1.4em;\n}\n.formulary button[data-v-5150e6ee] {\n  margin-top: 4vh;\n}\n.head[data-v-5150e6ee] {\n  cursor: pointer;\n}\n.active[data-v-5150e6ee] {\n}\n.nactivel[data-v-5150e6ee] {\n  background-color: #219e89;\n  color: #f8fafc;\n  box-shadow: inset -15px -20px 31px -23px rgba(0,0,0,0.75);\n  transition: background-color 0.3s ease-in-out;\n}\n.nactiver[data-v-5150e6ee] {\n  background-color: #219e89;\n  color: #f8fafc;\n  box-shadow: inset 15px -20px 31px -23px rgba(0,0,0,0.75);\n  transition: background-color 0.3s ease-in-out;\n}\n.nactivel[data-v-5150e6ee]:hover {\n  background-color: #008383;\n}\n.nactiver[data-v-5150e6ee]:hover {\n  background-color: #008383;\n}\n.form-content form[data-v-5150e6ee] {\n  display: block;\n  width: 70%;\n}\n.form1[data-v-5150e6ee] {\n  margin: 12vh auto 14vh;\n}\n.form2[data-v-5150e6ee] {\n  margin: 8vh auto 8vh;\n}\n.form-error[data-v-5150e6ee] {\n  color: red;\n  font-size: 0.7em;\n}\n.form-success[data-v-5150e6ee] {\n  color: rgb(0, 177, 0);\n  margin: 6px 0 0 20px;\n  font-size: 0.7em;\n}\n.btn[data-v-5150e6ee] {\n  font-size: 0.9em;\n}\n\n/* ANIMATIONS */\n.fade-in-left[data-v-5150e6ee] {\n\t-webkit-animation: fade-in-left-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n\t        animation: fade-in-left-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n}\n.fade-in-right[data-v-5150e6ee] {\n\t-webkit-animation: fade-in-right-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n\t        animation: fade-in-right-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n}\n.rotate-out-center[data-v-5150e6ee] {\n\t-webkit-animation: rotate-out-center-data-v-5150e6ee 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;\n\t        animation: rotate-out-center-data-v-5150e6ee 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;\n}\n@-webkit-keyframes fade-in-left-data-v-5150e6ee {\n0% {\n    transform: translateX(-50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@keyframes fade-in-left-data-v-5150e6ee {\n0% {\n    transform: translateX(-50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@-webkit-keyframes fade-in-right-data-v-5150e6ee {\n0% {\n    transform: translateX(50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@keyframes fade-in-right-data-v-5150e6ee {\n0% {\n    transform: translateX(50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@-webkit-keyframes rotate-out-center-data-v-5150e6ee {\n0% {\n    transform: rotate(0);\n    opacity: 1;\n}\n100% {\n    transform: rotate(-360deg);\n    opacity: 0;\n}\n}\n@keyframes rotate-out-center-data-v-5150e6ee {\n0% {\n    transform: rotate(0);\n    opacity: 1;\n}\n100% {\n    transform: rotate(-360deg);\n    opacity: 0;\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.formulary[data-v-5150e6ee] {\n  font-size: 1.4em;\n}\n.formulary button[data-v-5150e6ee] {\n  margin-top: 4vh;\n}\n.head[data-v-5150e6ee] {\n  cursor: pointer;\n}\n.active[data-v-5150e6ee] {\n}\n.nactivel[data-v-5150e6ee] {\n  background-color: #219e89;\n  color: #f8fafc;\n  box-shadow: inset -15px -20px 31px -23px rgba(0,0,0,0.75);\n  transition: background-color 0.3s ease-in-out;\n}\n.nactiver[data-v-5150e6ee] {\n  background-color: #219e89;\n  color: #f8fafc;\n  box-shadow: inset 15px -20px 31px -23px rgba(0,0,0,0.75);\n  transition: background-color 0.3s ease-in-out;\n}\n.nactivel[data-v-5150e6ee]:hover {\n  background-color: #008383;\n}\n.nactiver[data-v-5150e6ee]:hover {\n  background-color: #008383;\n}\n.form-content form[data-v-5150e6ee] {\n  display: block;\n  width: 70%;\n}\n.form1[data-v-5150e6ee] {\n  margin: 12vh auto 14vh;\n}\n.form2[data-v-5150e6ee] {\n  margin: 8vh auto 8vh;\n}\n.form-error[data-v-5150e6ee] {\n  color: red;\n  font-size: 0.7em;\n}\n.form-success[data-v-5150e6ee] {\n  color: rgb(0, 177, 0);\n  margin-left: 20px;\n  font-size: 0.7em;\n}\n.btn[data-v-5150e6ee] {\n  font-size: 0.9em;\n}\n\n/* ANIMATIONS */\n.fade-in-left[data-v-5150e6ee] {\n\t-webkit-animation: fade-in-left-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n\t        animation: fade-in-left-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n}\n.fade-in-right[data-v-5150e6ee] {\n\t-webkit-animation: fade-in-right-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n\t        animation: fade-in-right-data-v-5150e6ee 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;\n}\n.rotate-out-center[data-v-5150e6ee] {\n\t-webkit-animation: rotate-out-center-data-v-5150e6ee 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;\n\t        animation: rotate-out-center-data-v-5150e6ee 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;\n}\n@-webkit-keyframes fade-in-left-data-v-5150e6ee {\n0% {\n    transform: translateX(-50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@keyframes fade-in-left-data-v-5150e6ee {\n0% {\n    transform: translateX(-50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@-webkit-keyframes fade-in-right-data-v-5150e6ee {\n0% {\n    transform: translateX(50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@keyframes fade-in-right-data-v-5150e6ee {\n0% {\n    transform: translateX(50px);\n    opacity: 0;\n}\n100% {\n    transform: translateX(0);\n    opacity: 1;\n}\n}\n@-webkit-keyframes rotate-out-center-data-v-5150e6ee {\n0% {\n    transform: rotate(0);\n    opacity: 1;\n}\n100% {\n    transform: rotate(-360deg);\n    opacity: 0;\n}\n}\n@keyframes rotate-out-center-data-v-5150e6ee {\n0% {\n    transform: rotate(0);\n    opacity: 1;\n}\n100% {\n    transform: rotate(-360deg);\n    opacity: 0;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -40745,7 +40745,7 @@ var render = function() {
             _c("div", { staticClass: "card mt-md-4 mt-2 shadow bg-light" }, [
               _c("div", { staticClass: "card-body" }, [
                 _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col d-inline-flex" }, [
+                  _c("div", { staticClass: "col-5 d-inline-flex" }, [
                     _c("div", { staticClass: "col-sm-3" }, [
                       _c("h5", { staticClass: "mb-0" }, [
                         _c(
@@ -40781,7 +40781,7 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col d-inline-flex" }, [
+                  _c("div", { staticClass: "col-7 d-inline-flex" }, [
                     _c("div", { staticClass: "col-sm-3" }, [
                       _c("h5", { staticClass: "mb-0" }, [
                         _c(
@@ -40821,7 +40821,7 @@ var render = function() {
                 _c("hr"),
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col d-inline-flex" }, [
+                  _c("div", { staticClass: "col-5 d-inline-flex" }, [
                     _c("div", { staticClass: "col-sm-3" }, [
                       _c("h5", { staticClass: "mb-0" }, [
                         _c(
@@ -40857,7 +40857,7 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col d-inline-flex" }, [
+                  _c("div", { staticClass: "col-7 d-inline-flex" }, [
                     _c("div", { staticClass: "col-sm-3" }, [
                       _c("h5", { staticClass: "mb-0" }, [
                         _c(
@@ -40920,7 +40920,7 @@ var render = function() {
                   _c("div", { staticClass: "col-sm-9 text-secondary" }, [
                     _vm._v(
                       "\n              " +
-                        _vm._s(_vm.user_infos.biography) +
+                        _vm._s(_vm.user_infos.phone_number) +
                         "\n            "
                     )
                   ])
@@ -40934,7 +40934,7 @@ var render = function() {
                   _c("div", { staticClass: "col-sm-9 text-secondary" }, [
                     _vm._v(
                       "\n              " +
-                        _vm._s(_vm.user_infos.phone_number) +
+                        _vm._s(_vm.user_infos.diploma) +
                         "\n            "
                     )
                   ])
@@ -40948,7 +40948,7 @@ var render = function() {
                   _c("div", { staticClass: "col-sm-9 text-secondary" }, [
                     _vm._v(
                       "\n              " +
-                        _vm._s(_vm.user_infos.diploma) +
+                        _vm._s(_vm.user_infos.biography) +
                         "\n            "
                     )
                   ])
@@ -41039,14 +41039,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-3" }, [
-      _c("h5", { staticClass: "mb-0" }, [_vm._v("Bio")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-3" }, [
       _c("h5", { staticClass: "mb-0" }, [_vm._v("Tél.")])
     ])
   },
@@ -41056,6 +41048,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-3" }, [
       _c("h5", { staticClass: "mb-0" }, [_vm._v("Diplômes")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-3" }, [
+      _c("h5", { staticClass: "mb-0" }, [_vm._v("Bio.")])
     ])
   },
   function() {

@@ -24,7 +24,7 @@
         <div class="card mt-md-4 mt-2 shadow bg-light">
           <div class="card-body">
             <div class="row">
-              <div class="col d-inline-flex">
+              <div class="col-5 d-inline-flex">
                 <div class="col-sm-3">
                   <h5 class="mb-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
@@ -36,7 +36,7 @@
                   {{ user_infos.linkedin }}
                 </div>
               </div>
-              <div class="col d-inline-flex">
+              <div class="col-7 d-inline-flex">
                 <div class="col-sm-3">
                   <h5 class="mb-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
@@ -51,7 +51,7 @@
             </div>
             <hr>
             <div class="row">
-              <div class="col d-inline-flex">
+              <div class="col-5 d-inline-flex">
                 <div class="col-sm-3">
                   <h5 class="mb-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
@@ -63,7 +63,7 @@
                   {{ user_infos.instagram }}
                 </div>
               </div>
-              <div class="col d-inline-flex">
+              <div class="col-7 d-inline-flex">
                 <div class="col-sm-3">
                   <h5 class="mb-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
@@ -93,15 +93,6 @@
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <h5 class="mb-0">Bio</h5>
-              </div>
-              <div class="col-sm-9 text-secondary">
-                {{ user_infos.biography }}
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
                 <h5 class="mb-0">Tél.</h5>
               </div>
               <div class="col-sm-9 text-secondary">
@@ -115,6 +106,15 @@
               </div>
               <div class="col-sm-9 text-secondary">
                 {{ user_infos.diploma }}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h5 class="mb-0">Bio.</h5>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{ user_infos.biography }}
               </div>
             </div>
             <hr>

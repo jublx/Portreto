@@ -30,10 +30,11 @@ Route::middleware('auth:sanctum')->post('/logout', function (Request $request) {
   Auth::guard('web')->logout();
 });
 
+Route::middleware('auth:sanctum')->post('/update_user_infos', 'App\Http\Controllers\UserInformationsController@update');
+
+Route::middleware('auth:sanctum')->get('/user_infos', 'App\Http\Controllers\UserInformationsController@index');
 /*
 | Routes de l'API
 */ 
 
 Route::post('/register', 'App\Http\Controllers\AuthController@register');
-
-Route::get('/user_infos', 'App\Http\Controllers\UserInformationsController@index');

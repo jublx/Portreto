@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light shadow fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light shadow fixed-top bg-light">
     <router-link class="navbar-brand" to="/" exact>Portreto</router-link>
     <div v-if="isUserLogged" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       Mon compte

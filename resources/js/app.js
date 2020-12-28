@@ -65,11 +65,7 @@ new Vue({
       axios.get('/sanctum/csrf-cookie').then(() => {
         axios.get('/api/user').then(response => {
           store.commit('SET_USER', response.data);
-          axios.get('/api/user_infos').then((informations) => {
-            store.commit('SET_USER_INFOS', informations.data);
-          }).catch(error => {
-            console.log("Can't recover user informations.");
-          })
+          this.getUserInfos();
         }).catch(error => {
           console.log('User is not logged in.');
           if(!this.$route.fullPath.localeCompare('/profile')) { // si les chaînes de caractères sont identiques, renvoie 0
@@ -78,4 +74,15 @@ new Vue({
         })
       })
     },
+    methods: {
+      getUserInfos() {
+        axios.get('/sanctum/csrf-cookie').then(() => {
+          axios.get('/api/user_infos').then((informations) => {
+            store.commit('SET_USER_INFOS', informations.data);
+          }).catch(error => {
+            console.log("Can't recover user informations.");
+          })
+        })
+      }
+    }
 });

@@ -69,7 +69,26 @@ class UserInformationsController extends Controller
      */
     public function update(Request $request, UserInformations $userInformations)
     {
-        //
+        $user = $request->user();
+
+        $request->validate([
+          'contact_email' => 'email',
+        ]);
+
+        $user->informations()->update([
+          'contact_email' => $request->contact_email,
+          'phone_number' => $request->phone_number,
+          'nationality' => $request->nationality,
+          'adresse' => $request->adresse,
+          'biography' => $request->biography,
+          'diploma' => $request->diploma,
+          'job' => $request->job,
+          'interests' => $request->interests,
+          'linkedin' => $request->linkedin,
+          'facebook' => $request->facebook,
+          'instagram' => $request->instagram,
+          'twitter' => $request->twitter
+        ]);
     }
 
     /**

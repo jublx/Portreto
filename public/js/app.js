@@ -2025,7 +2025,7 @@ __webpack_require__.r(__webpack_exports__);
             });
             _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].commit('SET_USER', response.data);
             setTimeout(function () {
-              _this.$router.push('/profile');
+              _this.$router.push('/dashboard');
             }, 1500);
           });
         })["catch"](function (error) {
@@ -40641,7 +40641,7 @@ var render = function() {
                       {
                         staticClass: "nav-link",
                         attrs: {
-                          to: "/profile",
+                          to: "/dashboard",
                           "data-toggle": "collapse",
                           "data-target": "#navbarNav"
                         }

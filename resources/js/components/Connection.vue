@@ -90,7 +90,7 @@ export default {
             })
             store.commit('SET_USER', response.data);
             setTimeout(() => {
-              this.$router.push('/profile');
+              this.$router.push('/dashboard');
             }, 1500);
           })
         }).catch(error => {

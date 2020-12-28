@@ -2321,7 +2321,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getCurrentInfos: function getCurrentInfos() {
-      this.modifiedInfos = _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.user_infos;
+      this.modifiedInfos = JSON.parse(JSON.stringify(_store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.user_infos));
     },
     save: function save() {
       var _this = this;
@@ -2331,6 +2331,8 @@ __webpack_require__.r(__webpack_exports__);
           _this.success = true;
 
           _this.$root.getUserInfos();
+
+          $('#modal').modal("toggle");
         })["catch"](function (error) {
           _this.errors = error.response.data.errors;
         });
@@ -40402,7 +40404,11 @@ var render = function() {
                         "button",
                         {
                           staticClass: "btn btn-primary",
-                          attrs: { type: "button" },
+                          attrs: {
+                            type: "button",
+                            "data-toggle": "modal",
+                            "data-target": "#exampleModal"
+                          },
                           on: {
                             click: function($event) {
                               return _vm.save()

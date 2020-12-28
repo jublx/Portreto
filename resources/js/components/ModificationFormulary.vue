@@ -85,7 +85,7 @@
                 <div class="modal-footer">
                   
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                  <button type="button" class="btn btn-primary" @click="save()">Enregistrer</button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" @click="save()">Enregistrer</button>
                 </div>
               </div>
             </div>
@@ -111,13 +111,14 @@ export default {
   },
   methods: {
     getCurrentInfos() {
-      this.modifiedInfos = store.getters.user_infos;
+      this.modifiedInfos = JSON.parse(JSON.stringify(store.getters.user_infos));
     },
     save() {
       axios.get('/sanctum/csrf-cookie').then(() => {
         axios.post('/api/update_user_infos', this.modifiedInfos).then(() => {
           this.success = true;
           this.$root.getUserInfos();
+          $('#modal').modal("toggle");
         }).catch(error => {
           this.errors = error.response.data.errors;
         })

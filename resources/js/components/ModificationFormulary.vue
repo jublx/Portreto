@@ -15,32 +15,32 @@
               <div class="col">
                 <div class="modal-body">
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Email:</label>
+                      <label for="recipient-name" class="col-form-label custom-label">Email:</label>
                       <input type="text" class="form-control" id="email" v-model="modifiedInfos.contact_email">
                     </div>
 
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Nationalité:</label>
+                      <label for="recipient-name" class="col-form-label custom-label">Nationalité:</label>
                       <input type="text" class="form-control" id="nationalite" v-model="modifiedInfos.nationality">
                     </div>
                     
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Tél:</label>
-                      <input type="text" class="form-control" id="tel" v-model="modifiedInfos.phone_number">
+                      <label for="recipient-name" class="col-form-label custom-label">Tél:</label>
+                      <input type="tel" class="form-control" id="tel" v-model="modifiedInfos.phone_number">
                     </div>
 
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Diplômes:</label>
+                      <label for="recipient-name" class="col-form-label custom-label">Diplômes:</label>
                       <input type="text" class="form-control" id="diplomes" v-model="modifiedInfos.diploma">
                     </div>
 
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Job:</label>
+                      <label for="recipient-name" class="col-form-label custom-label">Job:</label>
                       <input type="text" class="form-control" id="job" v-model="modifiedInfos.job">
                     </div>
 
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Bio:</label>
+                      <label for="recipient-name" class="col-form-label custom-label">Bio:</label>
                       <textarea class="form-control" id="bio" v-model="modifiedInfos.biography"></textarea>
                     </div>
                 </div>
@@ -48,43 +48,41 @@
               <div class="col">
                 <div class="modal-body">
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Adresse:</label>
+                      <label for="recipient-name" class="col-form-label custom-label">Adresse:</label>
                       <input type="text" class="form-control" id="adresse" v-model="modifiedInfos.adresse">
                     </div>
 
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Linkedin:</label>
+                      <label for="recipient-name" class="col-form-label custom-label">Linkedin:</label>
                       <input type="text" class="form-control" id="linkedin" v-model="modifiedInfos.linkedin">
                     </div>
 
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Instagram:</label>
+                      <label for="recipient-name" class="col-form-label custom-label">Instagram:</label>
                       <input type="text" class="form-control" id="instagram" v-model="modifiedInfos.instagram">
                     </div>
 
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Twitter:</label>
+                      <label for="recipient-name" class="col-form-label custom-label">Twitter:</label>
                       <input type="text" class="form-control" id="twitter" v-model="modifiedInfos.twitter">
                     </div>
 
                     <div class="form-group">
-                      <label for="message-text" class="col-form-label">Facebook:</label>
+                      <label for="message-text" class="col-form-label custom-label">Facebook:</label>
                       <input type="text" class="form-control" id="facebook" v-model="modifiedInfos.facebook">
                     </div>
 
                     <div class="form-group">
-                      <label for="message-text" class="col-form-label">Centres d'interêts:</label>
+                      <label for="message-text" class="col-form-label custom-label">Centres d'interêts:</label>
                       <textarea class="form-control" id="interets" v-model="modifiedInfos.interests"></textarea>
-                    </div>
-                    
+                    </div>                    
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <div class="modal-footer">
-                  
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <div class="modal-footer">                  
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                   <button type="button" class="btn btn-primary"  @click="save()">Enregistrer</button>
                 </div>
               </div>
@@ -147,5 +145,14 @@ export default {
 .btn-custom {
   float: right;
   margin-bottom: 6px;
+}
+
+.custom-label {
+  font-size: 1.2em;
+}
+
+.form-control {
+  font-size: 1.1em;
+  color: #008383;
 }
 </style>

@@ -16,7 +16,8 @@ import About from './components/About.vue';
 import Progress from './components/ProgressState.vue'
 import Contact from './components/Contact.vue';
 import Footer from './components/Footer.vue';
-import ProfilePage from './components/ProfilePage.vue';
+import Dashboard from './components/Dashboard.vue';
+import NotFound from './components/NotFound.vue'
 
 // définitions des routes
 const routes = [
@@ -37,8 +38,12 @@ const routes = [
     component: Contact
   },
   {
-    path: '/profile',
-    component: ProfilePage
+    path: '/dashboard',
+    component: Dashboard
+  },
+  {
+    path: '*',
+    component: NotFound
   }
 ]
 const router = new VueRouter({
@@ -68,7 +73,7 @@ new Vue({
           this.getUserInfos();
         }).catch(error => {
           console.log('User is not logged in.');
-          if(!this.$route.fullPath.localeCompare('/profile')) { // si les chaînes de caractères sont identiques, renvoie 0
+          if(!this.$route.fullPath.localeCompare('/dashboard')) { // si les chaînes de caractères sont identiques, renvoie 0
             this.$router.push('/'); // si l'utilisateur n'est pas authentifié et qu'il souhaite accéder à la page de profil, le renvoie à la page d'accueil
           }
         })

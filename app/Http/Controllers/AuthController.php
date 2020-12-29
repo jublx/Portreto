@@ -17,7 +17,7 @@ class AuthController extends Controller
       ]);
       
       $user = User::create([
-        "name" => $request->name,
+        "name" => ucwords($request->name), // on met la première lettre du nom et prénom en majuscule
         "email" => $request->email,
         "password" => Hash::make($request->password)
       ]);

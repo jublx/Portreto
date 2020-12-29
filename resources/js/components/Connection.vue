@@ -90,7 +90,7 @@ export default {
             })
             store.commit('SET_USER', response.data);
             setTimeout(() => {
-              this.$router.push('/profile');
+              this.$router.push('/dashboard');
             }, 1500);
           })
         }).catch(error => {
@@ -183,7 +183,7 @@ export default {
 
 .form-success {
   color: rgb(0, 177, 0);
-  margin: 6px 0 0 20px;
+  margin-left: 20px;
   font-size: 0.7em;
 }
 

@@ -21,12 +21,10 @@
 
 <script>
 import store from '../store.js';
-import ProfilePage from './ProfilePage'
 import Connection from './Connection';
 
 export default {
   components: {
-    "profile-page": ProfilePage,
     "connection-formulary": Connection
   },
   computed: {

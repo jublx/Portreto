@@ -22,10 +22,12 @@
 <script>
 import store from '../store.js';
 import Connection from './Connection';
+import IndexProfile from './IndexProfile';
 
 export default {
   components: {
-    "connection-formulary": Connection
+    "connection-formulary": Connection,
+    "index-profile": IndexProfile
   },
   computed: {
     isUserLogged() {

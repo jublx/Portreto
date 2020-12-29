@@ -12,7 +12,7 @@
         <div class="col-xl px-xl-5">
           <transition enter-active-class="flip-in-hor-top" leave-active-class="flip-out-hor-top" mode="out-in">
             <connection-formulary v-if="!isUserLogged"></connection-formulary>
-            <img v-else src="../../images/connection.png" class="d-block">
+            <index-profile v-else></index-profile>
           </transition>
         </div>
       </div>

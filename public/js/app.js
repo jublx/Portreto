@@ -2724,50 +2724,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2780,6 +2736,33 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         date: '15-12-2020',
         content: "Création du \"code ami\" unique pour chaque utilisateur, on le retrouve sur le tableau de bord lorsqu'on est connecté."
+      }, {
+        date: '11-12-2020',
+        content: "Ajout de la modification des informations d'un utilisateur à partir du Tableau de bord de celui-ci."
+      }, {
+        date: '12-11-2020',
+        content: "Création d'une page de profile accessible si l'utilisateur est connecté."
+      }, {
+        date: '10-11-2020',
+        content: "Mise en ligne d'une première version du site."
+      }, {
+        date: '07-11-2020',
+        content: "Création de la base de donnée avec Mariadb."
+      }, {
+        date: '07-11-2020',
+        content: 'Mise à jour du Wordpress.'
+      }, {
+        date: '06-11-2020',
+        content: "Ajout d'un formulaire d'inscription et d'un formulaire de connexion sur la page d'accueil."
+      }, {
+        date: '17-10-2020',
+        content: 'Créations des pages "Avancement", "À propos" et "Contact", accessible à partir du footer.'
+      }, {
+        date: '16-10-2020',
+        content: "Création de la page d'accueil du site avec un premier design."
+      }, {
+        date: '01-10-2020',
+        content: 'Création du premier Wordpress sous le nom de "Visit me".'
       }]
     };
   }
@@ -41504,147 +41487,51 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container page" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("p", [
+      _vm._v(
+        "Cette page présente sous forme d'un tableau l'état d'avancement du projet. Ce tableau est mis à jour au fur et à mesure des modifications.\n    vous pouvez également consulter les détails du projet sur le site Wordpress associé (voir section « À propos »).\n  "
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "w-75", staticStyle: { margin: "auto" } }, [
+      _c("table", { staticClass: "table table-striped" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.changements, function(changements) {
+            return _c("tr", { key: changements }, [
+              _c("td", [_vm._v(_vm._s(changements.date))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(changements.content))])
+            ])
+          }),
+          0
+        )
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container page" }, [
-      _c("h1", [_c("span", [_vm._v("Avancement")]), _vm._v(" du projet")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "Cette page présente sous forme d'un tableau l'état d'avancement du projet. Ce tableau est mis à jour au fur et à mesure des modifications.\n    vous pouvez également consulter les détails du projet sur le site Wordpress associé (voir section « À propos »).\n  "
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "w-75", staticStyle: { margin: "auto" } }, [
-        _c("table", { staticClass: "table table-striped" }, [
-          _c("thead", [
-            _c("tr", [
-              _c("th", { attrs: { scope: "col" } }, [
-                _c("span", [_vm._v("Date")])
-              ]),
-              _vm._v(" "),
-              _c("th", { attrs: { scope: "col" } }, [
-                _c("span", [_vm._v("Nouveauté")])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _c("td", [_vm._v("26/12/2020")]),
-              _vm._v(" "),
-              _c("td", [
-                _vm._v(
-                  'Affichage d\'un formulaire "ajouter un contact" sur le tableau de bord.'
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("26/12/2020")]),
-              _vm._v(" "),
-              _c("td", [
-                _vm._v(
-                  "Affichage des différents réseaux sociaux des utilisateurs."
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("15/12/2020")]),
-              _vm._v(" "),
-              _c("td", [
-                _vm._v(
-                  'Création du "code ami" unique pour chaque utilisateur, on le retrouve sur le tableau de bord lorsqu\'on est connecté.'
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("11/12/2020")]),
-              _vm._v(" "),
-              _c("td", [
-                _vm._v(
-                  "Ajout de la modification des informations d'un utilisateur à partir du Tableau de bord de celui-ci."
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("12/11/2020")]),
-              _vm._v(" "),
-              _c("td", [
-                _vm._v(
-                  "Création d'une page de profile accessible si l'utilisateur est connecté."
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("10/11/2020")]),
-              _vm._v(" "),
-              _c("td", [
-                _vm._v("Mise en ligne d'une première version du site.")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("07/11/2020")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("Création de la base de donnée avec Mariadb.")])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("07/11/2020")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("Mise à jour du Wordpress.")])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("06/11/2020")]),
-              _vm._v(" "),
-              _c("td", [
-                _vm._v(
-                  "Ajout d'un formulaire d'inscription et d'un formulaire de connexion sur la page d'accueil."
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("17/10/2020")]),
-              _vm._v(" "),
-              _c("td", [
-                _vm._v(
-                  'Créations des pages "Avancement", "À propos" et "Contact", accessible à partir du footer.'
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("16/10/2020")]),
-              _vm._v(" "),
-              _c("td", [
-                _vm._v(
-                  "Création de la page d'accueil du site avec un premier design."
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("01/10/2020")]),
-              _vm._v(" "),
-              _c("td", [
-                _vm._v(
-                  'Création du premier Wordpress sous le nom de "Visit me".'
-                )
-              ])
-            ])
-          ])
+    return _c("h1", [_c("span", [_vm._v("Avancement")]), _vm._v(" du projet")])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_c("span", [_vm._v("Date")])]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [
+          _c("span", [_vm._v("Nouveauté")])
         ])
       ])
     ])
@@ -59430,8 +59317,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/mathis/Portreto/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/mathis/Portreto/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/TDDWA/Portreto/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/TDDWA/Portreto/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

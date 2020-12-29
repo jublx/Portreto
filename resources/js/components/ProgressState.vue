@@ -13,53 +13,9 @@
         </tr>
       </thead>
       <tbody>        
-        <tr>
-          <td>26/12/2020</td>
-          <td>Affichage d'un formulaire "ajouter un contact" sur le tableau de bord.</td>
-        </tr>
-        <tr>
-          <td>26/12/2020</td>
-          <td>Affichage des différents réseaux sociaux des utilisateurs.</td>
-        </tr>
-        <tr>
-          <td>15/12/2020</td>
-          <td>Création du "code ami" unique pour chaque utilisateur, on le retrouve sur le tableau de bord lorsqu'on est connecté.</td>
-        </tr>
-        <tr>
-          <td>11/12/2020</td>
-          <td>Ajout de la modification des informations d'un utilisateur à partir du Tableau de bord de celui-ci.</td>
-        </tr>
-        <tr>
-          <td>12/11/2020</td>
-          <td>Création d'une page de profile accessible si l'utilisateur est connecté.</td>
-        </tr>
-        <tr>
-          <td>10/11/2020</td>
-          <td>Mise en ligne d'une première version du site.</td>
-        </tr>
-        <tr>
-          <td>07/11/2020</td>
-          <td>Création de la base de donnée avec Mariadb.</td>
-        </tr>
-        <tr>
-          <td>07/11/2020</td>
-          <td>Mise à jour du Wordpress.</td>
-        </tr>
-        <tr>
-          <td>06/11/2020</td>
-          <td>Ajout d'un formulaire d'inscription et d'un formulaire de connexion sur la page d'accueil.</td>
-        </tr>
-        <tr>
-          <td>17/10/2020</td>
-          <td>Créations des pages "Avancement", "À propos" et "Contact", accessible à partir du footer.</td>
-        </tr>
-        <tr>
-          <td>16/10/2020</td>
-          <td>Création de la page d'accueil du site avec un premier design.</td>
-        </tr>
-        <tr>
-          <td>01/10/2020</td>
-          <td>Création du premier Wordpress sous le nom de "Visit me".</td>
+        <tr v-for="changements in changements" :key="changements">
+          <td>{{changements.date}}</td>
+          <td>{{changements.content}}</td>
         </tr>
       </tbody>
     </table>
@@ -84,6 +40,42 @@ export default {
           date: '15-12-2020',
           content: "Création du \"code ami\" unique pour chaque utilisateur, on le retrouve sur le tableau de bord lorsqu'on est connecté."
         },
+        {
+          date: '11-12-2020',
+          content: "Ajout de la modification des informations d'un utilisateur à partir du Tableau de bord de celui-ci."
+        },
+        {
+          date: '12-11-2020',
+          content: "Création d'une page de profile accessible si l'utilisateur est connecté."
+        },
+        {
+          date: '10-11-2020',
+          content: "Mise en ligne d'une première version du site."
+        },
+        {
+          date: '07-11-2020',
+          content: "Création de la base de donnée avec Mariadb."
+        },
+        {
+          date: '07-11-2020',
+          content: 'Mise à jour du Wordpress.'
+        },
+        {
+          date: '06-11-2020',
+          content: "Ajout d'un formulaire d'inscription et d'un formulaire de connexion sur la page d'accueil."
+        },
+        {
+          date: '17-10-2020',
+          content: 'Créations des pages "Avancement", "À propos" et "Contact", accessible à partir du footer.'
+        },
+        {
+          date: '16-10-2020',
+          content: "Création de la page d'accueil du site avec un premier design."
+        },
+        {
+          date: '01-10-2020',
+          content: 'Création du premier Wordpress sous le nom de "Visit me".'
+        }
       ]            
     }
   }

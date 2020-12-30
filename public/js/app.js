@@ -2309,7 +2309,7 @@ __webpack_require__.r(__webpack_exports__);
     addContact: function addContact() {
       var friend_code = this.addFriendCode.part1 + "-" + this.addFriendCode.part2 + "-" + this.addFriendCode.part3;
       axios.get('/sanctum/csrf-cookie').then(function () {
-        axios.post('/api/addContact', {
+        axios.post('/api/add_contact', {
           friend_code: friend_code
         }).then(function () {
           console.log("Contact ajouté !");
@@ -58236,6 +58236,8 @@ new Vue({
         _store_js__WEBPACK_IMPORTED_MODULE_1__["default"].commit('SET_USER', response.data);
 
         _this.getUserInfos();
+
+        _this.getUserContacts();
       })["catch"](function (error) {
         console.log('User is not logged in.');
 
@@ -58254,6 +58256,13 @@ new Vue({
           _store_js__WEBPACK_IMPORTED_MODULE_1__["default"].commit('SET_USER_INFOS', informations.data);
         })["catch"](function (error) {
           console.log("Can't recover user informations.");
+        });
+      });
+    },
+    getUserContacts: function getUserContacts() {
+      axios.get('/sanctum/csrf-cookie').then(function () {
+        axios.get('/api/user_contacts').then(function (response) {
+          console.log(response.data);
         });
       });
     }

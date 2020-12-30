@@ -180,7 +180,7 @@ export default {
     addContact() {
       let friend_code = this.addFriendCode.part1 + "-" + this.addFriendCode.part2 + "-" + this.addFriendCode.part3;
       axios.get('/sanctum/csrf-cookie').then(() => {
-        axios.post('/api/addContact', {friend_code}).then(() => {
+        axios.post('/api/add_contact', {friend_code}).then(() => {
           console.log("Contact ajouté !");
         }).catch(error => {
           console.log("Erreur lors de l'ajout du contact : " + error);

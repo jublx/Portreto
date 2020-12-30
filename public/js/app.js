@@ -1989,6 +1989,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2005,8 +2006,6 @@ __webpack_require__.r(__webpack_exports__);
         password: '',
         password_confirmation: ''
       },
-      errors1: [],
-      errors2: [],
       success: false
     };
   },
@@ -2017,19 +2016,20 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('/sanctum/csrf-cookie').then(function () {
         axios.post('/login', _this.form1).then(function () {
+          _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].commit('CLEAR_LOGIN_ERRORS');
           axios.get('/api/user').then(function (response) {
-            axios.get('/api/user_infos').then(function (informations) {
-              _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].commit('SET_USER_INFOS', informations.data);
-            })["catch"](function (error) {
-              console.log("Can't recover user informations.");
-            });
             _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].commit('SET_USER', response.data);
+
+            _this.$root.getUserInfos();
+
+            _this.$root.getUserContacts();
+
             setTimeout(function () {
               _this.$router.push('/dashboard');
             }, 1500);
           });
         })["catch"](function (error) {
-          _this.errors1 = error.response.data.errors;
+          _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].commit('SET_LOGIN_ERRORS', error.response.data.errors);
         });
       });
     },
@@ -2038,11 +2038,10 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.post('/api/register', this.form2).then(function () {
         console.log("User has been created");
+        _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].commit('CLEAR_REGISTER_ERRORS');
         _this2.success = true;
-        _this2.errors2 = [];
       })["catch"](function (error) {
-        console.log(error.response.data.errors);
-        _this2.errors2 = error.response.data.errors;
+        _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].commit('SET_REGISTER_ERRORS', error.response.data.errors);
       });
     }
   },
@@ -2053,6 +2052,12 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         return 'fade-in-right';
       }
+    },
+    registerErrors: function registerErrors() {
+      return _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.register_errors;
+    },
+    loginErrors: function loginErrors() {
+      return _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.login_errors;
     }
   }
 });
@@ -4008,8 +4013,9 @@ __webpack_require__.r(__webpack_exports__);
   store: _store_js__WEBPACK_IMPORTED_MODULE_0__["default"],
   methods: {
     logout: function logout() {
-      _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].commit('CLEAR_USER');
-      axios.post('/api/logout')["catch"](function (error) {
+      axios.post('/api/logout').then(function () {
+        _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].commit('CLEAR_USER');
+      })["catch"](function (error) {
         console.log('Echec de la déconnexion : ' + error);
       });
     }
@@ -8670,7 +8676,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nsvg[data-v-4566e296] {\n\t\twidth: 650px;\n\t\tmargin-bottom: auto;\n\t\tmargin-top: 0;\n\t\tmargin-left: 0;\n}\n#profile[data-v-4566e296] {\n\t\t\t-webkit-animation-duration: 2s;\n\t\t\t        animation-duration: 2s;\n\t\t\t-webkit-animation-name: animateProfile-data-v-4566e296;\n\t\t\t        animation-name: animateProfile-data-v-4566e296;\n\t\t\t-webkit-animation-iteration-count: infinite;\n\t\t\t        animation-iteration-count: infinite;\n\t\t\t-webkit-animation-direction: alternate;\n\t\t\t        animation-direction: alternate;\n}\n#rubriques[data-v-4566e296] {\n\t\t\t-webkit-animation-duration: 2s;\n\t\t\t        animation-duration: 2s;\n\t\t\t-webkit-animation-name: animateRubriques-data-v-4566e296;\n\t\t\t        animation-name: animateRubriques-data-v-4566e296;\n\t\t\t-webkit-animation-iteration-count: infinite;\n\t\t\t        animation-iteration-count: infinite;\n\t\t\t-webkit-animation-direction: alternate;\n\t\t\t        animation-direction: alternate;\n}\n#profile[data-v-4566e296] {\n\t\t\topacity: 0;\n}\n#rubriques[data-v-4566e296] {\n\t\t\topacity: 0;\n}\n@-webkit-keyframes animateProfile-data-v-4566e296 {\nfrom{\n\t\t\t\ttransform: translateX(100px) translateY(100px);\n\t\t\t\topacity: 0;\n}\nto {\n\t\t\t\ttransform: translateX(300px) translateY(-50px);\n\t\t\t\topacity: 1;\n}\n}\n@keyframes animateProfile-data-v-4566e296 {\nfrom{\n\t\t\t\ttransform: translateX(100px) translateY(100px);\n\t\t\t\topacity: 0;\n}\nto {\n\t\t\t\ttransform: translateX(300px) translateY(-50px);\n\t\t\t\topacity: 1;\n}\n}\n@-webkit-keyframes animateRubriques-data-v-4566e296 {\nfrom{\n\t\t\t\ttransform: translateX(100px) translateY(100px);\n\t\t\t\topacity: 0;\n}\nto {\n\t\t\t\ttransform: translateX(340px) translateY(52px);\n\t\t\t\topacity: 1;\n}\n}\n@keyframes animateRubriques-data-v-4566e296 {\nfrom{\n\t\t\t\ttransform: translateX(100px) translateY(100px);\n\t\t\t\topacity: 0;\n}\nto {\n\t\t\t\ttransform: translateX(340px) translateY(52px);\n\t\t\t\topacity: 1;\n}\n}\n\n", ""]);
+exports.push([module.i, "\nsvg[data-v-4566e296] {\n  width: 110%;\n  margin-left: -20%\n}\n#profile[data-v-4566e296] {\n  -webkit-animation-duration: 2s;\n          animation-duration: 2s;\n  -webkit-animation-name: animateProfile-data-v-4566e296;\n          animation-name: animateProfile-data-v-4566e296;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-direction: alternate;\n          animation-direction: alternate;\n}\n#rubriques[data-v-4566e296] {\n  -webkit-animation-duration: 2s;\n          animation-duration: 2s;\n  -webkit-animation-name: animateRubriques-data-v-4566e296;\n          animation-name: animateRubriques-data-v-4566e296;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-direction: alternate;\n          animation-direction: alternate;\n}\n#profile[data-v-4566e296] {\n  opacity: 0;\n}\n#rubriques[data-v-4566e296] {\n  opacity: 0;\n}\n@-webkit-keyframes animateProfile-data-v-4566e296 {\nfrom{\n    transform: translateX(100px) translateY(100px);\n    opacity: 0;\n}\nto {\n    transform: translateX(300px) translateY(-50px);\n    opacity: 1;\n}\n}\n@keyframes animateProfile-data-v-4566e296 {\nfrom{\n    transform: translateX(100px) translateY(100px);\n    opacity: 0;\n}\nto {\n    transform: translateX(300px) translateY(-50px);\n    opacity: 1;\n}\n}\n@-webkit-keyframes animateRubriques-data-v-4566e296 {\nfrom{\n    transform: translateX(100px) translateY(100px);\n    opacity: 0;\n}\nto {\n    transform: translateX(340px) translateY(52px);\n    opacity: 1;\n}\n}\n@keyframes animateRubriques-data-v-4566e296 {\nfrom{\n    transform: translateX(100px) translateY(100px);\n    opacity: 0;\n}\nto {\n    transform: translateX(340px) translateY(52px);\n    opacity: 1;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -41071,9 +41077,15 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    this.errors1.email
+                    _vm.loginErrors.email
                       ? _c("small", { staticClass: "form-error" }, [
-                          _vm._v(_vm._s(_vm.errors1.email[0]))
+                          _vm._v(_vm._s(_vm.loginErrors.email[0]))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.loginErrors.password
+                      ? _c("small", { staticClass: "form-error" }, [
+                          _vm._v(_vm._s(_vm.loginErrors.password[0]))
                         ])
                       : _vm._e()
                   ]),
@@ -41127,9 +41139,9 @@ var render = function() {
                           }
                         }),
                         _vm._v(" "),
-                        this.errors2.name
+                        _vm.registerErrors.name
                           ? _c("small", { staticClass: "form-error" }, [
-                              _vm._v(_vm._s(_vm.errors2.name[0]))
+                              _vm._v(_vm._s(_vm.registerErrors.name[0]))
                             ])
                           : _vm._e()
                       ]),
@@ -41191,9 +41203,9 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    this.errors2.email
+                    _vm.registerErrors.email
                       ? _c("small", { staticClass: "form-error" }, [
-                          _vm._v(_vm._s(_vm.errors2.email[0]))
+                          _vm._v(_vm._s(_vm.registerErrors.email[0]))
                         ])
                       : _vm._e()
                   ]),
@@ -41257,9 +41269,9 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    this.errors2.password
+                    _vm.registerErrors.password
                       ? _c("small", { staticClass: "form-error" }, [
-                          _vm._v(_vm._s(_vm.errors2.password[0]))
+                          _vm._v(_vm._s(_vm.registerErrors.password[0]))
                         ])
                       : _vm._e()
                   ]),
@@ -45645,7 +45657,12 @@ var render = function() {
       _c("div", { staticClass: "col-xl" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "row" }, [_c("image-csv")], 1)
+        _c(
+          "div",
+          { staticClass: "row justify-content-center" },
+          [_c("image-csv")],
+          1
+        )
       ]),
       _vm._v(" "),
       _c(
@@ -63238,7 +63255,7 @@ new Vue({
     getUserContacts: function getUserContacts() {
       axios.get('/sanctum/csrf-cookie').then(function () {
         axios.get('/api/user_contacts').then(function (response) {
-          console.log(response.data);
+          _store_js__WEBPACK_IMPORTED_MODULE_1__["default"].commit('SET_USER_CONTACTS', response.data);
         });
       });
     }
@@ -64425,7 +64442,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
   state: {
     isUserLogged: false,
     user: {},
-    user_infos: {}
+    user_infos: {},
+    user_contacts: [],
+    register_errors: [],
+    login_errors: []
   },
   mutations: {
     SET_IS_USER_LOGGED: function SET_IS_USER_LOGGED(state, value) {
@@ -64438,10 +64458,26 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     SET_USER_INFOS: function SET_USER_INFOS(state, value) {
       return state.user_infos = value;
     },
+    SET_USER_CONTACTS: function SET_USER_CONTACTS(state, value) {
+      return state.user_contacts = value;
+    },
+    SET_REGISTER_ERRORS: function SET_REGISTER_ERRORS(state, value) {
+      return state.register_errors = value;
+    },
+    SET_LOGIN_ERRORS: function SET_LOGIN_ERRORS(state, value) {
+      return state.login_errors = value;
+    },
+    CLEAR_REGISTER_ERRORS: function CLEAR_REGISTER_ERRORS(state) {
+      return state.register_errors = [];
+    },
+    CLEAR_LOGIN_ERRORS: function CLEAR_LOGIN_ERRORS(state) {
+      return state.login_errors = [];
+    },
     CLEAR_USER: function CLEAR_USER(state) {
       state.isUserLogged = false;
       state.user = {};
       state.user_infos = {};
+      state.user_contacts = [];
     }
   },
   getters: {
@@ -64454,11 +64490,19 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     user_infos: function user_infos(state) {
       return state.user_infos;
     },
+    user_contacts: function user_contacts(state) {
+      return state.user_contacts;
+    },
+    register_errors: function register_errors(state) {
+      return state.register_errors;
+    },
+    login_errors: function login_errors(state) {
+      return state.login_errors;
+    },
     loaded: function loaded(state) {
       return state.loaded;
     }
-  },
-  actions: {}
+  }
 }));
 
 /***/ }),
@@ -64481,8 +64525,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/TDDWA/Portreto/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/TDDWA/Portreto/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/jubelix/Programmation/Projets/Portreto/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/jubelix/Programmation/Projets/Portreto/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -34,8 +34,9 @@ export default {
   store,
   methods: {
     logout() {
-      store.commit('CLEAR_USER');
-      axios.post('/api/logout').catch(error => {
+      axios.post('/api/logout').then(() => {
+        store.commit('CLEAR_USER');
+      }).catch(error => {
         console.log('Echec de la déconnexion : ' + error);
       })
     }

@@ -14,7 +14,8 @@
           <div class="form-group">
             <label for="InputPassword1">Mot de passe</label>
             <input type="password" class="form-control" id="InputPassword1" v-model="form1.password">
-            <small v-if="this.errors1.email" class="form-error">{{ errors1.email[0] }}</small>
+            <small v-if="loginErrors.email" class="form-error">{{ loginErrors.email[0] }}</small>
+            <small v-if="loginErrors.password" class="form-error">{{ loginErrors.password[0] }}</small>
           </div>
           <button @click.prevent="handleLogin()" type="submit" class="btn btn-primary">Connexion</button>
         </form>
@@ -24,7 +25,7 @@
               <div class="col-md form-group">
                 <label for="InputFirstName">Prénom</label>
                 <input type="text" class="form-control" id="inputFirstName" v-model="form2.first_name">
-                <small v-if="this.errors2.name" class="form-error">{{ errors2.name[0] }}</small>
+                <small v-if="registerErrors.name" class="form-error">{{ registerErrors.name[0] }}</small>
               </div>
               <div class="col-md form-group">
                 <label for="InputName">Nom</label>
@@ -35,7 +36,7 @@
           <div class="form-group">
             <label for="InputEmail">Adresse e-mail</label>
             <input type="text" class="form-control" id="inputEmail" v-model="form2.email">
-            <small v-if="this.errors2.email" class="form-error">{{ errors2.email[0] }}</small>
+            <small v-if="registerErrors.email" class="form-error">{{ registerErrors.email[0] }}</small>
           </div>
           <div class="form-group">
             <label for="InputPassword1">Mot de passe</label>
@@ -44,7 +45,7 @@
           <div class="form-group">
             <label for="InputPassword2">Confirmez le mot de passe</label>
             <input type="password" class="form-control" id="InputPassword2" v-model="form2.password_confirmation">
-            <small v-if="this.errors2.password" class="form-error">{{ errors2.password[0] }}</small>
+            <small v-if="registerErrors.password" class="form-error">{{ registerErrors.password[0] }}</small>
           </div>
           <button @click.prevent="register()" type="submit" class="btn btn-primary">Inscription</button>
           <small v-if="success" class="form-success">Bienvenue ! Essayez maintenant de vous connecter.</small>
@@ -72,8 +73,6 @@ export default {
         password: '',
         password_confirmation: ''
       },
-      errors1: [],
-      errors2: [],
       success: false
     }
   },
@@ -82,30 +81,27 @@ export default {
     handleLogin() {
       axios.get('/sanctum/csrf-cookie').then(() => {
         axios.post('/login', this.form1).then(() => {
+          store.commit('CLEAR_LOGIN_ERRORS');
           axios.get('/api/user').then(response => {
-            axios.get('/api/user_infos').then((informations) => {
-              store.commit('SET_USER_INFOS', informations.data);
-            }).catch(error => {
-              console.log("Can't recover user informations.");
-            })
             store.commit('SET_USER', response.data);
+            this.$root.getUserInfos();
+            this.$root.getUserContacts();
             setTimeout(() => {
               this.$router.push('/dashboard');
             }, 1500);
           })
         }).catch(error => {
-          this.errors1 = error.response.data.errors;
+          store.commit('SET_LOGIN_ERRORS', error.response.data.errors);
         })
       })
     },
     register() {
       axios.post('/api/register', this.form2).then(() => {
         console.log("User has been created");
+        store.commit('CLEAR_REGISTER_ERRORS');
         this.success = true;
-        this.errors2 = [];
       }).catch(error => {
-        console.log(error.response.data.errors);
-        this.errors2 = error.response.data.errors;
+        store.commit('SET_REGISTER_ERRORS', error.response.data.errors);
       })
     }
   },
@@ -116,6 +112,12 @@ export default {
       } else {
         return 'fade-in-right'
       }
+    },
+    registerErrors() {
+      return store.getters.register_errors;
+    },
+    loginErrors() {
+      return store.getters.login_errors;
     }
   }
 }

@@ -5,7 +5,7 @@
           <div class="row">
             <h1><span>Portreto</span>, la plateforme qui regroupe les informations de contact qui <span>vous</span> intéressent.</h1>
           </div>
-          <div class="row">
+          <div class="row justify-content-center">
             <image-csv></image-csv>
             <!--<img src="../../images/profile.png" class="d-none ">-->
           </div>

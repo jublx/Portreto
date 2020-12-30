@@ -1343,56 +1343,54 @@ export default {
 </script>
 
 <style scoped>
-	svg {
-		width: 650px;
-		margin-bottom: auto;
-		margin-top: 0;
-		margin-left: 0;
-    }
+svg {
+  width: 110%;
+  margin-left: -20%
+}
     
-    #profile {
-			animation-duration: 2s;
-			animation-name: animateProfile;
-			animation-iteration-count: infinite;
-			animation-direction: alternate;
-		}
+#profile {
+  animation-duration: 2s;
+  animation-name: animateProfile;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
 
-		#rubriques {
-			animation-duration: 2s;
-			animation-name: animateRubriques;
-			animation-iteration-count: infinite;
-			animation-direction: alternate;
-		}
+#rubriques {
+  animation-duration: 2s;
+  animation-name: animateRubriques;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
 
-		#profile {
-			opacity: 0;
-		}
+#profile {
+  opacity: 0;
+}
 
-		#rubriques {
-			opacity: 0;
-		}
+#rubriques {
+  opacity: 0;
+}
 
-		
-		@keyframes animateProfile {
-			from{
-				transform: translateX(100px) translateY(100px);
-				opacity: 0;
-			}
-			to {
-				transform: translateX(300px) translateY(-50px);
-				opacity: 1;
-			}
-		}
 
-		@keyframes animateRubriques {
-			from{
-				transform: translateX(100px) translateY(100px);
-				opacity: 0;
-			}
-			to {
-				transform: translateX(340px) translateY(52px);
-				opacity: 1;
-			}
-		}
+@keyframes animateProfile {
+  from{
+    transform: translateX(100px) translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(300px) translateY(-50px);
+    opacity: 1;
+  }
+}
+
+@keyframes animateRubriques {
+  from{
+    transform: translateX(100px) translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(340px) translateY(52px);
+    opacity: 1;
+  }
+}
 
 </style>

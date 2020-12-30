@@ -93,7 +93,7 @@ new Vue({
       getUserContacts() {
         axios.get('/sanctum/csrf-cookie').then(() => {
           axios.get('/api/user_contacts').then((response) => {
-            console.log(response.data);
+            store.commit('SET_USER_CONTACTS', response.data);
           })
         })
       }

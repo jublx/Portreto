@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UserInformations;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\UserInformations;
 
 class UserInformationsController extends Controller
 {
@@ -19,7 +20,10 @@ class UserInformationsController extends Controller
 
     public function contacts(Request $request)
     {
-      return $request->user()->contacts;
+      return UserInformations::with(array('User' => function($query) {
+        $query->select('id','name', 'first_name');
+      }))
+      ->whereIn('user_id', $request->user()->contacts->pluck('id'))->get();
     }
 
     public function followers(Request $request)

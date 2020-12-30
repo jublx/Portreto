@@ -23,12 +23,12 @@
             <div class="row">
               <div class="col-md form-group">
                 <label for="InputFirstName">Prénom</label>
-                <input type="text" class="form-control" id="inputFirstName" v-model="form2.firstname">
+                <input type="text" class="form-control" id="inputFirstName" v-model="form2.first_name">
                 <small v-if="this.errors2.name" class="form-error">{{ errors2.name[0] }}</small>
               </div>
               <div class="col-md form-group">
                 <label for="InputName">Nom</label>
-                <input type="text" class="form-control" id="inputName" v-model="form2.lastname">
+                <input type="text" class="form-control" id="inputName" v-model="form2.name">
               </div>
             </div>
           </div>
@@ -66,8 +66,8 @@ export default {
         password: ''
       },
       form2: {
-        firstname: '',
-        lastname: '',
+        name: '',
+        first_name: '',
         email: '',
         password: '',
         password_confirmation: ''
@@ -99,14 +99,10 @@ export default {
       })
     },
     register() {
-      axios.post('/api/register', {
-        name: this.form2.firstname + ' ' + this.form2.lastname,
-        email: this.form2.email,
-        password: this.form2.password,
-        password_confirmation: this.form2.password_confirmation
-      }).then(() => {
+      axios.post('/api/register', this.form2).then(() => {
         console.log("User has been created");
         this.success = true;
+        this.errors2 = [];
       }).catch(error => {
         console.log(error.response.data.errors);
         this.errors2 = error.response.data.errors;

@@ -4,7 +4,7 @@
             <div class="d-flex flex-column align-items-center text-center">
                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                 <div class="mt-3">
-                    <h4>{{ user.name }}</h4>
+                    <h4>{{ user.first_name }} {{ user.name }}</h4>
                     <p class="text-muted">{{ user_infos.job }}</p>
                     <p class="text-muted font-size-sm">{{ user_infos.adresse }}</p>
                     <p class="text-muted font-size-sm">code ami : {{ user_infos.friend_code }}</p>

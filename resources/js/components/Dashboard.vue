@@ -13,7 +13,7 @@
             <div class="d-flex flex-column align-items-center text-center">
               <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
               <div class="mt-3">
-                <h4>{{ user.name }}</h4>
+                <h4>{{ user.first_name }} {{ user.name }}</h4>
                 <p class="text-muted">{{ user_infos.job }}</p>
                 <p class="text-muted adresse">{{ user_infos.adresse }}</p>
                 <p class="text-muted">code ami : {{ user_infos.friend_code }}</p>
@@ -134,14 +134,14 @@
               <div class="form-inline mx-sm-2 mb-2">
                 <label class="col-lg-3 p-0 justify-content-center">Ajouter un contact</label>
                 <div class="col-lg-6 justify-content-center d-inline-flex p-0 mt-2">
-                  <input type="number" min="100" max="999" class="form-control mx-2" id="part1"/>
+                  <input type="number" min="100" max="999" class="form-control mx-2" id="part1" v-model="addFriendCode.part1"/>
                   <label>-</label>
-                  <input type="number" min="100" max="999" class="form-control mx-2" id="part2"/>
+                  <input type="number" min="100" max="999" class="form-control mx-2" id="part2" v-model="addFriendCode.part2"/>
                   <label>-</label>
-                  <input type="number" min="100" max="999" class="form-control mx-2" id="part3"/>
+                  <input type="number" min="100" max="999" class="form-control mx-2" id="part3" v-model="addFriendCode.part3"/>
                 </div>
                 <div class="col-lg-3 justify-content-center d-flex p-0 mt-4 mt-lg-2">
-                  <button type="submit" class="btn btn-primary" @click.prevent>Ajouter contact</button>
+                  <button type="submit" class="btn btn-primary" @click.prevent="addContact">Ajouter contact</button>
                 </div>
               </div>
             </form>
@@ -174,6 +174,18 @@ export default {
         part2: "",
         part3: ""
       }
+    }
+  },
+  methods: {
+    addContact() {
+      let friend_code = this.addFriendCode.part1 + "-" + this.addFriendCode.part2 + "-" + this.addFriendCode.part3;
+      axios.get('/sanctum/csrf-cookie').then(() => {
+        axios.post('/api/addContact', {friend_code}).then(() => {
+          console.log("Contact ajouté !");
+        }).catch(error => {
+          console.log("Erreur lors de l'ajout du contact : " + error);
+        })
+      })
     }
   },
   computed: {

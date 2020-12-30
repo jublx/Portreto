@@ -14,27 +14,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-  return $request->user();
+Route::group(['middleware' => 'auth:sanctum'], function () {
+  Route::get('/user', function (Request $request) {
+    return $request->user();
+  });
+
+  /*
+  | Ce middleware est basé sur sanctum : on filtre la requête http, et si l'utilisateur est
+  | authentifié, alors on retourne vrai.
+  */
+  Route::get('/checkauth', function (Request $request) {
+    return true;
+  });
+
+  Route::post('/logout', function (Request $request) {
+    Auth::guard('web')->logout();
+  });
+
+  Route::post('/update_user_infos', 'App\Http\Controllers\UserInformationsController@update');
+
+  Route::get('/user_infos', 'App\Http\Controllers\UserInformationsController@index');
+
+  Route::post('/addContact', 'App\Http\Controllers\ContactController@add');
 });
-
-/*
-| Ce middleware est basé sur sanctum : on filtre la requête http, et si l'utilisateur est
-| authentifié, alors on retourne vrai.
-*/
-Route::middleware('auth:sanctum')->get('/checkauth', function (Request $request) {
-  return true;
-});
-
-Route::middleware('auth:sanctum')->post('/logout', function (Request $request) {
-  Auth::guard('web')->logout();
-});
-
-Route::middleware('auth:sanctum')->post('/update_user_infos', 'App\Http\Controllers\UserInformationsController@update');
-
-Route::middleware('auth:sanctum')->get('/user_infos', 'App\Http\Controllers\UserInformationsController@index');
-/*
-| Routes de l'API
-*/ 
 
 Route::post('/register', 'App\Http\Controllers\AuthController@register');

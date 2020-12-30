@@ -17,47 +17,14 @@ class UserInformationsController extends Controller
         return $request->user()->informations;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function contacts(Request $request)
     {
-
+      return $request->user()->contacts;
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function followers(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\UserInformations  $userInformations
-     * @return \Illuminate\Http\Response
-     */
-    public function show(UserInformations $userInformations)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\UserInformations  $userInformations
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(UserInformations $userInformations)
-    {
-        //
+      return $request->user()->followers;
     }
 
     /**
@@ -89,16 +56,5 @@ class UserInformationsController extends Controller
           'instagram' => $request->instagram,
           'twitter' => $request->twitter
         ]);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\UserInformations  $userInformations
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(UserInformations $userInformations)
-    {
-        //
     }
 }

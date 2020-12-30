@@ -1999,8 +1999,8 @@ __webpack_require__.r(__webpack_exports__);
         password: ''
       },
       form2: {
-        firstname: '',
-        lastname: '',
+        name: '',
+        first_name: '',
         email: '',
         password: '',
         password_confirmation: ''
@@ -2036,14 +2036,10 @@ __webpack_require__.r(__webpack_exports__);
     register: function register() {
       var _this2 = this;
 
-      axios.post('/api/register', {
-        name: this.form2.firstname + ' ' + this.form2.lastname,
-        email: this.form2.email,
-        password: this.form2.password,
-        password_confirmation: this.form2.password_confirmation
-      }).then(function () {
+      axios.post('/api/register', this.form2).then(function () {
         console.log("User has been created");
         _this2.success = true;
+        _this2.errors2 = [];
       })["catch"](function (error) {
         console.log(error.response.data.errors);
         _this2.errors2 = error.response.data.errors;
@@ -2308,6 +2304,20 @@ __webpack_require__.r(__webpack_exports__);
         part3: ""
       }
     };
+  },
+  methods: {
+    addContact: function addContact() {
+      var friend_code = this.addFriendCode.part1 + "-" + this.addFriendCode.part2 + "-" + this.addFriendCode.part3;
+      axios.get('/sanctum/csrf-cookie').then(function () {
+        axios.post('/api/addContact', {
+          friend_code: friend_code
+        }).then(function () {
+          console.log("Contact ajouté !");
+        })["catch"](function (error) {
+          console.log("Erreur lors de l'ajout du contact : " + error);
+        });
+      });
+    }
   },
   computed: {
     isUserLogged: function isUserLogged() {
@@ -39692,13 +39702,13 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.form2.firstname,
-                              expression: "form2.firstname"
+                              value: _vm.form2.first_name,
+                              expression: "form2.first_name"
                             }
                           ],
                           staticClass: "form-control",
                           attrs: { type: "text", id: "inputFirstName" },
-                          domProps: { value: _vm.form2.firstname },
+                          domProps: { value: _vm.form2.first_name },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
@@ -39706,7 +39716,7 @@ var render = function() {
                               }
                               _vm.$set(
                                 _vm.form2,
-                                "firstname",
+                                "first_name",
                                 $event.target.value
                               )
                             }
@@ -39730,23 +39740,19 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.form2.lastname,
-                              expression: "form2.lastname"
+                              value: _vm.form2.name,
+                              expression: "form2.name"
                             }
                           ],
                           staticClass: "form-control",
                           attrs: { type: "text", id: "inputName" },
-                          domProps: { value: _vm.form2.lastname },
+                          domProps: { value: _vm.form2.name },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.$set(
-                                _vm.form2,
-                                "lastname",
-                                $event.target.value
-                              )
+                              _vm.$set(_vm.form2, "name", $event.target.value)
                             }
                           }
                         })
@@ -40095,7 +40101,13 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("div", { staticClass: "mt-3" }, [
-                      _c("h4", [_vm._v(_vm._s(_vm.user.name))]),
+                      _c("h4", [
+                        _vm._v(
+                          _vm._s(_vm.user.first_name) +
+                            " " +
+                            _vm._s(_vm.user.name)
+                        )
+                      ]),
                       _vm._v(" "),
                       _c("p", { staticClass: "text-muted" }, [
                         _vm._v(_vm._s(_vm.user_infos.job))
@@ -40354,7 +40366,111 @@ var render = function() {
                       [_vm._v("Ajouter un contact")]
                     ),
                     _vm._v(" "),
-                    _vm._m(6),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "col-lg-6 justify-content-center d-inline-flex p-0 mt-2"
+                      },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.addFriendCode.part1,
+                              expression: "addFriendCode.part1"
+                            }
+                          ],
+                          staticClass: "form-control mx-2",
+                          attrs: {
+                            type: "number",
+                            min: "100",
+                            max: "999",
+                            id: "part1"
+                          },
+                          domProps: { value: _vm.addFriendCode.part1 },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.addFriendCode,
+                                "part1",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("label", [_vm._v("-")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.addFriendCode.part2,
+                              expression: "addFriendCode.part2"
+                            }
+                          ],
+                          staticClass: "form-control mx-2",
+                          attrs: {
+                            type: "number",
+                            min: "100",
+                            max: "999",
+                            id: "part2"
+                          },
+                          domProps: { value: _vm.addFriendCode.part2 },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.addFriendCode,
+                                "part2",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("label", [_vm._v("-")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.addFriendCode.part3,
+                              expression: "addFriendCode.part3"
+                            }
+                          ],
+                          staticClass: "form-control mx-2",
+                          attrs: {
+                            type: "number",
+                            min: "100",
+                            max: "999",
+                            id: "part3"
+                          },
+                          domProps: { value: _vm.addFriendCode.part3 },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.addFriendCode,
+                                "part3",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ]
+                    ),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -40371,6 +40487,7 @@ var render = function() {
                             on: {
                               click: function($event) {
                                 $event.preventDefault()
+                                return _vm.addContact($event)
                               }
                             }
                           },
@@ -40441,35 +40558,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-sm-3" }, [
       _c("h5", { staticClass: "mb-0" }, [_vm._v("Centres d'intérêts")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "col-lg-6 justify-content-center d-inline-flex p-0 mt-2" },
-      [
-        _c("input", {
-          staticClass: "form-control mx-2",
-          attrs: { type: "number", min: "100", max: "999", id: "part1" }
-        }),
-        _vm._v(" "),
-        _c("label", [_vm._v("-")]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control mx-2",
-          attrs: { type: "number", min: "100", max: "999", id: "part2" }
-        }),
-        _vm._v(" "),
-        _c("label", [_vm._v("-")]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control mx-2",
-          attrs: { type: "number", min: "100", max: "999", id: "part3" }
-        })
-      ]
-    )
   }
 ]
 render._withStripped = true
@@ -40654,7 +40742,11 @@ var render = function() {
             }),
             _vm._v(" "),
             _c("div", { staticClass: "mt-3" }, [
-              _c("h4", [_vm._v(_vm._s(_vm.user.name))]),
+              _c("h4", [
+                _vm._v(
+                  _vm._s(_vm.user.first_name) + " " + _vm._s(_vm.user.name)
+                )
+              ]),
               _vm._v(" "),
               _c("p", { staticClass: "text-muted" }, [
                 _vm._v(_vm._s(_vm.user_infos.job))
@@ -59317,8 +59409,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/TDDWA/Portreto/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/TDDWA/Portreto/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/jubelix/Programmation/Projets/Portreto/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/jubelix/Programmation/Projets/Portreto/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -12,12 +12,14 @@ class AuthController extends Controller
 
       $request->validate([
         'name' => ['required'],
+        'first_name' => ['required'],
         'email' => ['required', 'email', 'unique:users'],
         'password' => ['required', 'min:8', 'confirmed'],
       ]);
       
       $user = User::create([
         "name" => ucwords($request->name), // on met la première lettre du nom et prénom en majuscule
+        "first_name" =>ucwords($request->first_name),
         "email" => $request->email,
         "password" => Hash::make($request->password)
       ]);

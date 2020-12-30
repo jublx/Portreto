@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\Contact;
+use App\Models\UserInformations;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
-use App\Models\UserInformations;
 
 class User extends Authenticatable
 {
@@ -20,6 +21,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'first_name',
         'email',
         'password',
     ];
@@ -45,5 +47,23 @@ class User extends Authenticatable
 
     public function informations() {
       return $this->hasOne(UserInformations::class);
+    }
+
+    public function contacts() {
+      return $this->belongsToMany(
+        User::class,
+        'contacts',
+        'user_id',
+        'contact_id'
+      );
+    }
+
+    public function followers() {
+      return $this->belongsToMany(
+        User::class,
+        'contacts',
+        'contact_id',
+        'user_id'
+      );
     }
 }

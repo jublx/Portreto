@@ -6,7 +6,8 @@
             <h1><span>Portreto</span>, la plateforme qui regroupe les informations de contact qui <span>vous</span> intéressent.</h1>
           </div>
           <div class="row">
-            <img src="../../images/profile.png" class="d-none ">
+            <image-csv></image-csv>
+            <!--<img src="../../images/profile.png" class="d-none ">-->
           </div>
         </div>
         <div class="col-xl px-xl-5">
@@ -23,12 +24,15 @@
 import store from '../store.js';
 import Connection from './Connection';
 import IndexProfile from './IndexProfile';
+import ImageCSV from './ImageCSV';
 
 export default {
   components: {
     "connection-formulary": Connection,
-    "index-profile": IndexProfile
+    "index-profile": IndexProfile,
+    "image-csv": ImageCSV
   },
+  
   computed: {
     isUserLogged() {
       return store.getters.isUserLogged;

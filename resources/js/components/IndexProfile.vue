@@ -1,28 +1,17 @@
 <template>
-  <div>
-    <div class="card bg-custom algin-content-center shadow" style="margin:auto;">
-      <div class="card-body" style="background-color: ">
+  <div class="row justify-content-center">
+    <div class="card algin-content-center shadow w-50" style="margin:auto;">
+      <div class="card-img-top bg-custom shadow-lg w-100" style="background-color: ">
         <div class="d-flex flex-column text-center">
-          <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
-          <div class="mt-3">
-            <h4 style="margin-top:1em; margin-bottom:1em;">{{ user.first_name }} {{ user.name }}</h4>
-          </div>
+          <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle mb-5" width="150">
         </div>
       </div>
-    </div>
-    <div class="bg-custom3 algin-content-center shadow" style="margin:auto; margin-top:3em; text-align: center;">
-      <router-link to="/Dashboard">
-        <button type="button" class="btn btn-secondary2" data-dismiss="modal" style="margin: auto;">
-          <div class="card-body">
-            <div class="d-flex flex-column text-center">
-              <div class="mt-3">
-                <h1 style="font-size: 1.7em;">Bienvenue sur <span>Portreto</span></h1>
-                <h2 style="font-size: 0.75em;"><span>CLIQUEZ ICI POUR ACCEDER AU TABLEAU DE BORD</span></h2>
-              </div>
-            </div>
-          </div>
-        </button>
-      </router-link>
+      <div class="card-body px-5 text-center">
+        <h2 class="card-title mt-3">Bienvenue sur <span>Portreto</span>, {{ user.first_name }} !</h2>
+        <div class="row justify-content-center">
+          <router-link to="/Dashboard" class="btn btn-primary my-4">Tableau de bord</router-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -50,19 +39,15 @@ export default {
   color: #f8fafc;
 }
 
-.bg-custom2 {
-  width: 18rem;
-  color: #1a1a1a;
+h2 {
+  font-family: Roboto, sans-serif;
+  font-weight: 80;
+  font-size: 1.8em;
+  line-height: 70px;
 }
 
-.bg-custom3 {
-  width: 22rem;
-  color: #1a1a1a;
+.btn {
+  font-size: 1.2em;
 }
 
-.btn-secondary:hover {
-    color: #fff;
-    background-color: #d6d6d6;
-    border-color: #545b62;
-}
 </style>

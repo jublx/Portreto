@@ -3804,6 +3804,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   store: _store_js__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -8714,7 +8726,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.bg-custom[data-v-2cfbae3c] {\n  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);\n  color: #f8fafc;\n}\n", ""]);
+exports.push([module.i, "\n.bg-custom[data-v-2cfbae3c] {\n  width: 18rem;\n  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);\n  color: #f8fafc;\n}\n.bg-custom2[data-v-2cfbae3c] {\n  width: 18rem;\n  color: #1a1a1a;\n}\n.bg-custom3[data-v-2cfbae3c] {\n  width: 22rem;\n  color: #1a1a1a;\n}\n.btn-secondary[data-v-2cfbae3c]:hover {\n    color: #fff;\n    background-color: #d6d6d6;\n    border-color: #545b62;\n}\n", ""]);
 
 // exports
 
@@ -45727,60 +45739,88 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card bg-custom shadow" }, [
+  return _c("div", [
     _c(
       "div",
-      { staticClass: "card-body", staticStyle: { "background-color": "" } },
+      {
+        staticClass: "card bg-custom algin-content-center shadow",
+        staticStyle: { margin: "auto" }
+      },
       [
         _c(
           "div",
-          { staticClass: "d-flex flex-column align-items-center text-center" },
+          { staticClass: "card-body", staticStyle: { "background-color": "" } },
           [
-            _c("img", {
-              staticClass: "rounded-circle",
-              attrs: {
-                src: "https://bootdey.com/img/Content/avatar/avatar7.png",
-                alt: "Admin",
-                width: "150"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-3" }, [
-              _c("h4", [
-                _vm._v(
-                  _vm._s(_vm.user.first_name) + " " + _vm._s(_vm.user.name)
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "text-muted" }, [
-                _vm._v(_vm._s(_vm.user_infos.job))
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "text-muted font-size-sm" }, [
-                _vm._v(_vm._s(_vm.user_infos.adresse))
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "text-muted font-size-sm" }, [
-                _vm._v("code ami : " + _vm._s(_vm.user_infos.friend_code))
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-link",
+            _c("div", { staticClass: "d-flex flex-column text-center" }, [
+              _c("img", {
+                staticClass: "rounded-circle",
                 attrs: {
-                  to: "/profile",
-                  "data-toggle": "collapse",
-                  "data-target": "#navbarNav"
+                  src: "https://bootdey.com/img/Content/avatar/avatar7.png",
+                  alt: "Admin",
+                  width: "150"
                 }
-              },
-              [_vm._v("TABLEAU DE BORD")]
-            )
-          ],
-          1
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "mt-3" }, [
+                _c(
+                  "h4",
+                  {
+                    staticStyle: { "margin-top": "1em", "margin-bottom": "1em" }
+                  },
+                  [
+                    _vm._v(
+                      _vm._s(_vm.user.first_name) + " " + _vm._s(_vm.user.name)
+                    )
+                  ]
+                )
+              ])
+            ])
+          ]
         )
       ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "bg-custom3 algin-content-center shadow",
+        staticStyle: {
+          margin: "auto",
+          "margin-top": "3em",
+          "text-align": "center"
+        }
+      },
+      [
+        _c("router-link", { attrs: { to: "/Dashboard" } }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-secondary2",
+              staticStyle: { margin: "auto" },
+              attrs: { type: "button", "data-dismiss": "modal" }
+            },
+            [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "d-flex flex-column text-center" }, [
+                  _c("div", { staticClass: "mt-3" }, [
+                    _c("h1", { staticStyle: { "font-size": "1.7em" } }, [
+                      _vm._v("Bienvenue sur "),
+                      _c("span", [_vm._v("Portreto")])
+                    ]),
+                    _vm._v(" "),
+                    _c("h2", { staticStyle: { "font-size": "0.75em" } }, [
+                      _c("span", [
+                        _vm._v("CLIQUEZ ICI POUR ACCEDER AU TABLEAU DE BORD")
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ]
+          )
+        ])
+      ],
+      1
     )
   ])
 }
@@ -64525,8 +64565,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/jubelix/Programmation/Projets/Portreto/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/jubelix/Programmation/Projets/Portreto/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/TDDWA/Portreto/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/TDDWA/Portreto/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

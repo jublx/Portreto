@@ -41,6 +41,5 @@ export default new Vuex.Store({
     user_contacts: state => {return state.user_contacts},
     register_errors: state => {return state.register_errors},
     login_errors: state => {return state.login_errors},
-    loaded: state => {return state.loaded}
   },
 })

@@ -5,9 +5,8 @@
           <div class="row">
             <h1><span>Portreto</span>, la plateforme qui regroupe les informations de contact qui <span>vous</span> intéressent.</h1>
           </div>
-          <div class="row justify-content-center">
-            <image-csv></image-csv>
-            <!--<img src="../../images/profile.png" class="d-none ">-->
+          <div class="row d-none d-xl-block">
+            <image-csv class="img1"></image-csv>
           </div>
         </div>
         <div class="col-xl px-xl-5">
@@ -16,6 +15,9 @@
             <index-profile v-else></index-profile>
           </transition>
         </div>
+      </div>
+      <div class="row d-lg-block d-xl-none">
+        <image-csv class="img2"></image-csv>
       </div>
     </div>
 </template>
@@ -41,16 +43,18 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 h1 {
-  font-family: Roboto, sans-serif;
-  font-weight: 80;
-  font-size: 3em;
-  line-height: 70px;
+  margin-left: 8%;
 }
 
-img {
-  max-width: 50%;
+.img1 {
+  max-width: 60%;
+  margin: auto;
+}
+
+.img2 {
+  max-width: 80vw;
   margin: 6vh auto 0;
 }
 </style>

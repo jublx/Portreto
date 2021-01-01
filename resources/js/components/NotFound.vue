@@ -12,7 +12,7 @@
         <div class='_404 mt-4'>404</div>
         <div class='_1 mt-4'>LA PAGE</div>
         <div class='_2 mt-4'>À LAQUELLE VOUS SOUHAITEZ ACCÉDER N'A PAS ÉTÉ TROUVÉE</div>
-        <router-link class="btn btn-primary mt-4" to="/">RETOUR À L'ACCUEIL</router-link>
+        <router-link class="btn btn-primary mt-4 px-5" to="/">RETOUR À L'ACCUEIL</router-link>
     </div>
   </div>
 </template>
@@ -74,20 +74,10 @@ page {
   display: inline-block;
 }
 
-
-.btn{
-  background-color:#33cc99;
-  position: relative;
-  display: inline-block;
-  width: 358px;
-  padding: 5px;
-  z-index: 5;
-  font-size: 25px;
-  margin:0 auto;
-  color:#ffffff;
-  text-decoration: none;
-  margin-right: 10px
+.btn {
+  font-size: 22pt;
 }
+
 .right{
   float:right;
   width:60%;

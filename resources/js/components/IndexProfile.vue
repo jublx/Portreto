@@ -1,6 +1,6 @@
 <template>
   <div class="row justify-content-center">
-    <div class="card algin-content-center shadow w-50" style="margin:auto;">
+    <div class="card algin-content-center shadow w-lg-50 mt-5" style="margin:auto;">
       <div class="card-img-top bg-custom shadow-lg w-100" style="background-color: ">
         <div class="d-flex flex-column text-center">
           <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle mb-5" width="150">
@@ -48,6 +48,10 @@ h2 {
 
 .btn {
   font-size: 1.2em;
+}
+
+img {
+  margin: 40px auto;
 }
 
 </style>

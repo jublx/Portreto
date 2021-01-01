@@ -15,8 +15,7 @@
               <router-view>
                 <index-page></index-page>
               </router-view>
-            </transition>
-            
+            </transition>            
             
             <default-footer></default-footer>
         </div>

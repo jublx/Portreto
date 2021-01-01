@@ -2262,12 +2262,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   store: _store_js__WEBPACK_IMPORTED_MODULE_0__["default"],
   data: function data() {
     return {
-      currentContact: 0
+      currentContact: 0,
+      search: ""
     };
   },
   computed: {
@@ -2275,7 +2277,22 @@ __webpack_require__.r(__webpack_exports__);
       return _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.user_contacts;
     },
     currentInfos: function currentInfos() {
-      return _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.user_contacts[this.currentContact];
+      return this.user_contacts_filtered[this.currentContact];
+    },
+    user_contacts_filtered: function user_contacts_filtered() {
+      var _this = this;
+
+      var filtered_list = _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.user_contacts.filter(function (contact) {
+        var contactFullName = contact.user.first_name + " " + contact.user.name;
+        return contactFullName.toLowerCase().includes(_this.search.toLowerCase());
+      });
+
+      if (filtered_list.length == 0) {
+        return this.user_contacts;
+      }
+
+      this.currentContact = 0;
+      return filtered_list;
     }
   }
 });
@@ -8801,7 +8818,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.contact-list[data-v-74fa493a] {\n  height: 70vh;\n}\n.list-group-item[data-v-74fa493a] {\n  cursor: pointer;\n  background-color: #f8fafc;\n  font-size: 1.2em;\n  transition: background-color 0.2s;\n}\n.list-group-item[data-v-74fa493a]:hover {\n  background-color: #e9e9e9;\n}\n.bg-custom[data-v-74fa493a] {\n  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);\n  color: #f8fafc;\n}\n.card-p[data-v-74fa493a] {\n  font-size: 1.4em;\n  padding: 0;\n  margin-top: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.list-group[data-v-74fa493a] {\n  height: 65.2vh;\n  overflow-y: scroll;\n  -webkit-overflow-scrolling: touch;\n}\n.list-group-item[data-v-74fa493a] {\n  cursor: pointer;\n  background-color: #f8fafc;\n  font-size: 1.2em;\n  transition: background-color 0.2s;\n}\n.list-group-item[data-v-74fa493a]:hover {\n  background-color: #e9e9e9;\n}\n.bg-custom[data-v-74fa493a] {\n  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);\n  color: #f8fafc;\n}\n.card-p[data-v-74fa493a] {\n  font-size: 1.4em;\n  padding: 0;\n  margin-top: 10px;\n}\n.text-secondary[data-v-74fa493a] {\n  font-size: 1.3em;\n}\n.current-contact[data-v-74fa493a]::before {\n  content: \"\\2192   \";\n  color: #008383;\n}\n", ""]);
 
 // exports
 
@@ -41671,20 +41688,55 @@ var render = function() {
   return _vm.currentInfos
     ? _c("div", [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-3 contact-list p-0 shadow" }, [
+          _c("div", { staticClass: "col-3 p-0" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.search,
+                  expression: "search"
+                }
+              ],
+              staticClass: "form-control mb-2 shadow",
+              attrs: { type: "text", placeholder: "Rechercher" },
+              domProps: { value: _vm.search },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.search = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
             _c(
               "ul",
-              { staticClass: "list-group" },
-              _vm._l(_vm.user_contacts, function(contact) {
-                return _c("li", { staticClass: "list-group-item" }, [
-                  _vm._v(
-                    "\n          " +
-                      _vm._s(contact.user.first_name) +
-                      " " +
-                      _vm._s(contact.user.name) +
-                      "\n        "
-                  )
-                ])
+              { staticClass: "list-group shadow" },
+              _vm._l(_vm.user_contacts_filtered, function(contact, index) {
+                return _c(
+                  "li",
+                  {
+                    key: contact.user_id,
+                    staticClass: "list-group-item",
+                    class: index == _vm.currentContact ? "current-contact" : "",
+                    on: {
+                      click: function($event) {
+                        _vm.currentContact = index
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n          " +
+                        _vm._s(contact.user.first_name) +
+                        " " +
+                        _vm._s(contact.user.name) +
+                        "\n        "
+                    )
+                  ]
+                )
               }),
               0
             )
@@ -41987,7 +42039,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-3" }, [
-      _c("h5", { staticClass: "mb-0" }, [_vm._v("Email")])
+      _c("h5", { staticClass: "mt-1" }, [_vm._v("Email")])
     ])
   },
   function() {
@@ -41995,7 +42047,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-3" }, [
-      _c("h5", { staticClass: "mb-0" }, [_vm._v("Tél.")])
+      _c("h5", { staticClass: "mt-1" }, [_vm._v("Tél.")])
     ])
   },
   function() {
@@ -42003,7 +42055,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-3" }, [
-      _c("h5", { staticClass: "mb-0" }, [_vm._v("Diplômes")])
+      _c("h5", { staticClass: "mt-1" }, [_vm._v("Diplômes")])
     ])
   },
   function() {
@@ -42011,7 +42063,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-3" }, [
-      _c("h5", { staticClass: "mb-0" }, [_vm._v("Bio.")])
+      _c("h5", { staticClass: "mt-1" }, [_vm._v("Bio.")])
     ])
   },
   function() {
@@ -42019,7 +42071,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-3" }, [
-      _c("h5", { staticClass: "mb-0" }, [_vm._v("Centres d'intérêts")])
+      _c("h5", { staticClass: "mt-1" }, [_vm._v("Centres d'intérêts")])
     ])
   }
 ]

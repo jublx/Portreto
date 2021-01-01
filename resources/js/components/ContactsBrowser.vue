@@ -1,9 +1,10 @@
 <template>
   <div v-if="currentInfos"> <!-- empêche les erreurs liées à la réactivité du composant -->
     <div class="row">
-      <div class="col-3 contact-list p-0 shadow">
-        <ul class="list-group">
-          <li class="list-group-item" v-for="contact in user_contacts">
+      <div class="col-3 p-0">
+        <input type="text" v-model="search" placeholder="Rechercher" class="form-control mb-2 shadow"/>
+        <ul class="list-group shadow">
+          <li class="list-group-item" v-for="(contact, index) in user_contacts_filtered" :key="contact.user_id" @click="currentContact = index" :class="index == currentContact ? 'current-contact':''">
             {{ contact.user.first_name }} {{ contact.user.name }}
           </li>
         </ul>
@@ -93,7 +94,7 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col-sm-3">
-                    <h5 class="mb-0">Email</h5>
+                    <h5 class="mt-1">Email</h5>
                   </div>
                   <div class="col-sm-9 text-secondary">
                     {{ currentInfos.contact_email }}
@@ -102,7 +103,7 @@
                 <hr>
                 <div class="row">
                   <div class="col-sm-3">
-                    <h5 class="mb-0">Tél.</h5>
+                    <h5 class="mt-1">Tél.</h5>
                   </div>
                   <div class="col-sm-9 text-secondary">
                     {{ currentInfos.phone_number }}
@@ -111,7 +112,7 @@
                 <hr>
                 <div class="row">
                   <div class="col-sm-3">
-                    <h5 class="mb-0">Diplômes</h5>
+                    <h5 class="mt-1">Diplômes</h5>
                   </div>
                   <div class="col-sm-9 text-secondary">
                     {{ currentInfos.diploma }}
@@ -120,7 +121,7 @@
                 <hr>
                 <div class="row">
                   <div class="col-sm-3">
-                    <h5 class="mb-0">Bio.</h5>
+                    <h5 class="mt-1">Bio.</h5>
                   </div>
                   <div class="col-sm-9 text-secondary">
                     {{ currentInfos.biography }}
@@ -129,7 +130,7 @@
                 <hr>
                 <div class="row">
                   <div class="col-sm-3">
-                    <h5 class="mb-0">Centres d'intérêts</h5>
+                    <h5 class="mt-1">Centres d'intérêts</h5>
                   </div>
                   <div class="col-sm-9 text-secondary">
                     {{ currentInfos.interests }}
@@ -151,7 +152,8 @@ export default {
   store,
   data() {
     return {
-      currentContact: 0
+      currentContact: 0,
+      search: ""
     }
   },
   computed: {
@@ -159,15 +161,28 @@ export default {
       return store.getters.user_contacts;
     },
     currentInfos() {
-      return store.getters.user_contacts[this.currentContact];
+      return this.user_contacts_filtered[this.currentContact];
+    },
+    user_contacts_filtered() {
+      let filtered_list = store.getters.user_contacts.filter((contact) => {
+        let contactFullName = contact.user.first_name+" "+contact.user.name;
+        return contactFullName.toLowerCase().includes(this.search.toLowerCase());
+      });
+      if(filtered_list.length == 0) {
+        return this.user_contacts;
+      }
+      this.currentContact = 0;
+      return filtered_list;
     }
   }
 }
 </script>
 
 <style scoped>
-.contact-list {
-  height: 70vh;
+.list-group {
+  height: 65.2vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .list-group-item {
@@ -190,5 +205,14 @@ export default {
   font-size: 1.4em;
   padding: 0;
   margin-top: 10px;
+}
+
+.text-secondary {
+  font-size: 1.3em;
+}
+
+.current-contact::before {
+  content: "→ ";
+  color: #008383;
 }
 </style>

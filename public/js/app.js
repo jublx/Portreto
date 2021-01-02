@@ -2469,6 +2469,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2494,6 +2502,24 @@ __webpack_require__.r(__webpack_exports__);
           console.log("Contact ajouté !");
         })["catch"](function (error) {
           console.log("Erreur lors de l'ajout du contact : " + error);
+        });
+      });
+    },
+    uploadAvatar: function uploadAvatar() {
+      var _this = this;
+
+      var avatar = new FormData();
+      var imagefile = document.querySelector('#file-input');
+      avatar.append("avatar", imagefile.files[0]);
+      axios.get('/sanctum/csrf-cookie').then(function () {
+        axios.post('/api/update_avatar', avatar, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }).then(function () {
+          console.log('image uploadée');
+
+          _this.$root.getUserInfos();
         });
       });
     }
@@ -8837,7 +8863,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.fa-times[data-v-040e2ab9] {\n  cursor: pointer;\n  font-size: 1.8em;\n  margin-top: 42px;\n}\nh1[data-v-040e2ab9] {\n  margin: 10px;\n}\nh4[data-v-040e2ab9], p[data-v-040e2ab9] {\n  text-align: center;\n}\np[data-v-040e2ab9] {\n  font-size: 1.1em;\n}\n.page[data-v-040e2ab9] {\n  margin-top: 100px;\n}\n.bg-custom[data-v-040e2ab9] {\n  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);\n  color: #f8fafc;\n}\n.card[data-v-040e2ab9] {\n  font-size: 1.2em;\n}\n.btn-modal[data-v-040e2ab9] {\n  margin-bottom: -30px;\n}\n.text-muted[data-v-040e2ab9] {\n  margin: 0;\n}\n.form-control[data-v-040e2ab9] {\n  width: 22%;\n  text-align: center;\n}\n.adresse[data-v-040e2ab9] {\n  font-size: 0.9em;\n}\n\n/* on cache les flèches des champs de type number */\ninput[data-v-040e2ab9]::-webkit-outer-spin-button,\ninput[data-v-040e2ab9]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n/* Firefox */\ninput[type=number][data-v-040e2ab9] {\n  -moz-appearance: textfield;\n}\n.scale-in-center[data-v-040e2ab9] {\n  -webkit-animation: scale-in-center-data-v-040e2ab9 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\n          animation: scale-in-center-data-v-040e2ab9 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\n}\n@-webkit-keyframes scale-in-center-data-v-040e2ab9 {\n0% {\n    transform: scale(0);\n    opacity: 1;\n}\n100% {\n    transform: scale(1);\n    opacity: 1;\n}\n}\n@keyframes scale-in-center-data-v-040e2ab9 {\n0% {\n    transform: scale(0);\n    opacity: 1;\n}\n100% {\n    transform: scale(1);\n    opacity: 1;\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.fa-times[data-v-040e2ab9] {\n  cursor: pointer;\n  font-size: 1.8em;\n  margin-top: 42px;\n}\nh1[data-v-040e2ab9] {\n  margin: 10px;\n}\nh4[data-v-040e2ab9], p[data-v-040e2ab9] {\n  text-align: center;\n}\np[data-v-040e2ab9] {\n  font-size: 1.1em;\n}\n.page[data-v-040e2ab9] {\n  margin-top: 100px;\n}\n.image-upload[data-v-040e2ab9]{\n  position:relative;\n  display:inline-block;\n}\n.image-upload .overlay[data-v-040e2ab9]{\n  cursor: pointer;\n  position:absolute;\n  top:14px;\n  left:0;\n  width:100%;\n  height:100%;\n  opacity:0;\n  transition:opacity 200ms ease-in-out;\n}\n.image-upload:hover .overlay[data-v-040e2ab9]{\n  opacity: 1;\n}\n.image-upload:hover img[data-v-040e2ab9] {\n  filter: brightness(50%);\n}\n.overlay span[data-v-040e2ab9] {\n  position:absolute;\n  top:50%;\n  left:50%;\n  transform:translate(-50%,-50%);\n  color:#fff;\n}\n.image-upload>input[data-v-040e2ab9] {\n  display: none;\n}\n.bg-custom[data-v-040e2ab9] {\n  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);\n  color: #f8fafc;\n}\n.card[data-v-040e2ab9] {\n  font-size: 1.2em;\n}\n.btn-modal[data-v-040e2ab9] {\n  margin-bottom: -30px;\n}\n.text-muted[data-v-040e2ab9] {\n  margin: 0;\n}\n.form-control[data-v-040e2ab9] {\n  width: 22%;\n  text-align: center;\n}\n.adresse[data-v-040e2ab9] {\n  font-size: 0.9em;\n}\n\n/* on cache les flèches des champs de type number */\ninput[data-v-040e2ab9]::-webkit-outer-spin-button,\ninput[data-v-040e2ab9]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n/* Firefox */\ninput[type=number][data-v-040e2ab9] {\n  -moz-appearance: textfield;\n}\n.scale-in-center[data-v-040e2ab9] {\n  -webkit-animation: scale-in-center-data-v-040e2ab9 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\n          animation: scale-in-center-data-v-040e2ab9 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\n}\n@-webkit-keyframes scale-in-center-data-v-040e2ab9 {\n0% {\n    transform: scale(0);\n    opacity: 1;\n}\n100% {\n    transform: scale(1);\n    opacity: 1;\n}\n}\n@keyframes scale-in-center-data-v-040e2ab9 {\n0% {\n    transform: scale(0);\n    opacity: 1;\n}\n100% {\n    transform: scale(1);\n    opacity: 1;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -41749,11 +41775,10 @@ var render = function() {
                   _c("div", { staticClass: "card-body" }, [
                     _c("div", { staticClass: "text-center" }, [
                       _c("img", {
-                        staticClass: "rounded-circle mt-5",
+                        staticClass: "rounded-circle mt-4",
                         attrs: {
-                          src:
-                            "https://bootdey.com/img/Content/avatar/avatar7.png",
-                          alt: "Admin",
+                          src: "/images/avatars/" + _vm.currentInfos.avatar,
+                          alt: "avatar",
                           width: "150"
                         }
                       }),
@@ -42164,15 +42189,33 @@ var render = function() {
                                   "d-flex flex-column align-items-center text-center"
                               },
                               [
-                                _c("img", {
-                                  staticClass: "rounded-circle mt-4",
-                                  attrs: {
-                                    src:
-                                      "https://bootdey.com/img/Content/avatar/avatar7.png",
-                                    alt: "Admin",
-                                    width: "150"
-                                  }
-                                }),
+                                _c("div", { staticClass: "image-upload" }, [
+                                  _c(
+                                    "label",
+                                    { attrs: { for: "file-input" } },
+                                    [
+                                      _c("img", {
+                                        staticClass: "rounded-circle mt-4",
+                                        attrs: {
+                                          src:
+                                            "/images/avatars/" +
+                                            _vm.user_infos.avatar,
+                                          alt: "avatar",
+                                          width: "150"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "overlay" }, [
+                                        _c("span", [_vm._v("modifier")])
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    attrs: { id: "file-input", type: "file" },
+                                    on: { change: _vm.uploadAvatar }
+                                  })
+                                ]),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "mt-3" }, [
                                   _c("h4", [
@@ -46399,7 +46442,25 @@ var render = function() {
         staticStyle: { margin: "auto" }
       },
       [
-        _vm._m(0),
+        _c(
+          "div",
+          {
+            staticClass: "card-img-top bg-custom shadow-lg w-100",
+            staticStyle: { "background-color": "" }
+          },
+          [
+            _c("div", { staticClass: "d-flex flex-column text-center" }, [
+              _c("img", {
+                staticClass: "rounded-circle mt-4",
+                attrs: {
+                  src: "/images/avatars/" + _vm.user_infos.avatar,
+                  alt: "avatar",
+                  width: "150"
+                }
+              })
+            ])
+          ]
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "card-body px-5 text-center" }, [
           _c("h2", { staticClass: "card-title mt-3" }, [
@@ -46428,32 +46489,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "card-img-top bg-custom shadow-lg w-100",
-        staticStyle: { "background-color": "" }
-      },
-      [
-        _c("div", { staticClass: "d-flex flex-column text-center" }, [
-          _c("img", {
-            staticClass: "rounded-circle mb-5",
-            attrs: {
-              src: "https://bootdey.com/img/Content/avatar/avatar7.png",
-              alt: "Admin",
-              width: "150"
-            }
-          })
-        ])
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

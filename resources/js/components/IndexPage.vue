@@ -34,7 +34,6 @@ export default {
     "index-profile": IndexProfile,
     "image-csv": ImageCSV
   },
-  
   computed: {
     isUserLogged() {
       return store.getters.isUserLogged;

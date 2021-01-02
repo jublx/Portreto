@@ -15,7 +15,7 @@
             <div class="card shadow bg-custom h-100">
               <div class="card-body">
                 <div class="text-center">
-                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle mt-5" width="150">
+                  <img :src="'/images/avatars/'+currentInfos.avatar" alt="avatar" class="rounded-circle mt-4" width="150">
                   <div class="mt-3">
                     <h4>{{ currentInfos.user.first_name }} {{ currentInfos.user.name }}</h4>
                   </div>

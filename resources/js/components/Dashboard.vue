@@ -24,7 +24,15 @@
             <div class="card bg-custom shadow">
               <div class="card-body">
                 <div class="d-flex flex-column align-items-center text-center">
-                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle mt-4" width="150">
+                  <div class="image-upload">
+                    <label for="file-input">
+                      <img :src="'/images/avatars/'+user_infos.avatar" alt="avatar" class="rounded-circle mt-4" width="150">
+                      <div class="overlay">
+                        <span>modifier</span>
+                      </div>
+                    </label>
+                    <input id="file-input" type="file" @change="uploadAvatar"/>
+                  </div>
                   <div class="mt-3">
                     <h4>{{ user.first_name }} {{ user.name }}</h4>
                     <p class="text-muted">{{ user_infos.job }}</p>
@@ -183,6 +191,21 @@ export default {
           console.log("Erreur lors de l'ajout du contact : " + error);
         })
       })
+    },
+    uploadAvatar() {
+      var avatar = new FormData();
+      var imagefile = document.querySelector('#file-input');
+      avatar.append("avatar", imagefile.files[0]);
+      axios.get('/sanctum/csrf-cookie').then(() => {
+        axios.post('/api/update_avatar', avatar, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }).then(() => {
+          console.log('image uploadée');
+          this.$root.getUserInfos();
+        })
+      })
     }
   },
   computed: {
@@ -227,6 +250,42 @@ p {
 
 .page {
   margin-top: 100px;
+}
+
+.image-upload{
+  position:relative;
+  display:inline-block;
+}
+
+.image-upload .overlay{
+  cursor: pointer;
+  position:absolute;
+  top:14px;
+  left:0;
+  width:100%;
+  height:100%;
+  opacity:0;
+  transition:opacity 200ms ease-in-out;
+}
+
+.image-upload:hover .overlay{
+  opacity: 1;
+}
+
+.image-upload:hover img {
+  filter: brightness(50%);
+}
+
+.overlay span {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:#fff;
+}
+
+.image-upload>input {
+  display: none;
 }
 
 .bg-custom {

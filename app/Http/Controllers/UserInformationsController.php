@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\UserInformations;
+use Illuminate\Support\Facades\File; 
 
 class UserInformationsController extends Controller
 {
@@ -29,6 +30,25 @@ class UserInformationsController extends Controller
     public function followers(Request $request)
     {
       return $request->user()->followers;
+    }
+
+    public function updateAvatar(Request $request)
+    {
+      if($request->hasFile('avatar')) {
+        $request->validate([
+          'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        $avatar_name = $request->user()->id.'_avatar'.time().'.'.$request->avatar->getClientOriginalExtension();
+        $avatar_path = public_path('/images/avatars/');
+        $request->avatar->move($avatar_path, $avatar_name);
+        $currentUserImageName = $request->user()->informations->avatar;
+        if(strcmp($currentUserImageName, 'user_default.png') != 0) {
+          File::delete($avatar_path .''. $currentUserImageName);
+        }
+        $request->user()->informations()->update([
+          'avatar' => $avatar_name
+        ]);
+      }
     }
 
     /**

@@ -38,6 +38,8 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
   Route::post('/add_contact', 'App\Http\Controllers\ContactController@add');
 
   Route::get('/user_contacts', 'App\Http\Controllers\UserInformationsController@contacts');
+
+  Route::post('/update_avatar', 'App\Http\Controllers\UserInformationsController@updateAvatar');
 });
 
 Route::post('/register', 'App\Http\Controllers\AuthController@register');

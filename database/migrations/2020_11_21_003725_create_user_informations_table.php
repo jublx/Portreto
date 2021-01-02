@@ -28,6 +28,7 @@ class CreateUserInformationsTable extends Migration
             $table->string('twitter')->nullable();
             $table->string('facebook')->nullable();
             $table->text('interests')->nullable();
+            $table->string('avatar')->default('user_default.png');
             $table->timestamps();
             $table->primary('user_id');
         });

@@ -53,7 +53,7 @@ h1 {
 }
 
 .img2 {
-  max-width: 80vw;
+  width: 70%;
   margin: 6vh auto 0;
 }
 </style>

@@ -211,7 +211,6 @@ export default {
       var imagefile = document.querySelector('#file-input');
       avatar.append("avatar", imagefile.files[0]);
       var size = avatar.get("avatar").size / (1024 * 1024);
-      console.log(size);
       if(size <= 5) {
         axios.get('/sanctum/csrf-cookie').then(() => {
           axios.post('/api/update_avatar', avatar, {

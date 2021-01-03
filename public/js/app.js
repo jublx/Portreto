@@ -2597,7 +2597,6 @@ __webpack_require__.r(__webpack_exports__);
       var imagefile = document.querySelector('#file-input');
       avatar.append("avatar", imagefile.files[0]);
       var size = avatar.get("avatar").size / (1024 * 1024);
-      console.log(size);
 
       if (size <= 5) {
         axios.get('/sanctum/csrf-cookie').then(function () {
@@ -9030,7 +9029,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nh1[data-v-dd746fb4] {\n  margin-left: 8%;\n}\n.img1[data-v-dd746fb4] {\n  max-width: 60%;\n  margin: auto;\n}\n.img2[data-v-dd746fb4] {\n  max-width: 80vw;\n  margin: 6vh auto 0;\n}\n", ""]);
+exports.push([module.i, "\nh1[data-v-dd746fb4] {\n  margin-left: 8%;\n}\n.img1[data-v-dd746fb4] {\n  max-width: 60%;\n  margin: auto;\n}\n.img2[data-v-dd746fb4] {\n  width: 70%;\n  margin: 6vh auto 0;\n}\n", ""]);
 
 // exports
 

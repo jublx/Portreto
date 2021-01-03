@@ -34,19 +34,24 @@ class UserInformationsController extends Controller
 
     public function updateAvatar(Request $request)
     {
+      $request->validate([
+        'avatar' => 'required|image|max:5120|mimes:jpeg,png,jpg,gif,svg'
+      ],
+      [
+        'avatar.max' => "La taille de l'image ne doit pas dépasser 5 Mo."
+      ]);
       if($request->hasFile('avatar')) {
-        $request->validate([
-          'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
-        $avatar_name = $request->user()->id.'_avatar'.time().'.'.$request->avatar->getClientOriginalExtension();
-        $avatar_path = public_path('/images/avatars/');
-        $request->avatar->move($avatar_path, $avatar_name);
-        $currentUserImageName = $request->user()->informations->avatar;
-        if(strcmp($currentUserImageName, 'user_default.png') != 0) {
-          File::delete($avatar_path .''. $currentUserImageName);
+        
+
+        $avatar_name = $request->user()->id.'_avatar'.time().'.'.$request->avatar->getClientOriginalExtension(); // détermination du nom de l'image
+        $avatar_path = public_path('/images/avatars/'); 
+        $request->avatar->move($avatar_path, $avatar_name); // déplace l'image de la requête dans le dossier /public/images/avatars/
+        $currentUserImageName = $request->user()->informations->avatar; // récupère le nom de l'avatar actuel de l'utilisateur
+        if(strcmp($currentUserImageName, 'user_default.png') != 0) { 
+          File::delete($avatar_path .''. $currentUserImageName); // on supprime l'ancien avatar de l'utilisateur
         }
         $request->user()->informations()->update([
-          'avatar' => $avatar_name
+          'avatar' => $avatar_name // on met à jour le nom de l'avatar de l'utilisateur
         ]);
       }
     }
@@ -60,10 +65,14 @@ class UserInformationsController extends Controller
      */
     public function update(Request $request, UserInformations $userInformations)
     {
+      // mise à jour des infos de l'utilisateur avec validation des champs
         $user = $request->user();
 
         $request->validate([
           'contact_email' => 'email',
+        ],
+        [
+          'contact_email.email' => "Le champ email doit contenir une adresse email valide."
         ]);
 
         $user->informations()->update([

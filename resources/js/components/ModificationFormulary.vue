@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="getCurrentInfos()" type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">modifier</button>
+    <button @click="getCurrentInfos()" type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"><i class="fas fa-pen"></i> Modifier</button>
     <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -17,6 +17,7 @@
                     <div class="form-group">
                       <label for="recipient-name" class="col-form-label custom-label">Email:</label>
                       <input type="text" class="form-control" id="email" v-model="modifiedInfos.contact_email">
+                      <small v-if="errors.contact_email" class="form-error"><i class="fas fa-times-circle"></i> {{ errors.contact_email[0] }}</small>            
                     </div>
 
                     <div class="form-group">
@@ -81,8 +82,9 @@
             </div>
             <div class="row">
               <div class="col">
-                <div class="modal-footer">                  
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                <div class="modal-footer">      
+                  <small v-if="success" class="form-sucess mr-5"><i class="fas fa-check-circle"></i> Le profil a bien été modifié.</small>            
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="clearReturns">Fermer</button>
                   <button type="button" class="btn btn-primary"  @click="save()">Enregistrer</button>
                 </div>
               </div>
@@ -112,6 +114,7 @@ export default {
       this.modifiedInfos = JSON.parse(JSON.stringify(store.getters.user_infos));
     },
     save() {
+      this.clearReturns();
       axios.get('/sanctum/csrf-cookie').then(() => {
         axios.post('/api/update_user_infos', this.modifiedInfos).then(() => {
           this.success = true;
@@ -121,6 +124,10 @@ export default {
           this.errors = error.response.data.errors;
         })
       })
+    },
+    clearReturns() {
+      this.success = false;
+      this.errors = [];
     }
   },
   computed: {

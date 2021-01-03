@@ -3,7 +3,7 @@
     <div class="card algin-content-center shadow w-lg-50 mt-5" style="margin:auto;">
       <div class="card-img-top bg-custom shadow-lg w-100" style="background-color: ">
         <div class="d-flex flex-column text-center">
-          <img :src="'/images/avatars/'+user_infos.avatar" alt="avatar" class="rounded-circle mt-4" width="150">
+          <img :src="'/images/avatars/'+user_infos.avatar" alt="avatar" class="rounded-circle my-5" width="150">
         </div>
       </div>
       <div class="card-body px-5 text-center">

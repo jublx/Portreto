@@ -1,15 +1,18 @@
 <template>
-  <div v-if="currentInfos"> <!-- empêche les erreurs liées à la réactivité du composant -->
+  <div> <!-- empêche les erreurs liées à la réactivité du composant -->
     <div class="row">
       <div class="col-3 p-0">
         <input type="text" v-model="search" placeholder="Rechercher" class="form-control mb-2 shadow"/>
         <ul class="list-group shadow">
-          <li class="list-group-item" v-for="(contact, index) in user_contacts_filtered" :key="contact.user_id" @click="currentContact = index" :class="index == currentContact ? 'current-contact':''">
+          <li class="list-group-item contact-list-item" v-for="(contact, index) in user_contacts_filtered" :key="contact.user_id" @click="currentContact = index" :class="index == currentContact ? 'current-contact':''">
             {{ contact.user.first_name }} {{ contact.user.name }}
+            <div class="overlay">
+              <span class="text-danger" @click="contactToDelete = contact.user_id" data-toggle="modal" data-target="#validationModal"><i class="fas fa-trash-alt"></i></span>
+            </div>
           </li>
         </ul>
       </div>
-      <div class="col-9">
+      <div class="col-9" v-if="currentInfos.length > 0">
         <div class="row">
           <div class="col-6 pl-4 pr-2">
             <div class="card shadow bg-custom h-100">
@@ -141,7 +144,29 @@
           </div>
         </div>
       </div>
-    </div>   
+      <div v-else class="row col-9 justify-content-center">
+        <p class="form-error mt-5">Vous ne possédez pour le moment aucun contact.</p>            
+      </div>
+    </div> 
+    <div class="modal fade" id="validationModal" tabindex="-1" role="dialog" aria-labelledby="validationModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="validationModalLabel">Confirmation</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Voulez-vous vraiment supprimer ce contact ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" >Non</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" @click="removeContact(contactToDelete)">Oui</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>   
 </template>
 
@@ -153,7 +178,21 @@ export default {
   data() {
     return {
       currentContact: 0,
-      search: ""
+      search: "",
+      contactToDelete: null
+    }
+  },
+  methods: {
+    removeContact(contact_id) {
+      axios.get('/sanctum/csrf-cookie').then(() => {
+        axios.post('/api/remove_contact', {contact_id}).then(() => {
+          console.log("Le contact a bien été supprimé.");
+          this.$root.getUserContacts();
+        }).catch(error => {
+          console.log("Erreur lors de la suppression du contact : "+error);
+        })
+      })
+      this.contactToDelete = null;
     }
   },
   computed: {
@@ -161,7 +200,10 @@ export default {
       return store.getters.user_contacts;
     },
     currentInfos() {
-      return this.user_contacts_filtered[this.currentContact];
+      if(this.user_contacts.length > 0) {
+        return this.user_contacts_filtered[this.currentContact];
+      }
+      return [];
     },
     user_contacts_filtered() {
       let filtered_list = store.getters.user_contacts.filter((contact) => {
@@ -179,6 +221,10 @@ export default {
 </script>
 
 <style scoped>
+.card {
+  width: 200px;
+}
+
 .list-group {
   height: 65.2vh;
   overflow-y: scroll;
@@ -212,7 +258,27 @@ export default {
 }
 
 .current-contact::before {
-  content: "→ ";
+  content: "→";
+  margin-right: 6%;
   color: #008383;
 }
+
+.contact-list-item .overlay {
+  cursor: pointer;
+  position: absolute;
+  top: 14px;
+  right: 6%;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  transition: right 0.2s ease-in-out;
+}
+
+.contact-list-item .overlay span {
+  padding: 4px;
+}
+
+.contact-list-item:hover .overlay{
+  opacity: 0.8;
+}
+
 </style>

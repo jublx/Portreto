@@ -10,11 +10,11 @@
     <div v-if="isUserLogged" class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <router-link class="nav-link" to="/dashboard" data-toggle="collapse" data-target="#navbarNav">TABLEAU DE BORD</router-link>
+          <router-link class="nav-link" to="/dashboard" data-toggle="collapse" data-target="#navbarNav"><i class="fas fa-user-alt"></i> TABLEAU DE BORD</router-link>
         </li>
         <li class="nav-item" @click="logout">
           <router-link class="nav-link" to="/" data-toggle="collapse" data-target="#navbarNav">
-            <div>DÉCONNEXION</div>
+            <div><i class="fas fa-sign-in-alt"></i> DÉCONNEXION</div>
           </router-link>
         </li>
       </ul>

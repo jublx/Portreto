@@ -24,8 +24,9 @@
             <div class="card bg-custom shadow">
               <div class="card-body">
                 <div class="d-flex flex-column align-items-center text-center">
-                  <div class="image-upload">
-                    <label for="file-input">
+                  <small v-if="imageUploadErrors.avatar" class="form-error"><i class="fas fa-times-circle"></i> {{ imageUploadErrors.avatar[0] }}</small>            
+                  <div class="image-upload" :class="imageUploadErrors.avatar ? 'shake-horizontal':''">
+                    <label for="file-input" >
                       <img :src="'/images/avatars/'+user_infos.avatar" alt="avatar" class="rounded-circle mt-4" width="150">
                       <div class="overlay">
                         <span>modifier</span>
@@ -146,15 +147,19 @@
                       <input type="number" min="100" max="999" class="form-control mx-2" id="part3" v-model="addFriendCode.part3"/>
                     </div>
                     <div class="col-lg-3 justify-content-center d-flex p-0 mt-4 mt-lg-2">
-                      <button type="submit" class="btn btn-primary" @click.prevent="addContact">Ajouter contact</button>
+                      <button type="submit" class="btn btn-primary" @click.prevent="addContact"><i class="fas fa-plus"></i> Ajouter contact</button>                  
                     </div>
+                  </div>
+                  <div class="row col ml-3">
+                    <small v-if="addContactSuccess" class="form-sucess mr-5"><i class="fas fa-check-circle"></i> Le contact a bien été ajouté.</small>
+                    <small v-if="addContactErrors.friend_code" class="form-sucess mr-5"><i class="fas fa-times-circle"></i> {{ addContactErrors.friend_code[0] }}</small>    
                   </div>
                 </form>
               </div>
             </div>
             <div class="card shadow bg-light mt-md-4 mt-2">
               <div class="row justify-content-center py-4">
-                <div class="btn btn-primary" @click="contactBrowser = !contactBrowser">Afficher mes contacts</div>
+                <button class="btn btn-primary" @click="contactBrowser = !contactBrowser"><i class="fas fa-address-book"></i> Afficher mes contacts</button>
               </div>
             </div>
           </div>
@@ -178,17 +183,24 @@ export default {
         part2: "",
         part3: ""
       },
-      contactBrowser: false
+      contactBrowser: false,
+      addContactSuccess: false,
+      addContactErrors: [],
+      imageUploadErrors: []
     }
   },
   methods: {
     addContact() {
       let friend_code = this.addFriendCode.part1 + "-" + this.addFriendCode.part2 + "-" + this.addFriendCode.part3;
+      this.addContactSuccess = false;
+      this.addContactErrors = [];
       axios.get('/sanctum/csrf-cookie').then(() => {
         axios.post('/api/add_contact', {friend_code}).then(() => {
           console.log("Contact ajouté !");
+          this.addContactSuccess = true;
+          this.$root.getUserContacts(); // rafraîchit la liste des contacts
         }).catch(error => {
-          console.log("Erreur lors de l'ajout du contact : " + error);
+          this.addContactErrors = error.response.data.errors;
         })
       })
     },
@@ -204,6 +216,11 @@ export default {
         }).then(() => {
           console.log('image uploadée');
           this.$root.getUserInfos();
+        }).catch(error => {
+          this.imageUploadErrors = error.response.data.errors;
+          setTimeout(() => {
+              this.imageUploadErrors = []; // supprime le message d'erreur au bout de 3,5s
+            }, 3500);
         })
       })
     }
@@ -310,6 +327,10 @@ p {
   text-align: center;
 }
 
+.form-error {
+
+}
+
 .adresse {
   font-size: 0.9em;
 }
@@ -354,5 +375,67 @@ input[type=number] {
     opacity: 1;
   }
 }
+
+.shake-horizontal {
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  80% {
+    -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+  }
+  90% {
+    -webkit-transform: translateX(-8px);
+            transform: translateX(-8px);
+  }
+}
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  80% {
+    -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+  }
+  90% {
+    -webkit-transform: translateX(-8px);
+            transform: translateX(-8px);
+  }
+}
+
 
 </style>

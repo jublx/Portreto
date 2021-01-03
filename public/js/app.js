@@ -41670,7 +41670,7 @@ var render = function() {
     _vm._v(" "),
     _c("p", [
       _vm._v(
-        "\n    Cette plateforme vous est proposée par Roland ACHOUR, Mathis TEIXEIRA et Julien CLIPET : \n  "
+        "\n    Cette plateforme vous est proposée par Julien CLIPET, Roland ACHOUR et Mathis TEIXEIRA :\n  "
       )
     ]),
     _vm._v(" "),

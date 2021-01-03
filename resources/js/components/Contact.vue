@@ -2,7 +2,7 @@
   <div class="container page">
     <h1><span>Contact</span></h1>
     <p>
-      Cette plateforme vous est proposée par Roland ACHOUR, Mathis TEIXEIRA et Julien CLIPET : 
+      Cette plateforme vous est proposée par Julien CLIPET, Roland ACHOUR et Mathis TEIXEIRA :
     </p>
     <ul class="">
       <li>

@@ -12,7 +12,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-9" v-if="currentInfos.length > 0">
+      <div class="col-9" v-if="currentInfos.length != 0">
         <div class="row">
           <div class="col-6 pl-4 pr-2">
             <div class="card shadow bg-custom h-100">
@@ -221,10 +221,6 @@ export default {
 </script>
 
 <style scoped>
-.card {
-  width: 200px;
-}
-
 .list-group {
   height: 65.2vh;
   overflow-y: scroll;

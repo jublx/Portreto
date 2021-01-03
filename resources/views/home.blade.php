@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-70RE8MK291%22%3E"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-70RE8MK291');
+        </script>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>Portreto</title>
@@ -10,7 +19,7 @@
     <body>
         <div id="app">
             <navbar></navbar>
-            <transition appear="true" enter-active-class="fade-in-bottom" leave-active-class="fade-out" mode="out-in">
+            <transition appear enter-active-class="fade-in-bottom" leave-active-class="fade-out" mode="out-in">
               <router-view>
                 <index-page></index-page>
               </router-view>

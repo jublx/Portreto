@@ -13,9 +13,9 @@
         </tr>
       </thead>
       <tbody>        
-        <tr v-for="changements in changements" :key="changements">
-          <td>{{changements.date}}</td>
-          <td>{{changements.content}}</td>
+        <tr v-for="changement in changements" :key="changement.content">
+          <td>{{changement.date}}</td>
+          <td>{{changement.content}}</td>
         </tr>
       </tbody>
     </table>

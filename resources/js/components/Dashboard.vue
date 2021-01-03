@@ -1,6 +1,6 @@
 <template>    
   <div v-if="isUserLogged" class="container page">
-    <transition enter-active-class="scale-in-center" leave-active-class="fade-out" mode="out-in">
+    <transition enter-active-class="flip-in-hor-top" leave-active-class="flip-out-hor-top" mode="out-in">
       <div key=1 v-if="contactBrowser">
         <div class="row">
           <div class="col-8 p-0">
@@ -10,7 +10,8 @@
             <i class="fas fa-times" @click="contactBrowser = !contactBrowser"></i>
           </div>
         </div>
-        <contacts-browser v-if="contactBrowser"></contacts-browser>
+        <contacts-browser v-if="contactBrowser" class="d-none d-lg-block"></contacts-browser>
+        <contact-browser-mobile v-if="contactBrowser" class="d-md-block d-lg-none"></contact-browser-mobile>
       </div>    
       <div key=2 v-else>
         <div class="row">
@@ -172,6 +173,7 @@
 <script>
 import store from '../store.js';
 import ContactBrowser from './ContactsBrowser.vue';
+import ContactBrowserMobile from './ContactBrowserMobile.vue';
 import ModificationFormulary from './ModificationFormulary.vue';
 
 export default {
@@ -186,7 +188,7 @@ export default {
       contactBrowser: false,
       addContactSuccess: false,
       addContactErrors: [],
-      imageUploadErrors: []
+      imageUploadErrors: [],
     }
   },
   methods: {
@@ -241,6 +243,7 @@ export default {
   },
   components: {
     'contacts-browser': ContactBrowser,
+    'contact-browser-mobile': ContactBrowserMobile,
     'modification-formulary': ModificationFormulary
   }
 }
@@ -335,6 +338,67 @@ p {
   font-size: 0.9em;
 }
 
+.flip-out-hor-top {
+	-webkit-animation: flip-out-hor-top 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: flip-out-hor-top 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes flip-out-hor-top {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateX(70deg);
+            transform: rotateX(70deg);
+    opacity: 0;
+  }
+}
+@keyframes flip-out-hor-top {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateX(70deg);
+            transform: rotateX(70deg);
+    opacity: 0;
+  }
+}
+
+.flip-in-hor-top {
+	-webkit-animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes flip-in-hor-top {
+  0% {
+    -webkit-transform: rotateX(-80deg);
+            transform: rotateX(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
+}
+@keyframes flip-in-hor-top {
+  0% {
+    -webkit-transform: rotateX(-80deg);
+            transform: rotateX(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
+}
+
+
 /* on cache les flèches des champs de type number */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -345,35 +409,6 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
-}
-
-.scale-in-center {
-  animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@-webkit-keyframes scale-in-center {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
-@keyframes scale-in-center {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
 }
 
 .shake-horizontal {

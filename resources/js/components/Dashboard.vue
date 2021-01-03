@@ -33,7 +33,7 @@
                         <span>modifier</span>
                       </div>
                     </label>
-                    <input id="file-input" type="file" @change="uploadAvatar"/>
+                    <input id="file-input" type="file" @change="uploadAvatar" accept=".png, .jpg, .jpeg"/>
                   </div>
                   <div class="mt-3">
                     <h4>{{ user.first_name }} {{ user.name }}</h4>
@@ -210,21 +210,30 @@ export default {
       var avatar = new FormData();
       var imagefile = document.querySelector('#file-input');
       avatar.append("avatar", imagefile.files[0]);
-      axios.get('/sanctum/csrf-cookie').then(() => {
-        axios.post('/api/update_avatar', avatar, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        }).then(() => {
-          console.log('image uploadée');
-          this.$root.getUserInfos();
-        }).catch(error => {
-          this.imageUploadErrors = error.response.data.errors;
-          setTimeout(() => {
+      var size = avatar.get("avatar").size / (1024 * 1024);
+      console.log(size);
+      if(size <= 5) {
+        axios.get('/sanctum/csrf-cookie').then(() => {
+          axios.post('/api/update_avatar', avatar, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          }).then(() => {
+            console.log('image uploadée');
+            this.$root.getUserInfos();
+          }).catch(error => {
+            this.imageUploadErrors = error.response.data.errors;
+            setTimeout(() => {
               this.imageUploadErrors = []; // supprime le message d'erreur au bout de 3,5s
             }, 3500);
+          })
         })
-      })
+      } else {
+        this.imageUploadErrors = {avatar: ["La taille de l'image ne doit pas dépasser 5 Mo."]};
+        setTimeout(() => {
+          this.imageUploadErrors = []; // supprime le message d'erreur au bout de 3,5s
+        }, 3500);
+      }
     }
   },
   computed: {

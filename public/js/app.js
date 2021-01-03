@@ -2596,22 +2596,34 @@ __webpack_require__.r(__webpack_exports__);
       var avatar = new FormData();
       var imagefile = document.querySelector('#file-input');
       avatar.append("avatar", imagefile.files[0]);
-      axios.get('/sanctum/csrf-cookie').then(function () {
-        axios.post('/api/update_avatar', avatar, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        }).then(function () {
-          console.log('image uploadée');
+      var size = avatar.get("avatar").size / (1024 * 1024);
+      console.log(size);
 
-          _this2.$root.getUserInfos();
-        })["catch"](function (error) {
-          _this2.imageUploadErrors = error.response.data.errors;
-          setTimeout(function () {
-            _this2.imageUploadErrors = []; // supprime le message d'erreur au bout de 3,5s
-          }, 3500);
+      if (size <= 5) {
+        axios.get('/sanctum/csrf-cookie').then(function () {
+          axios.post('/api/update_avatar', avatar, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          }).then(function () {
+            console.log('image uploadée');
+
+            _this2.$root.getUserInfos();
+          })["catch"](function (error) {
+            _this2.imageUploadErrors = error.response.data.errors;
+            setTimeout(function () {
+              _this2.imageUploadErrors = []; // supprime le message d'erreur au bout de 3,5s
+            }, 3500);
+          });
         });
-      });
+      } else {
+        this.imageUploadErrors = {
+          avatar: ["La taille de l'image ne doit pas dépasser 5 Mo."]
+        };
+        setTimeout(function () {
+          _this2.imageUploadErrors = []; // supprime le message d'erreur au bout de 3,5s
+        }, 3500);
+      }
     }
   },
   computed: {
@@ -42225,7 +42237,38 @@ var render = function() {
           { staticClass: "modal-dialog", attrs: { role: "document" } },
           [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(5),
+              _c("div", { staticClass: "modal-header" }, [
+                _c(
+                  "h5",
+                  {
+                    staticClass: "modal-title",
+                    attrs: { id: "validationModalLabel" }
+                  },
+                  [_vm._v("Confirmation")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "close",
+                    attrs: {
+                      type: "button",
+                      "data-dismiss": "modal",
+                      "aria-label": "Close"
+                    },
+                    on: {
+                      click: function($event) {
+                        _vm.contactToDelete = null
+                      }
+                    }
+                  },
+                  [
+                    _c("span", { attrs: { "aria-hidden": "true" } }, [
+                      _vm._v("×")
+                    ])
+                  ]
+                )
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
                 _vm._v(
@@ -42238,7 +42281,12 @@ var render = function() {
                   "button",
                   {
                     staticClass: "btn btn-secondary",
-                    attrs: { type: "button" }
+                    attrs: { type: "button", "data-dismiss": "modal" },
+                    on: {
+                      click: function($event) {
+                        _vm.contactToDelete = null
+                      }
+                    }
                   },
                   [_vm._v("Non")]
                 ),
@@ -42303,31 +42351,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-3" }, [
       _c("h5", { staticClass: "mt-1" }, [_vm._v("Centres d'intérêts")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c(
-        "h5",
-        { staticClass: "modal-title", attrs: { id: "validationModalLabel" } },
-        [_vm._v("Confirmation")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close"
-          }
-        },
-        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
-      )
     ])
   }
 ]
@@ -42475,7 +42498,11 @@ var render = function() {
                                     ),
                                     _vm._v(" "),
                                     _c("input", {
-                                      attrs: { id: "file-input", type: "file" },
+                                      attrs: {
+                                        id: "file-input",
+                                        type: "file",
+                                        accept: ".png, .jpg, .jpeg"
+                                      },
                                       on: { change: _vm.uploadAvatar }
                                     })
                                   ]

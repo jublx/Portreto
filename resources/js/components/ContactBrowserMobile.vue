@@ -3,23 +3,27 @@
   <input type="text" v-model="search" placeholder="Rechercher" class="form-control mb-2 shadow"/>
     
     <div id="accordion">
-      <div class="card"  v-for="(contact, index) in user_contacts_filtered" :key="contact.user_id">
-        <div class="card-header" :id="'heading'+index">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" :data-target="'#collapse'+index" aria-expanded="true" :aria-controls="'collapse'+index">
-              <div class="text-center">
-                <img :src="'/images/avatars/'+contact.avatar" alt="avatar" class="rounded-circle mt-4" width="150">
-                <div class="mt-3">
-                  <h4>{{ contact.user.first_name }} {{ contact.user.name }}</h4>
+      <div v-if="currentInfos.length != 0">
+      <div class="card h-50"  v-for="(contact, index) in user_contacts_filtered" :key="contact.user_id">
+        <div class="card-header h-50" :id="'heading'+index" >
+          <h5 class="mb-0 h-50">
+            <button class="btn btn-link" data-toggle="collapse" :data-target="'#collapse'+index" aria-expanded="true" :aria-controls="'collapse'+index">           
+              <div class="row ">
+                <div class="col-20 d-inline-flex">
+                  <div class="text-center">
+                    <img :src="'/images/avatars/'+contact.avatar" alt="avatar" class="rounded-circle mt-4" width="50" style="margin-bottom:50%">
+                  </div>
+                  <div class="col-20 d-inline-flex">
+                      <h3 style="margin: auto; margin-left: 1em; ">{{ contact.user.first_name }} {{ contact.user.name }}</h3>
+                  </div>
+                    <span class="text-danger" @click="contactToDelete = contact.user_id" data-toggle="modal" data-target="#validationModal" style="margin: auto; margin-left: 1em; "><i class="fas fa-trash-alt"></i></span>
                 </div>
               </div>
             </button>
           </h5>
         </div>
-
         <div :id="'collapse'+index" class="collapse" :aria-labelledby="'heading'+index" data-parent="#accordion">
           <div class="card-body">
-
             <div class="card shadow bg-light mt-2">
               <div class="card-body">
                 <div class="row justify-content-center mt-1">
@@ -29,7 +33,6 @@
                     <p class="card-p">code ami : {{ contact.friend_code }}</p>
                   </div>
                 </div>
-                
                 <div class="row justify-content-center mt-5">
                   <div class="col-5 d-inline-flex">
                     <div class="col-sm-3">
@@ -136,6 +139,29 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </div>
+    <div v-else class="row col-9 justify-content-center">
+      <p class="form-error mt-5">Vous ne possédez pour le moment aucun contact.</p>            
+    </div>
+    </div> 
+    <div class="modal fade" id="validationModal" tabindex="-1" role="dialog" aria-labelledby="validationModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="validationModalLabel">Confirmation</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="contactToDelete = null">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Voulez-vous vraiment supprimer ce contact ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" @click="contactToDelete = null" data-dismiss="modal">Non</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" @click="removeContact(contactToDelete)">Oui</button>
+          </div>
         </div>
       </div>
     </div>

@@ -2748,7 +2748,7 @@ __webpack_require__.r(__webpack_exports__);
         part2: "",
         part3: ""
       },
-      contactBrowser: true,
+      contactBrowser: false,
       addContactSuccess: false,
       addContactErrors: [],
       imageUploadErrors: []

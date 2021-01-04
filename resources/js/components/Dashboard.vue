@@ -185,7 +185,7 @@ export default {
         part2: "",
         part3: ""
       },
-      contactBrowser: true,
+      contactBrowser: false,
       addContactSuccess: false,
       addContactErrors: [],
       imageUploadErrors: [],

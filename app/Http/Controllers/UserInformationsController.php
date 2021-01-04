@@ -32,6 +32,11 @@ class UserInformationsController extends Controller
       return $request->user()->followers;
     }
 
+    public function numberOfFollowers(Request $request)
+    {
+      return $request->user()->followers->count();
+    }
+
     public function updateAvatar(Request $request)
     {
       $request->validate([

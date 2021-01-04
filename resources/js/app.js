@@ -72,6 +72,7 @@ new Vue({
           store.commit('SET_USER', response.data);
           this.getUserInfos();
           this.getUserContacts();
+          this.getUserNumberOfFollowers();
         }).catch(error => {
           console.log('User is not logged in.');
           if(!this.$route.fullPath.localeCompare('/dashboard')) { // si les chaînes de caractères sont identiques, renvoie 0
@@ -86,7 +87,7 @@ new Vue({
           axios.get('/api/user_infos').then((informations) => {
             store.commit('SET_USER_INFOS', informations.data);
           }).catch(error => {
-            console.log("Can't recover user informations.");
+            console.log("Can't recover user's informations.");
           })
         })
       },
@@ -94,6 +95,17 @@ new Vue({
         axios.get('/sanctum/csrf-cookie').then(() => {
           axios.get('/api/user_contacts').then((response) => {
             store.commit('SET_USER_CONTACTS', response.data);
+          }).catch(error => {
+            console.log("Can't recover user's contacts.");
+          })
+        })
+      },
+      getUserNumberOfFollowers() {
+        axios.get('/sanctum/csrf-cookie').then(() => {
+          axios.get('/api/number_of_followers').then((response) => {
+            store.commit('SET_NUMBER_OF_FOLLOWERS', response.data);
+          }).catch(error => {
+            console.log("Can't recover user's number of followers.");
           })
         })
       }

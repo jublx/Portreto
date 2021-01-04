@@ -86,6 +86,7 @@ export default {
             store.commit('SET_USER', response.data);
             this.$root.getUserInfos();
             this.$root.getUserContacts();
+            this.$root.getUserNumberOfFollowers();
             setTimeout(() => {
               this.$router.push('/dashboard');
             }, 1500);

@@ -85,6 +85,14 @@
                 </div>
               </div>
             </div>
+            <div class="card mt-md-4 mt-2 shadow bg-light">
+              <div class="card-body">
+                <div class="row justify-content-center">
+                  <p v-if="user_number_of_followers == 1" class="ml-3"><span class="big-num">{{ user_number_of_followers }}</span> personne vous a ajouté.</p>
+                  <p v-else class="ml-3"><span class="big-num">{{ user_number_of_followers }}</span> personnes vous ont ajouté.</p>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col-md-7 mt-md-0 mt-2">
             <div class="card shadow bg-light">
@@ -247,6 +255,9 @@ export default {
     },
     user_contacts() {
       return store.getters.user_contacts;
+    },
+    user_number_of_followers() {
+      return store.getters.user_number_of_followers;
     }
   },
   components: {
@@ -338,8 +349,8 @@ p {
   text-align: center;
 }
 
-.form-error {
-
+.big-num {
+  font-size: 2.2em;
 }
 
 .adresse {

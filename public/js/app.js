@@ -2024,6 +2024,8 @@ __webpack_require__.r(__webpack_exports__);
 
             _this.$root.getUserContacts();
 
+            _this.$root.getUserNumberOfFollowers();
+
             setTimeout(function () {
               _this.$router.push('/dashboard');
             }, 1500);
@@ -2735,6 +2737,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2822,6 +2832,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     user_contacts: function user_contacts() {
       return _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.user_contacts;
+    },
+    user_number_of_followers: function user_number_of_followers() {
+      return _store_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.user_number_of_followers;
     }
   },
   components: {
@@ -9176,7 +9189,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.fa-times[data-v-040e2ab9] {\n  cursor: pointer;\n  font-size: 1.8em;\n  margin-top: 42px;\n}\nh1[data-v-040e2ab9] {\n  margin: 10px;\n}\nh4[data-v-040e2ab9], p[data-v-040e2ab9] {\n  text-align: center;\n}\np[data-v-040e2ab9] {\n  font-size: 1.1em;\n}\n.page[data-v-040e2ab9] {\n  margin-top: 100px;\n}\n.image-upload[data-v-040e2ab9]{\n  position:relative;\n  display:inline-block;\n}\n.image-upload .overlay[data-v-040e2ab9]{\n  cursor: pointer;\n  position:absolute;\n  top:14px;\n  left:0;\n  width:100%;\n  height:100%;\n  opacity:0;\n  transition:opacity 200ms ease-in-out;\n}\n.image-upload:hover .overlay[data-v-040e2ab9]{\n  opacity: 1;\n}\n.image-upload:hover img[data-v-040e2ab9] {\n  filter: brightness(50%);\n}\n.overlay span[data-v-040e2ab9] {\n  position:absolute;\n  top:50%;\n  left:50%;\n  transform:translate(-50%,-50%);\n  color:#fff;\n}\n.image-upload>input[data-v-040e2ab9] {\n  display: none;\n}\n.bg-custom[data-v-040e2ab9] {\n  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);\n  color: #f8fafc;\n}\n.card[data-v-040e2ab9] {\n  font-size: 1.2em;\n}\n.btn-modal[data-v-040e2ab9] {\n  margin-bottom: -30px;\n}\n.text-muted[data-v-040e2ab9] {\n  margin: 0;\n}\n.form-control[data-v-040e2ab9] {\n  width: 22%;\n  text-align: center;\n}\n.form-error[data-v-040e2ab9] {\n}\n.adresse[data-v-040e2ab9] {\n  font-size: 0.9em;\n}\n.flip-out-hor-top[data-v-040e2ab9] {\n\t-webkit-animation: flip-out-hor-top-data-v-040e2ab9 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;\n\t        animation: flip-out-hor-top-data-v-040e2ab9 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;\n}\n@-webkit-keyframes flip-out-hor-top-data-v-040e2ab9 {\n0% {\n    transform: rotateX(0);\n    opacity: 1;\n}\n100% {\n    transform: rotateX(70deg);\n    opacity: 0;\n}\n}\n@keyframes flip-out-hor-top-data-v-040e2ab9 {\n0% {\n    transform: rotateX(0);\n    opacity: 1;\n}\n100% {\n    transform: rotateX(70deg);\n    opacity: 0;\n}\n}\n.flip-in-hor-top[data-v-040e2ab9] {\n\t-webkit-animation: flip-in-hor-top-data-v-040e2ab9 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\n\t        animation: flip-in-hor-top-data-v-040e2ab9 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\n}\n@-webkit-keyframes flip-in-hor-top-data-v-040e2ab9 {\n0% {\n    transform: rotateX(-80deg);\n    opacity: 0;\n}\n100% {\n    transform: rotateX(0);\n    opacity: 1;\n}\n}\n@keyframes flip-in-hor-top-data-v-040e2ab9 {\n0% {\n    transform: rotateX(-80deg);\n    opacity: 0;\n}\n100% {\n    transform: rotateX(0);\n    opacity: 1;\n}\n}\n\n\n/* on cache les flèches des champs de type number */\ninput[data-v-040e2ab9]::-webkit-outer-spin-button,\ninput[data-v-040e2ab9]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n/* Firefox */\ninput[type=number][data-v-040e2ab9] {\n  -moz-appearance: textfield;\n}\n.shake-horizontal[data-v-040e2ab9] {\n  -webkit-animation: shake-horizontal-data-v-040e2ab9 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;\n          animation: shake-horizontal-data-v-040e2ab9 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;\n}\n@-webkit-keyframes shake-horizontal-data-v-040e2ab9 {\n0%,\n  100% {\n    transform: translateX(0);\n}\n10%,\n  30%,\n  50%,\n  70% {\n    transform: translateX(-10px);\n}\n20%,\n  40%,\n  60% {\n    transform: translateX(10px);\n}\n80% {\n    transform: translateX(8px);\n}\n90% {\n    transform: translateX(-8px);\n}\n}\n@keyframes shake-horizontal-data-v-040e2ab9 {\n0%,\n  100% {\n    transform: translateX(0);\n}\n10%,\n  30%,\n  50%,\n  70% {\n    transform: translateX(-10px);\n}\n20%,\n  40%,\n  60% {\n    transform: translateX(10px);\n}\n80% {\n    transform: translateX(8px);\n}\n90% {\n    transform: translateX(-8px);\n}\n}\n\n\n", ""]);
+exports.push([module.i, "\n.fa-times[data-v-040e2ab9] {\n  cursor: pointer;\n  font-size: 1.8em;\n  margin-top: 42px;\n}\nh1[data-v-040e2ab9] {\n  margin: 10px;\n}\nh4[data-v-040e2ab9], p[data-v-040e2ab9] {\n  text-align: center;\n}\np[data-v-040e2ab9] {\n  font-size: 1.1em;\n}\n.page[data-v-040e2ab9] {\n  margin-top: 100px;\n}\n.image-upload[data-v-040e2ab9]{\n  position:relative;\n  display:inline-block;\n}\n.image-upload .overlay[data-v-040e2ab9]{\n  cursor: pointer;\n  position:absolute;\n  top:14px;\n  left:0;\n  width:100%;\n  height:100%;\n  opacity:0;\n  transition:opacity 200ms ease-in-out;\n}\n.image-upload:hover .overlay[data-v-040e2ab9]{\n  opacity: 1;\n}\n.image-upload:hover img[data-v-040e2ab9] {\n  filter: brightness(50%);\n}\n.overlay span[data-v-040e2ab9] {\n  position:absolute;\n  top:50%;\n  left:50%;\n  transform:translate(-50%,-50%);\n  color:#fff;\n}\n.image-upload>input[data-v-040e2ab9] {\n  display: none;\n}\n.bg-custom[data-v-040e2ab9] {\n  background-image: linear-gradient(to right bottom, #4eb888, #37ab8a, #219e8a, #0b9187, #008383);\n  color: #f8fafc;\n}\n.card[data-v-040e2ab9] {\n  font-size: 1.2em;\n}\n.btn-modal[data-v-040e2ab9] {\n  margin-bottom: -30px;\n}\n.text-muted[data-v-040e2ab9] {\n  margin: 0;\n}\n.form-control[data-v-040e2ab9] {\n  width: 22%;\n  text-align: center;\n}\n.big-num[data-v-040e2ab9] {\n  font-size: 2.2em;\n}\n.adresse[data-v-040e2ab9] {\n  font-size: 0.9em;\n}\n.flip-out-hor-top[data-v-040e2ab9] {\n\t-webkit-animation: flip-out-hor-top-data-v-040e2ab9 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;\n\t        animation: flip-out-hor-top-data-v-040e2ab9 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;\n}\n@-webkit-keyframes flip-out-hor-top-data-v-040e2ab9 {\n0% {\n    transform: rotateX(0);\n    opacity: 1;\n}\n100% {\n    transform: rotateX(70deg);\n    opacity: 0;\n}\n}\n@keyframes flip-out-hor-top-data-v-040e2ab9 {\n0% {\n    transform: rotateX(0);\n    opacity: 1;\n}\n100% {\n    transform: rotateX(70deg);\n    opacity: 0;\n}\n}\n.flip-in-hor-top[data-v-040e2ab9] {\n\t-webkit-animation: flip-in-hor-top-data-v-040e2ab9 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\n\t        animation: flip-in-hor-top-data-v-040e2ab9 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;\n}\n@-webkit-keyframes flip-in-hor-top-data-v-040e2ab9 {\n0% {\n    transform: rotateX(-80deg);\n    opacity: 0;\n}\n100% {\n    transform: rotateX(0);\n    opacity: 1;\n}\n}\n@keyframes flip-in-hor-top-data-v-040e2ab9 {\n0% {\n    transform: rotateX(-80deg);\n    opacity: 0;\n}\n100% {\n    transform: rotateX(0);\n    opacity: 1;\n}\n}\n\n\n/* on cache les flèches des champs de type number */\ninput[data-v-040e2ab9]::-webkit-outer-spin-button,\ninput[data-v-040e2ab9]::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n/* Firefox */\ninput[type=number][data-v-040e2ab9] {\n  -moz-appearance: textfield;\n}\n.shake-horizontal[data-v-040e2ab9] {\n  -webkit-animation: shake-horizontal-data-v-040e2ab9 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;\n          animation: shake-horizontal-data-v-040e2ab9 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;\n}\n@-webkit-keyframes shake-horizontal-data-v-040e2ab9 {\n0%,\n  100% {\n    transform: translateX(0);\n}\n10%,\n  30%,\n  50%,\n  70% {\n    transform: translateX(-10px);\n}\n20%,\n  40%,\n  60% {\n    transform: translateX(10px);\n}\n80% {\n    transform: translateX(8px);\n}\n90% {\n    transform: translateX(-8px);\n}\n}\n@keyframes shake-horizontal-data-v-040e2ab9 {\n0%,\n  100% {\n    transform: translateX(0);\n}\n10%,\n  30%,\n  50%,\n  70% {\n    transform: translateX(-10px);\n}\n20%,\n  40%,\n  60% {\n    transform: translateX(10px);\n}\n80% {\n    transform: translateX(8px);\n}\n90% {\n    transform: translateX(-8px);\n}\n}\n\n\n", ""]);
 
 // exports
 
@@ -43338,6 +43351,38 @@ var render = function() {
                               ])
                             ])
                           ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "card mt-md-4 mt-2 shadow bg-light" },
+                          [
+                            _c("div", { staticClass: "card-body" }, [
+                              _c(
+                                "div",
+                                { staticClass: "row justify-content-center" },
+                                [
+                                  _vm.user_number_of_followers == 1
+                                    ? _c("p", { staticClass: "ml-3" }, [
+                                        _c("span", { staticClass: "big-num" }, [
+                                          _vm._v(
+                                            _vm._s(_vm.user_number_of_followers)
+                                          )
+                                        ]),
+                                        _vm._v(" personne vous a ajouté.")
+                                      ])
+                                    : _c("p", { staticClass: "ml-3" }, [
+                                        _c("span", { staticClass: "big-num" }, [
+                                          _vm._v(
+                                            _vm._s(_vm.user_number_of_followers)
+                                          )
+                                        ]),
+                                        _vm._v(" personnes vous ont ajouté.")
+                                      ])
+                                ]
+                              )
+                            ])
+                          ]
                         )
                       ]),
                       _vm._v(" "),
@@ -64980,6 +65025,8 @@ new Vue({
         _this.getUserInfos();
 
         _this.getUserContacts();
+
+        _this.getUserNumberOfFollowers();
       })["catch"](function (error) {
         console.log('User is not logged in.');
 
@@ -64997,7 +65044,7 @@ new Vue({
         axios.get('/api/user_infos').then(function (informations) {
           _store_js__WEBPACK_IMPORTED_MODULE_1__["default"].commit('SET_USER_INFOS', informations.data);
         })["catch"](function (error) {
-          console.log("Can't recover user informations.");
+          console.log("Can't recover user's informations.");
         });
       });
     },
@@ -65005,6 +65052,17 @@ new Vue({
       axios.get('/sanctum/csrf-cookie').then(function () {
         axios.get('/api/user_contacts').then(function (response) {
           _store_js__WEBPACK_IMPORTED_MODULE_1__["default"].commit('SET_USER_CONTACTS', response.data);
+        })["catch"](function (error) {
+          console.log("Can't recover user's contacts.");
+        });
+      });
+    },
+    getUserNumberOfFollowers: function getUserNumberOfFollowers() {
+      axios.get('/sanctum/csrf-cookie').then(function () {
+        axios.get('/api/number_of_followers').then(function (response) {
+          _store_js__WEBPACK_IMPORTED_MODULE_1__["default"].commit('SET_NUMBER_OF_FOLLOWERS', response.data);
+        })["catch"](function (error) {
+          console.log("Can't recover user's number of followers.");
         });
       });
     }
@@ -66299,7 +66357,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     user_infos: {},
     user_contacts: [],
     register_errors: [],
-    login_errors: []
+    login_errors: [],
+    number_of_followers: 0
   },
   mutations: {
     SET_IS_USER_LOGGED: function SET_IS_USER_LOGGED(state, value) {
@@ -66321,6 +66380,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     SET_LOGIN_ERRORS: function SET_LOGIN_ERRORS(state, value) {
       return state.login_errors = value;
     },
+    SET_NUMBER_OF_FOLLOWERS: function SET_NUMBER_OF_FOLLOWERS(state, value) {
+      return state.number_of_followers = value;
+    },
     CLEAR_REGISTER_ERRORS: function CLEAR_REGISTER_ERRORS(state) {
       return state.register_errors = [];
     },
@@ -66332,6 +66394,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
       state.user = {};
       state.user_infos = {};
       state.user_contacts = [];
+      state.number_of_followers = 0;
     }
   },
   getters: {
@@ -66346,6 +66409,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     },
     user_contacts: function user_contacts(state) {
       return state.user_contacts;
+    },
+    user_number_of_followers: function user_number_of_followers(state) {
+      return state.number_of_followers;
     },
     register_errors: function register_errors(state) {
       return state.register_errors;

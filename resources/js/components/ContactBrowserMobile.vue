@@ -1,7 +1,7 @@
 <template>
   <div>
     <input type="text" v-model="search" placeholder="Rechercher" class="form-control mb-2 shadow"/>    
-    <div id="accordion" class="mt-3">
+    <div id="accordion" class="mt-3 shadow">
       <div v-if="currentInfos.length != 0">
       <div class="card contact-list-item"  v-for="(contact, index) in user_contacts_filtered" :key="contact.user_id">
         <div class="card-header h-50" :id="'heading'+index" data-toggle="collapse" :data-target="'#collapse'+index">
@@ -120,8 +120,8 @@
         </div>
       </div>
     </div>
-    <div v-else class="row col-9 justify-content-center">
-      <p class="form-error mt-5">Vous ne possédez pour le moment aucun contact.</p>            
+    <div v-else class="row justify-content-center">
+      <small class="form-error mt-5 text-center">Vous ne possédez pour le moment aucun contact.</small>            
     </div>
     </div> 
     <div class="modal fade" id="validationModalMobile" tabindex="-1" role="dialog" aria-labelledby="validationModalMobileLabel" aria-hidden="true" data-backdrop="static">

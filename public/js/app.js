@@ -42083,7 +42083,7 @@ var render = function() {
       }
     }),
     _vm._v(" "),
-    _c("div", { staticClass: "mt-3", attrs: { id: "accordion" } }, [
+    _c("div", { staticClass: "mt-3 shadow", attrs: { id: "accordion" } }, [
       _vm.currentInfos.length != 0
         ? _c(
             "div",
@@ -42395,8 +42395,8 @@ var render = function() {
             }),
             0
           )
-        : _c("div", { staticClass: "row col-9 justify-content-center" }, [
-            _c("p", { staticClass: "form-error mt-5" }, [
+        : _c("div", { staticClass: "row justify-content-center" }, [
+            _c("small", { staticClass: "form-error mt-5 text-center" }, [
               _vm._v("Vous ne possédez pour le moment aucun contact.")
             ])
           ])

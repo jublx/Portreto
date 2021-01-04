@@ -43467,8 +43467,7 @@ var render = function() {
                                     _c(
                                       "label",
                                       {
-                                        staticClass:
-                                          "col-lg-3 p-0 justify-content-center"
+                                        staticClass: "col-lg-3 p-0 text-center"
                                       },
                                       [_vm._v("Ajouter un contact")]
                                     ),

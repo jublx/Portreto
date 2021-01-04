@@ -139,7 +139,7 @@
               <div class="card-body">
                 <form class="row">
                   <div class="form-inline mx-sm-2 mb-2">
-                    <label class="col-lg-3 p-0 justify-content-center">Ajouter un contact</label>
+                    <label class="col-lg-3 p-0 text-center">Ajouter un contact</label>
                     <div class="col-lg-6 justify-content-center d-inline-flex p-0 mt-2">
                       <input type="number" min="100" max="999" class="form-control mx-2" id="part1" v-model="addFriendCode.part1"/>
                       <label>-</label>

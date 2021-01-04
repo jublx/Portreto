@@ -1,4 +1,3 @@
 RewriteEngine on
 RewriteCond %{REQUEST_URI} !^public
-RewriteRule ^(wordpress)($|/) - [L]
 RewriteRule ^(.*)$ public/$1 [L]

@@ -1,0 +1,84 @@
+.page {
+  margin: calc(5vw + 50px) auto 100px auto;
+}
+
+body {
+  min-height: 85vh;
+}
+
+h1 {
+  font-family: Roboto, sans-serif;
+  font-weight: 80;
+  font-size: 3em;
+  line-height: 70px;
+}
+
+p {
+  font-family: Roboto, sans-serif;
+  font-weight:1;
+  font-size: 1.5em;
+  line-height: 50px;
+  text-justify: auto;
+}
+
+span {
+  color: #0b9187;
+}
+
+.fade-out {
+	animation: fade-out 0.2s ease-out both;
+}
+
+.fade-in-bottom {
+	animation: fade-in-bottom 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.flip-in-hor-top {
+	animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.flip-out-hor-top {
+	animation: flip-out-hor-top 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+ @keyframes flip-in-hor-top {
+  0% {
+    transform: rotateX(-80deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
+
+ @keyframes flip-out-hor-top {
+  0% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(70deg);
+    opacity: 0;
+  }
+}

@@ -29,6 +29,30 @@ export default {
     return {
       changements: [
         {
+          date: '03-01-2021',
+          content: 'Ajout du composant de consultation des contacts sur navigateurs mobiles, et vérification de la taille de l\'image côté client pour maximiser la réactivité.'
+        },
+        {
+          date: '02-01-2021',
+          content: 'Ajout de la fonctionnalité de changement d\'image de profil (5Mo max et vérification côté serveur après upload).'
+        },
+        {
+          date: '01-01-2021',
+          content: 'Ajout du composant de consultation des contacts sur navigateur pc, et ajout de la fonction de recherche'
+        },
+        {
+          date: '30-12-2020',
+          content: 'Modification sur le fonctionnent côté client des requêtes http (centralisation des fonctions et requêtes limitées en nombre pour optimiser la réactivité.'
+        },
+        {
+          date: '29-12-2020',
+          content: 'Création d\'une carte de profil sur la page d\'accueil.'
+        },
+        {
+          date: '28-12-2020',
+          content: 'Ajout de la page 404 not found pour toute url non reconnue.'
+        },
+        {
           date: '26-12-2020',
           content: 'Affichage d\'un formulaire "ajouter un contact" sur le tableau de bord.'
         },

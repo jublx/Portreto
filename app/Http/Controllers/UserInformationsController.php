@@ -68,7 +68,7 @@ class UserInformationsController extends Controller
      * @param  \App\Models\UserInformations  $userInformations
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserInformations $userInformations)
+    public function update(Request $request)
     {
       // mise à jour des infos de l'utilisateur avec validation des champs
         $user = $request->user();

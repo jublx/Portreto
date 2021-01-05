@@ -11,9 +11,7 @@
         <div id="app">
             <navbar></navbar> 
             <transition appear enter-active-class="fade-in-bottom" leave-active-class="fade-out" mode="out-in">
-              <router-view>
-                <index-page></index-page>
-              </router-view>
+              <router-view></router-view>
             </transition>    
             <default-footer></default-footer>
         </div>
